@@ -3024,6 +3024,7 @@ namespace ti?
 ;semiSafeRAM Locations
 ;---------------------------------------------
 ?usbArea			:= 0D13FD8h ; 14306 bytes used for usb, probably need to disable timer3/usb interrupts to use
+?usbHandleKeys		:= 0D14091h ; zero this byte while using usbArea to keep GetCSC from affecting other parts of usbArea
 ?usbInited		:= 0D177B7h ; zero this byte while using usbArea and to reset the usb stack when interrupts are re-enabled
 ?heapBot			:= 0D1887Ch ; 1024 bytes used for flash ram routines, rest used rarely
 ?ramCodeTop		:= 0D18C7Ch
