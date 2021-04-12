@@ -128,7 +128,7 @@ help:
 	@echo   help
 
 .PHONY: $(LIBS)
-.PHONY: install-fasmg install-std install-ce $(addprefix install-,$(LIBS))
+.PHONY: docs-html docs-pdf install-fasmg install-std install-ce $(addprefix install-,$(LIBS))
 .PHONY: check clean clean-std $(addprefix clean-,$(LIBS))
 .PHONY: all help install uninstall release release-libs docs
 .PHONY: fasmg convbin convimg convfont
