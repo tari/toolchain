@@ -6,6 +6,7 @@ on:
       - v* # push events versioned tags
     branches-ignore:
       - gh-pages
+      - fatdrvce-rewrite
   pull_request:
     branches:
       - master
