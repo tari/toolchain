@@ -370,7 +370,7 @@ Additionally, the library supports accessing program data and various OS variabl
 <dd><p>Closes all open slots.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Call before you use any variable functions </p>
+<p>Call before you use any variable functions such as <a class="reference internal" href="#fileioc_8h_1a2842e9d72ce53bca7b41c22838881775"><span class="std std-ref">ti_Open()</span></a> </p>
 </div>
 </dd></dl>
 
@@ -381,13 +381,13 @@ Additionally, the library supports accessing program data and various OS variabl
 <p>An AppVar is used as default file storage.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If there isn’t enough memory to create the variable, or a slot isn’t open, zero (0) is returned </p>
+<p>If there isn’t enough memory to create the variable, or a slot isn’t open, zero (0) is returned. Remember to call <a class="reference internal" href="#fileioc_8h_1a2a9a88c6c2200809894fdab31ffef226"><span class="std std-ref">ti_CloseAll()</span></a> when calling for the first time. </p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>name</strong> – Name of file to open </p></li>
-<li><p><strong>mode</strong> – <p>“r” - Opens a file for reading. The file must exist. Keeps file in archive if in archive.</p>
+<li><p><strong>mode</strong> – <p>“r” - Opens a file for reading. The file must exist. If the file does not exist, zero is returned. Keeps file in archive if in archive.</p>
 <p>”w” - Creates an empty file for writing. Overwrites file if already exists.</p>
 <p>”a” - Appends to a file. Writing operations, append data at the end of the file. The file is created if it does not exist.</p>
 <p>”r+” - Opens a file to update both reading and writing. The file must exist. Moves file from archive to RAM if in archive.</p>
@@ -409,13 +409,13 @@ Additionally, the library supports accessing program data and various OS variabl
 <p>Can open any type of program or appvar variable </p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If there isn’t enough memory to create the variable, or a slot isn’t open, zero (0) is returned </p>
+<p>If there isn’t enough memory to create the variable, or a slot isn’t open, zero (0) is returned. </p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>varname</strong> – Name of variable to open </p></li>
-<li><p><strong>mode</strong> – <p>“r” - Opens a file for reading. The file must exist. Keeps file in archive if in archive.</p>
+<li><p><strong>mode</strong> – <p>“r” - Opens a file for reading. The file must exist. If the file does not exist, zero is returned. Keeps file in archive if in archive.</p>
 <p>”w” - Creates an empty file for writing. Overwrites file if already exists.</p>
 <p>”a” - Appends to a file. Writing operations, append data at the end of the file. The file is created if it does not exist.</p>
 <p>”r+” - Opens a file to update both reading and writing. The file must exist. Moves file from archive to RAM if in archive.</p>
