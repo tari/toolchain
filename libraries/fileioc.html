@@ -365,23 +365,13 @@ Additionally, the library supports accessing program data and various OS variabl
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-functions">Functions</p>
 <dl class="cpp function">
-<dt id="_CPPv411ti_CloseAllv">
-<span id="_CPPv311ti_CloseAllv"></span><span id="_CPPv211ti_CloseAllv"></span><span id="ti_CloseAll__void"></span><span class="target" id="fileioc_8h_1a2a9a88c6c2200809894fdab31ffef226"></span>void <code class="sig-name descname">ti_CloseAll</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv411ti_CloseAllv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Closes all open slots.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Call before you use any variable functions such as <a class="reference internal" href="#fileioc_8h_1a2842e9d72ce53bca7b41c22838881775"><span class="std std-ref">ti_Open()</span></a> </p>
-</div>
-</dd></dl>
-
-<dl class="cpp function">
 <dt id="_CPPv47ti_OpenPKcPKc">
 <span id="_CPPv37ti_OpenPKcPKc"></span><span id="_CPPv27ti_OpenPKcPKc"></span><span id="ti_Open__cCP.cCP"></span><span class="target" id="fileioc_8h_1a2842e9d72ce53bca7b41c22838881775"></span><a class="reference internal" href="#_CPPv48ti_var_t" title="ti_var_t">ti_var_t</a> <code class="sig-name descname">ti_Open</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>name</em>, <em class="property">const</em> char *<em>mode</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv47ti_OpenPKcPKc" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Opens a file.</p>
 <p>An AppVar is used as default file storage.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If there isn’t enough memory to create the variable, or a slot isn’t open, zero (0) is returned. Remember to call <a class="reference internal" href="#fileioc_8h_1a2a9a88c6c2200809894fdab31ffef226"><span class="std std-ref">ti_CloseAll()</span></a> when calling for the first time. </p>
+<p>If there isn’t enough memory to create the variable, or a slot isn’t open, zero (0) is returned. </p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
