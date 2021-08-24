@@ -200,12 +200,15 @@ You may have to allow the script to be run depending on the user account control
 </div></blockquote>
 <p><strong>On Linux or macOS</strong></p>
 <blockquote>
-<div><ul class="simple">
-<li><p>Extend the PATH environment variable to point to <code class="code docutils literal notranslate"><span class="pre">CEdev/bin</span></code> by modifying <cite>.bashrc</cite>, <cite>.zshrc</cite>, or whatever flavor your OS uses.</p></li>
-</ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span>/&lt;insert custom path here&gt;/CEdev/bin:<span class="nv">$PATH</span>
+<div><ul>
+<li><p>Extend the PATH environment variable to point to <code class="code docutils literal notranslate"><span class="pre">CEdev/bin</span></code> by modifying <cite>.bashrc</cite>, <cite>.zshrc</cite>, or whatever flavor your OS uses.</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span>/&lt;insert custom path here&gt;/CEdev/bin:<span class="nv">$PATH</span>
 </pre></div>
 </div>
+</div></blockquote>
+</li>
+</ul>
 </div></blockquote>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -217,7 +220,7 @@ This is a limitation of the <code class="code docutils literal notranslate"><spa
 <h2>Building Programs<a class="headerlink" href="#building-programs" title="Permalink to this headline">¶</a></h2>
 <p>Programs are built with the <code class="code docutils literal notranslate"><span class="pre">make</span></code> command, executed from a terminal session.
 This tutorial explains how to use the CE C Toolchain to build programs using <code class="code docutils literal notranslate"><span class="pre">make</span></code>.</p>
-<p>Locate the installed <cite>CEdev</cite> folder, and open a terminal by double-clicking on <code class="code docutils literal notranslate"><span class="pre">cedev.bat</span></code> on Windows or launching your favorite one on Linux/macOS.
+<p>Locate the installed <cite>CEdev</cite> folder, and open a session by double-clicking <code class="code docutils literal notranslate"><span class="pre">cedev.bat</span></code> on Windows or launching your favorite terminal on Linux/macOS.
 Navigate to the <cite>examples</cite> folder using the <code class="code docutils literal notranslate"><span class="pre">cd</span> <span class="pre">examples</span></code> command.
 This folder contains example projects that you can build and modify to learn how to write CE C programs.
 Navigate the to the <cite>hello_world</cite> example inside this folder using the command <code class="code docutils literal notranslate"><span class="pre">cd</span> <span class="pre">hello_world</span></code>.</p>
