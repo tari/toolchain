@@ -93,12 +93,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Welcome to the CE C Toolchain!</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../static/getting-started.html">Getting Started</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Helpful Information</span></p>
-<ul>
 <li class="toctree-l1"><a class="reference internal" href="../static/faq.html">Frequently Asked Questions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../static/git.html">Using Git For Revision Control</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../static/coding-guidelines.html">General Coding Guidelines</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Toolchain Documentation</span></p>
 <ul class="current">
@@ -107,27 +102,11 @@
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">CE C Libraries</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="fileioc.html">fileioc.h</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">fontlibc.h</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#creating-fonts">Creating Fonts</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#editor-software">Editor Software</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#using-fonts-in-your-project">Using Fonts in Your Project</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#using-font-packs">Using Font Packs</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#opening-a-font-pack-the-simple-way">Opening a Font Pack the Simple Way</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#caching-a-font-pack-s-address">Caching a Font Pack’s Address</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#finding-a-font-pack-by-typeface-name">Finding a Font Pack by Typeface Name</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#looking-at-other-font-metadata">Looking at Other Font Metadata</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#selecting-a-font-by-style">Selecting a Font by Style</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#api-usage-notes">API Usage Notes</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#text-windowing">Text Windowing</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#aligning-text">Aligning Text</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#text-control-codes">Text Control Codes</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#transparent-text">Transparent Text</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#line-spacing">Line Spacing</a></li>
-</ul>
-</li>
+<li class="toctree-l3"><a class="reference internal" href="#text-windowing">Text Windowing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aligning-text">Aligning Text</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#text-control-codes">Text Control Codes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#transparent-text">Transparent Text</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#line-spacing">Line Spacing</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#api-documentation">API Documentation</a></li>
 </ul>
 </li>
@@ -215,281 +194,49 @@
 </pre></div>
 </div>
 <p>fontlibc was designed under a “mechanism not policy” sort of philosophy.
-Rather than attempting to provide as many fancy features as a programmer could want, fontlibc tries to provide fast, basic routines that can be used to build the additional functionality you want.
+Rather than attempt to provide as many fancy features as a programmer could want, fontlibc tries to provide fast, basic routines that can be used to build the additional functionality you want.
 For example, word-wrap is not directly provided, but can be implemented using <code class="code docutils literal notranslate"><span class="pre">fontlib_SetAlternateStopCode</span></code> and <code class="code docutils literal notranslate"><span class="pre">fontlib_GetStringWidth</span></code>.
 fontlib hopes to provide enough performance to be usable in games, while providing powerful enough basic features for fancy GUIs and document editors.</p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#creating-fonts" id="id2">Creating Fonts</a></p>
-<ul>
-<li><p><a class="reference internal" href="#editor-software" id="id3">Editor Software</a></p></li>
-<li><p><a class="reference internal" href="#using-fonts-in-your-project" id="id4">Using Fonts in Your Project</a></p>
-<ul>
-<li><p><a class="reference internal" href="#embedding-a-font-directly-in-your-program" id="id5">Embedding a Font Directly in Your Program</a></p></li>
-<li><p><a class="reference internal" href="#packaging-a-font-pack" id="id6">Packaging a Font Pack</a></p></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p><a class="reference internal" href="#using-font-packs" id="id7">Using Font Packs</a></p>
-<ul>
-<li><p><a class="reference internal" href="#opening-a-font-pack-the-simple-way" id="id8">Opening a Font Pack the Simple Way</a></p></li>
-<li><p><a class="reference internal" href="#caching-a-font-pack-s-address" id="id9">Caching a Font Pack’s Address</a></p></li>
-<li><p><a class="reference internal" href="#finding-a-font-pack-by-typeface-name" id="id10">Finding a Font Pack by Typeface Name</a></p></li>
-<li><p><a class="reference internal" href="#looking-at-other-font-metadata" id="id11">Looking at Other Font Metadata</a></p></li>
-<li><p><a class="reference internal" href="#selecting-a-font-by-style" id="id12">Selecting a Font by Style</a></p></li>
-</ul>
-</li>
-<li><p><a class="reference internal" href="#api-usage-notes" id="id13">API Usage Notes</a></p>
-<ul>
-<li><p><a class="reference internal" href="#text-windowing" id="id14">Text Windowing</a></p></li>
-<li><p><a class="reference internal" href="#aligning-text" id="id15">Aligning Text</a></p></li>
-<li><p><a class="reference internal" href="#text-control-codes" id="id16">Text Control Codes</a></p></li>
-<li><p><a class="reference internal" href="#transparent-text" id="id17">Transparent Text</a></p></li>
-<li><p><a class="reference internal" href="#line-spacing" id="id18">Line Spacing</a></p></li>
-</ul>
-</li>
-<li><p><a class="reference internal" href="#api-documentation" id="id19">API Documentation</a></p></li>
+<li><p><a class="reference internal" href="#text-windowing" id="id2">Text Windowing</a></p></li>
+<li><p><a class="reference internal" href="#aligning-text" id="id3">Aligning Text</a></p></li>
+<li><p><a class="reference internal" href="#text-control-codes" id="id4">Text Control Codes</a></p></li>
+<li><p><a class="reference internal" href="#transparent-text" id="id5">Transparent Text</a></p></li>
+<li><p><a class="reference internal" href="#line-spacing" id="id6">Line Spacing</a></p></li>
+<li><p><a class="reference internal" href="#api-documentation" id="id7">API Documentation</a></p></li>
 </ul>
 </div>
-<div class="section" id="creating-fonts">
-<h2><a class="toc-backref" href="#id2">Creating Fonts</a><a class="headerlink" href="#creating-fonts" title="Permalink to this headline">¶</a></h2>
-<p>Fonts for use with FontLibC can be made with any program that can produce Windows 3.x .FNT resource files.</p>
-<div class="section" id="editor-software">
-<h3><a class="toc-backref" href="#id3">Editor Software</a><a class="headerlink" href="#editor-software" title="Permalink to this headline">¶</a></h3>
-<p><a class="reference external" href="http://hukka.ncn.fi/?fony">Fony</a> is probably the most-used FNT editor available. It can open both .FNT and .FON files.</p>
-<p><a class="reference external" href="https://github.com/juanitogan/mkwinfont">mkwinfont</a> provides some Python code for converting a text-based format to and .FON files; it should be trivial for someone with basic Python skills to change to code to skip the .FON packaging stage and directly produce a .FNT resource file. Useful if for some reason you think graphics are best done without the aid of any kind of graphics editor.</p>
-<p><a class="reference external" href="http://www.vsoft.nl/software/utils/win/fontedit/">VSoft’s FontEdit</a> is mostly just the original FontEdit included with the Windows SDK for Windows 3.x, but compiled for 32-bit Windows. A notable addition, however, is the ability to import TrueType fonts, though I haven’t tested it. It cannot, however, open .FON files; the FNT resource(s) embedded in a .FON file must be extracted before FontEdit can open the font(s).</p>
-<p><a class="reference external" href="https://github.com/drdnar/MFE">MFE</a> is DrDnar’s own bitmap font editor. It can export .FNT files. It has the useful feature of allowing fully custom mapping from Unicode to your font’s 8-bit code page, which makes creating mock-ups with the preview function easier.</p>
-</div>
-<div class="section" id="using-fonts-in-your-project">
-<h3><a class="toc-backref" href="#id4">Using Fonts in Your Project</a><a class="headerlink" href="#using-fonts-in-your-project" title="Permalink to this headline">¶</a></h3>
-<p>Once your .FNT file has been created, use the convfont utility included with the SDK to convert the .FNT resource file into a format usable in your project.</p>
-<p>There are two main ways of including a font in your project:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>directly in your program binary; or,</p></li>
-<li><p>in separate font pack appvar.</p></li>
-</ul>
-</div></blockquote>
-<div class="section" id="embedding-a-font-directly-in-your-program">
-<h4><a class="toc-backref" href="#id5">Embedding a Font Directly in Your Program</a><a class="headerlink" href="#embedding-a-font-directly-in-your-program" title="Permalink to this headline">¶</a></h4>
-<p>Embedding a font directly in your program ensures the font will always be available, but it prevents it from being used by any other program, and bloats your program. However, it is also the easiest way to access a custom font.</p>
-<p>Place your .FNT font files in your source code directory. Then, create a <code class="code docutils literal notranslate"><span class="pre">myfonts.h</span></code> source code file:</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/* Declare globally-accessible pointers to the font data. */</span>
-<span class="k">extern</span> <span class="k">const</span> <span class="n">fontlib_font_t</span> <span class="o">*</span><span class="n">my_font_1</span><span class="p">;</span>
-<span class="k">extern</span> <span class="k">const</span> <span class="n">fontlib_font_t</span> <span class="o">*</span><span class="n">my_font_2</span><span class="p">;</span>
-<span class="p">.</span> <span class="p">.</span> <span class="p">.</span>
-</pre></div>
-</div>
-<p>Then create a <code class="code docutils literal notranslate"><span class="pre">myfonts.c</span></code> file:</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/* This contains the raw data for the font. */</span>
-<span class="k">static</span> <span class="k">const</span> <span class="kt">uint8_t</span> <span class="n">my_font_1_data</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="cp">#include</span> <span class="cpf">&quot;myfont1.inc&quot;</span><span class="cp"></span>
-<span class="p">};</span>
-<span class="cm">/* However, C89 does not allow us to typecast a byte array into a</span>
-<span class="cm">fontlib_font_t pointer directly, so we have to use a second statement to do it,</span>
-<span class="cm">though helpfully we can at least do it in the global scope. */</span>
-<span class="k">const</span> <span class="n">fontlib_font_t</span> <span class="o">*</span><span class="n">my_font_1</span> <span class="o">=</span> <span class="p">(</span><span class="n">fontlib_font_t</span> <span class="o">*</span><span class="p">)</span><span class="n">my_font_1_data</span><span class="p">;</span>
-
-<span class="k">static</span> <span class="k">const</span> <span class="kt">uint8_t</span> <span class="n">my_font_2_data</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="cp">#include</span> <span class="cpf">&quot;myfont2.inc&quot;</span><span class="cp"></span>
-<span class="p">};</span>
-<span class="k">const</span> <span class="n">fontlib_font_t</span> <span class="o">*</span><span class="n">my_font_2</span> <span class="o">=</span> <span class="p">(</span><span class="n">fontlib_font_t</span> <span class="o">*</span><span class="p">)</span><span class="n">my_font_2_data</span><span class="p">;</span>
-</pre></div>
-</div>
-<p>Now you should be wondering where the <code class="code docutils literal notranslate"><span class="pre">myfont1.inc</span></code> file comes from. This file will get generated by your makefile, which will need to be modified to append the following:</p>
-<div class="highlight-make notranslate"><div class="highlight"><pre><span></span><span class="c"># This is a roundabout way to tell make that myfonts.c depends on the .inc files.</span>
-<span class="c"># It does it by saying the compiled object code depends on the .inc files.</span>
-<span class="nf">$(OBJDIR)/myfonts.src</span><span class="o">:</span> <span class="k">$(</span><span class="nv">SRCDIR</span><span class="k">)</span>/<span class="n">myfont</span>1.<span class="n">inc</span> <span class="k">$(</span><span class="nv">SRCDIR</span><span class="k">)</span>/<span class="n">myfont</span>2.<span class="n">inc</span>
-
-<span class="c"># Convert a .fnt file into a .inc file</span>
-<span class="nf">$(SRCDIR)/myfont1.inc</span><span class="o">:</span> <span class="k">$(</span><span class="nv">SRCDIR</span><span class="k">)</span>/<span class="n">myfont</span>1.<span class="n">fnt</span>
-    convfont -o carray -f <span class="k">$(</span>SRCDIR<span class="k">)</span>/myfont1.fnt <span class="k">$(</span>SRCDIR<span class="k">)</span>/myfont1.inc
-
-<span class="nf">$(SRCDIR)/myfont2.inc</span><span class="o">:</span> <span class="k">$(</span><span class="nv">SRCDIR</span><span class="k">)</span>/<span class="n">myfont</span>2.<span class="n">fnt</span>
-    convfont -o carray -f <span class="k">$(</span>SRCDIR<span class="k">)</span>/myfont2.fnt <span class="k">$(</span>SRCDIR<span class="k">)</span>/myfont2.inc
-</pre></div>
-</div>
-<p>Finally, somewhere else in your program, you can use <code class="code docutils literal notranslate"><span class="pre">fontlib_SetFont</span></code>:</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-    <span class="p">.</span> <span class="p">.</span> <span class="p">.</span>
-    <span class="n">fontlib_SetFont</span><span class="p">(</span><span class="n">my_font_1</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
-    <span class="p">.</span> <span class="p">.</span> <span class="p">.</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="packaging-a-font-pack">
-<h4><a class="toc-backref" href="#id6">Packaging a Font Pack</a><a class="headerlink" href="#packaging-a-font-pack" title="Permalink to this headline">¶</a></h4>
-<p>Font packs are an alternative to directly embedding a font in your program binary. They allow multiple related fonts to be packaged together, and FontLibC can select a font from the font pack given a requested size and style. The fonts in a font pack can be used by other programs, reducing the size of your program and saving valuable space on-calculator. They can also be archived, freeing up limited RAM.</p>
-<p>A font pack should contain related fonts, namely different sizes and styles of a typeface. It is legal for a font pack to contain only one font. Metadata fields in a font pack, such as the description, should be <em>short.</em></p>
-<p>Font packs are easiest to make as a separate project. Create a new folder, place your <code class="code docutils literal notranslate"><span class="pre">.fnt</span></code> files in it, and then create a <code class="code docutils literal notranslate"><span class="pre">makefile</span></code> with the following contents:</p>
-<div class="highlight-make notranslate"><div class="highlight"><pre><span></span><span class="c"># Put each of your .fnt files on this next line.</span>
-<span class="c"># Look at the documentation for convfont for more information on font properties</span>
-<span class="nf">temp.bin</span><span class="o">:</span> <span class="n">font</span>1.<span class="n">fnt</span> <span class="n">font</span>2.<span class="n">fnt</span> <span class="n">font</span>3.<span class="n">fnt</span>
-    convfont -o fontpack -N <span class="s2">&quot;Font Name&quot;</span> -P <span class="s2">&quot;ASCII&quot;</span> -V <span class="s2">&quot;Some version or date&quot;</span> -A <span class="s2">&quot;Your Name&quot;</span> <span class="se">\</span>
-    -D <span class="s2">&quot;A SHORT description of your font&quot;</span> <span class="se">\</span>
-    -f font1.fnt -a <span class="m">1</span> -b <span class="m">1</span> -w bold -s sans-serif -s upright -s proportional <span class="se">\</span>
-    -f font2.fnt -a <span class="m">2</span> -b <span class="m">2</span> -w normal -s serif -s italic <span class="se">\</span>
-    -f font3.fnt -a <span class="m">0</span> -b <span class="m">3</span> -w light -s monospaced <span class="se">\</span>
-    temp.bin
-
-<span class="c"># Don&#39;t forget to change font_pack_file_name on both these lines.</span>
-<span class="c"># Set PACKNAME to the on-calculator appvar name you want</span>
-<span class="nf">font_pack_file_name.8xv</span><span class="o">:</span> <span class="n">temp</span>.<span class="n">bin</span>
-    convhex -a -v -n PACKNAME temp.bin font_pack_file_name.8xv
-
-<span class="nf">all</span><span class="o">:</span> <span class="n">font_pack_file_name</span>.8<span class="n">xv</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="using-font-packs">
-<h2><a class="toc-backref" href="#id7">Using Font Packs</a><a class="headerlink" href="#using-font-packs" title="Permalink to this headline">¶</a></h2>
-<p>While using an embedded font is easy—just call <code class="code docutils literal notranslate"><span class="pre">fontlib_SetFont</span></code> directly on the pointer to the font data—, using a font pack is a bit more involved.</p>
-<p><strong>WARNING: FontLibC caches a pointer to the font’s data when you use</strong> <code class="code docutils literal notranslate"><span class="pre">SetFont</span></code>. <strong>If you do something that causes the font’s data to move, that pointer becomes invalid and FontLibC will start displaying garbage!</strong> For example, if a font appvar is in RAM, any operation that creates or resizes a file may invalidate the cached pointer. Simply calling <code class="code docutils literal notranslate"><span class="pre">SetFont</span></code> again will not suffice to fix this; you must also lookup the font’s location again. This also applies if a font pack is archived, and you do something that causes a garbage collection cycle.</p>
-<p>(The above warning does not apply to fonts embedded into your program, as data embedded in your program cannot get moved.)</p>
-<div class="section" id="opening-a-font-pack-the-simple-way">
-<h3><a class="toc-backref" href="#id8">Opening a Font Pack the Simple Way</a><a class="headerlink" href="#opening-a-font-pack-the-simple-way" title="Permalink to this headline">¶</a></h3>
-<p>If you require a specific font pack with a specific appvar name, then opening a font is straight-forward:</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;graphx.h&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;fontlibc.h&gt;</span><span class="cp"></span>
-
-<span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">fontlib_font_t</span> <span class="o">*</span><span class="n">my_font</span><span class="p">;</span>
-    <span class="p">.</span> <span class="p">.</span> <span class="p">.</span>
-    <span class="cm">/* Get the first font present in the font pack */</span>
-    <span class="n">my_font</span> <span class="o">=</span> <span class="n">fontlib_GetFontByIndex</span><span class="p">(</span><span class="s">&quot;MYFONT&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
-    <span class="cm">/* This check is important! If fetching the font fails, trying to use the font will go . . . poorly. */</span>
-    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">my_font</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">gfx_PrintStringXY</span><span class="p">(</span><span class="s">&quot;MYFONT appvar not found or invalid&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
-        <span class="k">return</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="cm">/* Use font for whatever */</span>
-    <span class="n">fontlib_SetFont</span><span class="p">(</span><span class="n">my_font</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
-    <span class="p">.</span> <span class="p">.</span> <span class="p">.</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="caching-a-font-pack-s-address">
-<h3><a class="toc-backref" href="#id9">Caching a Font Pack’s Address</a><a class="headerlink" href="#caching-a-font-pack-s-address" title="Permalink to this headline">¶</a></h3>
-<p>However, accessing fonts this way triggers a slow VAT lookup for the appvar every time you call a <code class="code docutils literal notranslate"><span class="pre">GetFont</span></code> routine. You can avoid this overhead—provided you keep in mind the above warning about moving data around—by using the FileIOC library to get a direct pointer to the appvar’s data.</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">ti_var_t</span> <span class="n">file</span><span class="p">;</span>
-<span class="n">fontlib_font_pack_t</span> <span class="o">*</span><span class="n">my_font_pack</span><span class="p">;</span>
-<span class="n">fontlib_font_t</span> <span class="o">*</span><span class="n">my_font</span><span class="p">;</span>
-<span class="p">.</span> <span class="p">.</span> <span class="p">.</span>
-<span class="cm">/* Open file */</span>
-<span class="n">file</span> <span class="o">=</span> <span class="n">ti_open</span><span class="p">(</span><span class="s">&quot;MYFONT&quot;</span><span class="p">,</span> <span class="s">&quot;r&quot;</span><span class="p">);</span>
-<span class="cm">/* Throw an error if the file was not found */</span>
-<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">my_font_pack</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">gfx_PrintStringXY</span><span class="p">(</span><span class="s">&quot;MYFONT appvar not found&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
-    <span class="k">return</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="n">my_font_pack</span> <span class="o">=</span> <span class="n">ti_GetDataPtr</span><span class="p">(</span><span class="n">file</span><span class="p">);</span>
-<span class="cm">/* Once we have the pointer, we don&#39;t need the file handle any more. */</span>
-<span class="n">ti_Close</span><span class="p">(</span><span class="n">file</span><span class="p">);</span>
-<span class="cm">/* Just because the file exists doesn&#39;t mean it&#39;s actually a font pack */</span>
-<span class="n">my_font</span> <span class="o">=</span> <span class="n">fontlib_GetFontByIndexRaw</span><span class="p">(</span><span class="n">my_font_pack</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
-<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">my_font</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">gfx_PrintStringXY</span><span class="p">(</span><span class="s">&quot;MYFONT appvar is invalid&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
-    <span class="k">return</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="finding-a-font-pack-by-typeface-name">
-<h3><a class="toc-backref" href="#id10">Finding a Font Pack by Typeface Name</a><a class="headerlink" href="#finding-a-font-pack-by-typeface-name" title="Permalink to this headline">¶</a></h3>
-<p>In addition to opening a font pack by appvar name, FontLibC also provides the special routine <code class="code docutils literal notranslate"><span class="pre">fontlib_GetFontPackName</span></code> to make it easier to search for a font pack by typeface name:</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">char</span> <span class="o">*</span><span class="n">var_name</span><span class="p">;</span>
-<span class="kt">char</span> <span class="o">*</span><span class="n">typeface_name</span><span class="p">;</span>
-<span class="n">fontlib_font_pack_t</span> <span class="o">*</span><span class="n">my_font_pack</span><span class="p">;</span>
-<span class="kt">uint8_t</span> <span class="o">*</span><span class="n">search_pos</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
-<span class="k">while</span> <span class="p">((</span><span class="n">var_name</span> <span class="o">=</span> <span class="n">ti_DetectVar</span><span class="p">(</span><span class="o">&amp;</span><span class="n">search_pos</span><span class="p">,</span> <span class="s">&quot;FONTPACK&quot;</span><span class="p">,</span> <span class="n">TI_APPVAR_TYPE</span><span class="p">))</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">typeface_name</span> <span class="o">=</span> <span class="n">fontlib_GetFontPackName</span><span class="p">(</span><span class="n">var_name</span><span class="p">);</span>
-    <span class="cm">/* Font packs can omit the name metadata property, so check for that. */</span>
-    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">typeface_name</span><span class="p">)</span>
-        <span class="k">continue</span><span class="p">;</span>
-    <span class="cm">/* Do something interesting with the typeface_name here.</span>
-<span class="cm">       Note that a direct pointer to the name is returned, which may be archived,</span>
-<span class="cm">       so you cannot write to the string. */</span>
-    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">strcmp</span><span class="p">(</span><span class="n">typeface_name</span><span class="p">,</span> <span class="s">&quot;My Font&quot;</span><span class="p">))</span> <span class="p">{</span>
-        <span class="n">fontlib_SetFont</span><span class="p">(</span><span class="n">fontlib_GetFontByIndex</span><span class="p">(</span><span class="n">var_name</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">0</span><span class="p">);</span>
-        <span class="k">break</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="looking-at-other-font-metadata">
-<h3><a class="toc-backref" href="#id11">Looking at Other Font Metadata</a><a class="headerlink" href="#looking-at-other-font-metadata" title="Permalink to this headline">¶</a></h3>
-<p>There are no other routines for processing the other metadata fields in a font pack. However, it is not hard to process the metadata fields yourself:</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">ti_var_t</span> <span class="n">file</span><span class="p">;</span>
-<span class="n">fontlib_font_pack_t</span> <span class="o">*</span><span class="n">font_pack</span><span class="p">;</span>
-<span class="kt">int</span> <span class="n">metadata_offset</span><span class="p">;</span>
-<span class="n">fontlib_metadata_t</span> <span class="o">*</span><span class="n">font_pack_metadata</span><span class="p">;</span>
-<span class="kt">char</span> <span class="o">*</span><span class="n">font_pack_author</span><span class="p">;</span>
-<span class="p">.</span> <span class="p">.</span> <span class="p">.</span>
-<span class="cm">/* Assume that file is the already-opened appvar of the font pack. */</span>
-<span class="n">font_pack</span> <span class="o">=</span> <span class="n">ti_GetDataPtr</span><span class="p">(</span><span class="n">file</span><span class="p">);</span>
-<span class="n">metadata_offset</span> <span class="o">=</span> <span class="n">font_pack</span><span class="o">-&gt;</span><span class="n">metadata</span><span class="p">;</span>
-<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">metadata_offset</span><span class="p">)</span>
-    <span class="k">return</span><span class="p">;</span> <span class="cm">/* No metadata in the font pack, do something else here */</span>
-<span class="n">ti_Seek</span><span class="p">(</span><span class="n">metadata_offset</span><span class="p">,</span> <span class="n">SEEK_SET</span><span class="p">,</span> <span class="n">file</span><span class="p">);</span>
-<span class="n">font_pack_metadata</span> <span class="o">=</span> <span class="n">ti_GetDataPtr</span><span class="p">(</span><span class="n">file</span><span class="p">);</span>
-<span class="n">metadata_offset</span> <span class="o">=</span> <span class="n">font_pack_metadata</span><span class="o">-&gt;</span><span class="n">font_author</span><span class="p">;</span>
-<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">metadata_offset</span><span class="p">)</span>
-    <span class="k">return</span><span class="p">;</span> <span class="cm">/* No author specified */</span>
-<span class="n">ti_Seek</span><span class="p">(</span><span class="n">metadata_offset</span><span class="p">,</span> <span class="n">SEEK_SET</span><span class="p">,</span> <span class="n">file</span><span class="p">);</span>
-<span class="n">font_pack_author</span> <span class="o">=</span> <span class="n">ti_GetDataPtr</span><span class="p">(</span><span class="n">file</span><span class="p">);</span>
-<span class="cm">/* Now you have the author name string */</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="selecting-a-font-by-style">
-<h3><a class="toc-backref" href="#id12">Selecting a Font by Style</a><a class="headerlink" href="#selecting-a-font-by-style" title="Permalink to this headline">¶</a></h3>
-<p>The <code class="code docutils literal notranslate"><span class="pre">GetFontByStyle</span></code> routines help you automatically select a font given a set of size and style criteria.</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">fontlib_font_pack_t</span> <span class="o">*</span><span class="n">font_pack</span><span class="p">;</span>
-<span class="n">fontlib_font_t</span> <span class="o">*</span><span class="n">font</span><span class="p">;</span>
-<span class="p">.</span> <span class="p">.</span> <span class="p">.</span>
-<span class="cm">/* Assume font_pack already points to a valid font pack. */</span>
-<span class="cm">/* Get a 9 or 10 pixel tall bold, serif font that isn&#39;t monospaced and isn&#39;t italic. */</span>
-<span class="n">font</span> <span class="o">=</span> <span class="n">fontlib_GetFontByStyleRaw</span><span class="p">(</span><span class="n">font_pack</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">FONTLIB_BOLD</span><span class="p">,</span> <span class="n">FONTLIB_BOLD</span><span class="p">,</span> <span class="n">FONTLIB_SERIF</span><span class="p">,</span> <span class="n">FONTLIB_MONOSPACED</span> <span class="o">|</span> <span class="n">FONTLIB_ITALIC</span><span class="p">);</span>
-<span class="k">if</span> <span class="p">(</span><span class="n">font</span><span class="p">)</span>
-    <span class="n">fontlib_SetFont</span><span class="p">(</span><span class="n">font</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="section" id="api-usage-notes">
-<h2><a class="toc-backref" href="#id13">API Usage Notes</a><a class="headerlink" href="#api-usage-notes" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="text-windowing">
-<h3><a class="toc-backref" href="#id14">Text Windowing</a><a class="headerlink" href="#text-windowing" title="Permalink to this headline">¶</a></h3>
-<p>To assist in text layout, fontlibc provides for a text window, which automatically confines text to appear in a specific rectangular area of the screen. This feature may be useful for dialogs and scrolling large blocks of text. Use <code class="code docutils literal notranslate"><span class="pre">fontlib_SetWindow</span></code> to set the current window bounds. Use <code class="code docutils literal notranslate"><span class="pre">fontlib_SetNewlineOptions</span></code> to control how <code class="code docutils literal notranslate"><span class="pre">fontlib_DrawString</span></code> behaves when it reaches the right edge of the text window.</p>
+<h2><a class="toc-backref" href="#id2">Text Windowing</a><a class="headerlink" href="#text-windowing" title="Permalink to this headline">¶</a></h2>
+<p>To assist in text layout, fontlibc provides for a text window, which automatically confines text to appear in a specific rectangular area of the screen.
+This feature may be useful for dialogs and scrolling large blocks of text.
+Use <code class="code docutils literal notranslate"><span class="pre">fontlib_SetWindow</span></code> to set the current window bounds.
+Use <code class="code docutils literal notranslate"><span class="pre">fontlib_SetNewlineOptions</span></code> to control how <code class="code docutils literal notranslate"><span class="pre">fontlib_DrawString</span></code> behaves when it reaches the right edge of the text window.</p>
 </div>
 <div class="section" id="aligning-text">
-<h3><a class="toc-backref" href="#id15">Aligning Text</a><a class="headerlink" href="#aligning-text" title="Permalink to this headline">¶</a></h3>
-<p>Implementing centered text, right-aligned text, and word wrap requires being able to compute the width of a word or string of text. The routine <code class="code docutils literal notranslate"><span class="pre">fontlib_GetStringWidth</span></code> provides this functionality.</p>
-<p>If you call <code class="code docutils literal notranslate"><span class="pre">fontlib_SetAlternateStopCode('</span> <span class="pre">')</span></code>, <code class="code docutils literal notranslate"><span class="pre">fontlib_GetStringWidth</span></code> and <code class="code docutils literal notranslate"><span class="pre">fontlib_DrawString</span></code> will stop drawing on spaces, giving you a chance to check if the next word will fit on screen. You can use <code class="code docutils literal notranslate"><span class="pre">fontlib_GetLastCharacterRead()</span></code> to find out where <code class="code docutils literal notranslate"><span class="pre">fontlib_GetStringWidth</span></code> or <code class="code docutils literal notranslate"><span class="pre">fontlib_DrawString</span></code> stopped, and, after handling the space, then pass that address (plus one) again to <code class="code docutils literal notranslate"><span class="pre">fontlib_GetStringWidth</span></code> or <code class="code docutils literal notranslate"><span class="pre">fontlib_DrawString</span></code> to resume processing at where it left off before.</p>
+<h2><a class="toc-backref" href="#id3">Aligning Text</a><a class="headerlink" href="#aligning-text" title="Permalink to this headline">¶</a></h2>
+<p>Implementing centered text, right-aligned text, and word wrap requires being able to compute the width of a word or string of text.
+The routine <code class="code docutils literal notranslate"><span class="pre">fontlib_GetStringWidth</span></code> provides this functionality.</p>
+<p>If you call <code class="code docutils literal notranslate"><span class="pre">fontlib_SetAlternateStopCode('</span> <span class="pre">')</span></code>, <code class="code docutils literal notranslate"><span class="pre">fontlib_GetStringWidth</span></code> and <code class="code docutils literal notranslate"><span class="pre">fontlib_DrawString</span></code> will stop drawing on spaces, giving you a chance to check if the next word will fit on screen.
+You can use <code class="code docutils literal notranslate"><span class="pre">fontlib_GetLastCharacterRead()</span></code> to find out where <code class="code docutils literal notranslate"><span class="pre">fontlib_GetStringWidth</span></code> or <code class="code docutils literal notranslate"><span class="pre">fontlib_DrawString</span></code> stopped, and, after handling the space, then pass that address (plus one) again to <code class="code docutils literal notranslate"><span class="pre">fontlib_GetStringWidth</span></code> or <code class="code docutils literal notranslate"><span class="pre">fontlib_DrawString</span></code> to resume processing at where it left off before.</p>
 </div>
 <div class="section" id="text-control-codes">
-<h3><a class="toc-backref" href="#id16">Text Control Codes</a><a class="headerlink" href="#text-control-codes" title="Permalink to this headline">¶</a></h3>
+<h2><a class="toc-backref" href="#id4">Text Control Codes</a><a class="headerlink" href="#text-control-codes" title="Permalink to this headline">¶</a></h2>
 <p>Embedded control codes are a popular way of managing style and formatting information in string.
 fontlibc only natively recognizes two types of control codes: NULL (0) as a stop code and a user-specified alternate stop code, and a user-specified newline code (defaults to 0x0A—ASCII LF and standard Linux style).
 However, you can add your own control codes with <code class="code docutils literal notranslate"><span class="pre">fontlib_SetFirstPrintableCodePoint</span></code>.
 When any code point less than the first printable code point is encountered, fontlibc stops string processing and returns to allow you to handle the control code yourself using <code class="code docutils literal notranslate"><span class="pre">fontlib_GetLastCharacterRead</span></code>.</p>
 </div>
 <div class="section" id="transparent-text">
-<h3><a class="toc-backref" href="#id17">Transparent Text</a><a class="headerlink" href="#transparent-text" title="Permalink to this headline">¶</a></h3>
+<h2><a class="toc-backref" href="#id5">Transparent Text</a><a class="headerlink" href="#transparent-text" title="Permalink to this headline">¶</a></h2>
 <p>Part of providing high-performance is not painting a single pixel more than once.
 To assist with this goal, fontlibc provides for both transparent and opaque text backgrounds.
 Use <code class="code docutils literal notranslate"><span class="pre">fontlib_SetTransparency(true)</span></code> if you need to paint text over a background other than a solid color.
 If you turn transparency off, however, fontlibc will paint both background and foreground pixels for you, eliminating the time needed to erase those pixels before painting over that area.</p>
 </div>
 <div class="section" id="line-spacing">
-<h3><a class="toc-backref" href="#id18">Line Spacing</a><a class="headerlink" href="#line-spacing" title="Permalink to this headline">¶</a></h3>
+<h2><a class="toc-backref" href="#id6">Line Spacing</a><a class="headerlink" href="#line-spacing" title="Permalink to this headline">¶</a></h2>
 <p>Since a block of text may not always be the same size, fontlibc provides <code class="code docutils literal notranslate"><span class="pre">fontlib_ClearEOL</span></code> for erasing the remainder of a line of text without needing to pad it with spaces.
 This action can also be performed automatically after embedded newlines in text and on normal wrapping with <code class="code docutils literal notranslate"><span class="pre">fontlib_SetNewlineOptions</span></code>.</p>
 <p>Additional blank vertical space around text can improve readability in large blocks of text.
@@ -497,9 +244,8 @@ This action can also be performed automatically after embedded newlines in text 
 Fonts may specify default additional spacing that is automatically applied when calling <code class="code docutils literal notranslate"><span class="pre">fontlib_SetFont</span></code>.
 In GUIs and games where the benefits of legibility are outweighed by more aggressive use of vertical space, you can force the default spacing to zero after using <code class="code docutils literal notranslate"><span class="pre">fontlib_SetFont</span></code> with <code class="code docutils literal notranslate"><span class="pre">fontlib_SetLineSpacing</span></code>.</p>
 </div>
-</div>
 <div class="section" id="api-documentation">
-<h2><a class="toc-backref" href="#id19">API Documentation</a><a class="headerlink" href="#api-documentation" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id7">API Documentation</a><a class="headerlink" href="#api-documentation" title="Permalink to this headline">¶</a></h2>
 <p>Provides improved font support. </p>
 <p><dl class="simple">
 <dt><strong>Author</strong></dt><dd><p>DrDnar </p>
@@ -511,8 +257,7 @@ In GUIs and games where the benefits of legibility are outweighed by more aggres
 <dl class="cpp enum">
 <dt id="_CPPv425fontlib_newline_options_t">
 <span id="_CPPv325fontlib_newline_options_t"></span><span id="_CPPv225fontlib_newline_options_t"></span><span class="target" id="fontlibc_8h_1a33af52aa5db3dc2ad8357328b37a528e"></span><em class="property">enum </em><code class="sig-name descname">fontlib_newline_options_t</code><a class="headerlink" href="#_CPPv425fontlib_newline_options_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Options for controlling newline behavior. </p>
-<p><dl class="simple">
+<dd><p>Options for controlling newline behavior <dl class="simple">
 <dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#fontlibc_8h_1a9a6814959051d03d5f8b6cd4e60db879"><span class="std std-ref">fontlib_SetNewlineOptions</span></a> </p>
 </dd>
 </dl>
@@ -541,7 +286,7 @@ In GUIs and games where the benefits of legibility are outweighed by more aggres
 <dl class="cpp enumerator">
 <dt id="_CPPv4N25fontlib_newline_options_t24FONTLIB_PRECLEAR_NEWLINEE">
 <span id="_CPPv3N25fontlib_newline_options_t24FONTLIB_PRECLEAR_NEWLINEE"></span><span id="_CPPv2N25fontlib_newline_options_t24FONTLIB_PRECLEAR_NEWLINEE"></span><span class="target" id="fontlibc_8h_1a33af52aa5db3dc2ad8357328b37a528ea373b823a7122a70d3918d2555e6000a7"></span><em class="property">enumerator </em><code class="sig-name descname">FONTLIB_PRECLEAR_NEWLINE</code><a class="headerlink" href="#_CPPv4N25fontlib_newline_options_t24FONTLIB_PRECLEAR_NEWLINEE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Clears the NEXT line of text. </p>
+<dd><p>Clears the NEXT line of text </p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Don’t combine this with AUTO_CLEAR because that just wastes CPU cycles due to erasing/drawing each pixel twice. </p>
@@ -551,8 +296,7 @@ In GUIs and games where the benefits of legibility are outweighed by more aggres
 <dl class="cpp enumerator">
 <dt id="_CPPv4N25fontlib_newline_options_t19FONTLIB_AUTO_SCROLLE">
 <span id="_CPPv3N25fontlib_newline_options_t19FONTLIB_AUTO_SCROLLE"></span><span id="_CPPv2N25fontlib_newline_options_t19FONTLIB_AUTO_SCROLLE"></span><span class="target" id="fontlibc_8h_1a33af52aa5db3dc2ad8357328b37a528eab37b9c2f4a5fdbef51312bfaede09fb4"></span><em class="property">enumerator </em><code class="sig-name descname">FONTLIB_AUTO_SCROLL</code><a class="headerlink" href="#_CPPv4N25fontlib_newline_options_t19FONTLIB_AUTO_SCROLLE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Enables automatic scrolling when a newline would push the cursor past the bottom of the text window. </p>
-<p>The cursor is left at the bottom left. </p>
+<dd><p>Enables automatic scrolling when a newline would push the cursor past the bottom of the text window. The cursor is left at the bottom left. </p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If PRECLEAR is not set, then the bottom line of text will not be erased. </p>
@@ -564,8 +308,7 @@ In GUIs and games where the benefits of legibility are outweighed by more aggres
 <dl class="cpp enum">
 <dt id="_CPPv422fontlib_load_options_t">
 <span id="_CPPv322fontlib_load_options_t"></span><span id="_CPPv222fontlib_load_options_t"></span><span class="target" id="fontlibc_8h_1af106266dcf020e47c6c902b49934376c"></span><em class="property">enum </em><code class="sig-name descname">fontlib_load_options_t</code><a class="headerlink" href="#_CPPv422fontlib_load_options_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Options for controlling how SetFont functions. </p>
-<p><dl class="simple">
+<dd><p>Options for controlling how SetFont functions. <dl class="simple">
 <dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#fontlibc_8h_1acc53a3091651b5469febda8bb68b6bc9"><span class="std std-ref">fontlib_SetFont</span></a> </p>
 </dd>
 </dl>
@@ -574,8 +317,7 @@ In GUIs and games where the benefits of legibility are outweighed by more aggres
 <dl class="cpp enumerator">
 <dt id="_CPPv4N22fontlib_load_options_t27FONTLIB_IGNORE_LINE_SPACINGE">
 <span id="_CPPv3N22fontlib_load_options_t27FONTLIB_IGNORE_LINE_SPACINGE"></span><span id="_CPPv2N22fontlib_load_options_t27FONTLIB_IGNORE_LINE_SPACINGE"></span><span class="target" id="fontlibc_8h_1af106266dcf020e47c6c902b49934376ca813669d134b6e1989e0580eb5775ca05"></span><em class="property">enumerator </em><code class="sig-name descname">FONTLIB_IGNORE_LINE_SPACING</code><a class="headerlink" href="#_CPPv4N22fontlib_load_options_t27FONTLIB_IGNORE_LINE_SPACINGE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>If set, then the space above/below metrics specified in the font will be ignored and set to zero. </p>
-<p>You can still manually set them later. </p>
+<dd><p>If set, then the space above/below metrics specified in the font will be ignored and set to zero. You can still manually set them later. </p>
 </dd></dl>
 
 </dd></dl>
@@ -583,8 +325,7 @@ In GUIs and games where the benefits of legibility are outweighed by more aggres
 <dl class="cpp enum">
 <dt id="_CPPv416fontlib_styles_t">
 <span id="_CPPv316fontlib_styles_t"></span><span id="_CPPv216fontlib_styles_t"></span><span class="target" id="fontlibc_8h_1af74209031f5e28cfeb61e863db3dcdbc"></span><em class="property">enum </em><code class="sig-name descname">fontlib_styles_t</code><a class="headerlink" href="#_CPPv416fontlib_styles_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Options for selecting a font by style. </p>
-<p><dl class="simple">
+<dd><p>Options for selecting a font by style <dl class="simple">
 <dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#fontlibc_8h_1a14c25d5ca8341191713b43e4d4aa6577"><span class="std std-ref">fontlib_GetFontByStyle</span></a> </p>
 </dd>
 </dl>
@@ -593,7 +334,7 @@ In GUIs and games where the benefits of legibility are outweighed by more aggres
 <dl class="cpp enumerator">
 <dt id="_CPPv4N16fontlib_styles_t13FONTLIB_SERIFE">
 <span id="_CPPv3N16fontlib_styles_t13FONTLIB_SERIFE"></span><span id="_CPPv2N16fontlib_styles_t13FONTLIB_SERIFE"></span><span class="target" id="fontlibc_8h_1af74209031f5e28cfeb61e863db3dcdbca0f14aae4ade2d7cb08027c1928285cb8"></span><em class="property">enumerator </em><code class="sig-name descname">FONTLIB_SERIF</code><a class="headerlink" href="#_CPPv4N16fontlib_styles_t13FONTLIB_SERIFE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Clear = sans-serif font. </p>
+<dd><p>Clear = sans-serif font </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
@@ -611,7 +352,7 @@ In GUIs and games where the benefits of legibility are outweighed by more aggres
 <dl class="cpp enumerator">
 <dt id="_CPPv4N16fontlib_styles_t18FONTLIB_MONOSPACEDE">
 <span id="_CPPv3N16fontlib_styles_t18FONTLIB_MONOSPACEDE"></span><span id="_CPPv2N16fontlib_styles_t18FONTLIB_MONOSPACEDE"></span><span class="target" id="fontlibc_8h_1af74209031f5e28cfeb61e863db3dcdbca71ecb196e7f4e20db0c4c9643bf3b373"></span><em class="property">enumerator </em><code class="sig-name descname">FONTLIB_MONOSPACED</code><a class="headerlink" href="#_CPPv4N16fontlib_styles_t18FONTLIB_MONOSPACEDE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Monospaced font. </p>
+<dd><p>Monospaced font </p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Chances are you’re not using this library for monospaced fonts. But if you are, you’ll still have to provide a widths table where every byte is the same. </p>
@@ -627,8 +368,7 @@ In GUIs and games where the benefits of legibility are outweighed by more aggres
 <dl class="cpp enum">
 <dt id="_CPPv417fontlib_weights_t">
 <span id="_CPPv317fontlib_weights_t"></span><span id="_CPPv217fontlib_weights_t"></span><span class="target" id="fontlibc_8h_1a7254f40632cd9129d608dbf019099389"></span><em class="property">enum </em><code class="sig-name descname">fontlib_weights_t</code><a class="headerlink" href="#_CPPv417fontlib_weights_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Options for selecting a font by weight. </p>
-<p><dl class="simple">
+<dd><p>Options for selecting a font by weight <dl class="simple">
 <dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#fontlibc_8h_1a14c25d5ca8341191713b43e4d4aa6577"><span class="std std-ref">fontlib_GetFontByStyle</span></a> </p>
 </dd>
 </dl>
@@ -692,8 +432,7 @@ In GUIs and games where the benefits of legibility are outweighed by more aggres
 <dl class="cpp function">
 <dt id="_CPPv427fontlib_SetWindowFullScreenv">
 <span id="_CPPv327fontlib_SetWindowFullScreenv"></span><span id="_CPPv227fontlib_SetWindowFullScreenv"></span><span id="fontlib_SetWindowFullScreen__void"></span><span class="target" id="fontlibc_8h_1a32646881706a7931dfe43c3ceed05ff9"></span>void <code class="sig-name descname">fontlib_SetWindowFullScreen</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv427fontlib_SetWindowFullScreenv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Sets the bounds of the window all text will appear in to be the full screen. </p>
-<p>This is the default. </p>
+<dd><p>Sets the bounds of the window all text will appear in to be the full screen. This is the default. </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -727,7 +466,7 @@ In GUIs and games where the benefits of legibility are outweighed by more aggres
 <dl class="cpp function">
 <dt id="_CPPv421fontlib_GetWindowXMinv">
 <span id="_CPPv321fontlib_GetWindowXMinv"></span><span id="_CPPv221fontlib_GetWindowXMinv"></span><span id="fontlib_GetWindowXMin__void"></span><span class="target" id="fontlibc_8h_1a9149f8cfd2df7946df3b5bbc772d8078"></span>unsigned int <code class="sig-name descname">fontlib_GetWindowXMin</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv421fontlib_GetWindowXMinv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Returns the starting column of the current text window. </p>
+<dd><p>Returns the starting column of the current text window </p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>Window X </p>
@@ -738,7 +477,7 @@ In GUIs and games where the benefits of legibility are outweighed by more aggres
 <dl class="cpp function">
 <dt id="_CPPv421fontlib_GetWindowYMinv">
 <span id="_CPPv321fontlib_GetWindowYMinv"></span><span id="_CPPv221fontlib_GetWindowYMinv"></span><span id="fontlib_GetWindowYMin__void"></span><span class="target" id="fontlibc_8h_1ad731c36201edd432e6996e33c3da9f2b"></span>uint8_t <code class="sig-name descname">fontlib_GetWindowYMin</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv421fontlib_GetWindowYMinv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Returns the starting row of the current text window. </p>
+<dd><p>Returns the starting row of the current text window </p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>Window Y </p>
@@ -749,7 +488,7 @@ In GUIs and games where the benefits of legibility are outweighed by more aggres
 <dl class="cpp function">
 <dt id="_CPPv422fontlib_GetWindowWidthv">
 <span id="_CPPv322fontlib_GetWindowWidthv"></span><span id="_CPPv222fontlib_GetWindowWidthv"></span><span id="fontlib_GetWindowWidth__void"></span><span class="target" id="fontlibc_8h_1a90f6b52727c2ea3e7064dba3b2e52a47"></span>unsigned int <code class="sig-name descname">fontlib_GetWindowWidth</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv422fontlib_GetWindowWidthv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Returns the width of the current text window. </p>
+<dd><p>Returns the width of the current text window </p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>Window width </p>
@@ -760,7 +499,7 @@ In GUIs and games where the benefits of legibility are outweighed by more aggres
 <dl class="cpp function">
 <dt id="_CPPv423fontlib_GetWindowHeightv">
 <span id="_CPPv323fontlib_GetWindowHeightv"></span><span id="_CPPv223fontlib_GetWindowHeightv"></span><span id="fontlib_GetWindowHeight__void"></span><span class="target" id="fontlibc_8h_1a22c1f272c6157868fe68d684aef12043"></span>uint8_t <code class="sig-name descname">fontlib_GetWindowHeight</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv423fontlib_GetWindowHeightv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Returns the height of the current text window. </p>
+<dd><p>Returns the height of the current text window </p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>Window height </p>
@@ -771,7 +510,7 @@ In GUIs and games where the benefits of legibility are outweighed by more aggres
 <dl class="cpp function">
 <dt id="_CPPv425fontlib_SetCursorPositionj7uint8_t">
 <span id="_CPPv325fontlib_SetCursorPositionj7uint8_t"></span><span id="_CPPv225fontlib_SetCursorPositionj7uint8_t"></span><span id="fontlib_SetCursorPosition__unsigned-i.uint8_t"></span><span class="target" id="fontlibc_8h_1a0f05b1006f53dfc86b309fc167f4e639"></span>void <code class="sig-name descname">fontlib_SetCursorPosition</code><span class="sig-paren">(</span>unsigned int <em>x</em>, uint8_t <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv425fontlib_SetCursorPositionj7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Sets the cursor position. </p>
+<dd><p>Sets the cursor position.</p>
 <p>Behavior is undefined if the cursor is set outside of the text window. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -842,7 +581,7 @@ In GUIs and games where the benefits of legibility are outweighed by more aggres
 <dl class="cpp function">
 <dt id="_CPPv415fontlib_SetFontPK14fontlib_font_t22fontlib_load_options_t">
 <span id="_CPPv315fontlib_SetFontPK14fontlib_font_t22fontlib_load_options_t"></span><span id="_CPPv215fontlib_SetFontPK14fontlib_font_t22fontlib_load_options_t"></span><span id="fontlib_SetFont__fontlib_font_tCP.fontlib_load_options_t"></span><span class="target" id="fontlibc_8h_1acc53a3091651b5469febda8bb68b6bc9"></span>bool <code class="sig-name descname">fontlib_SetFont</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv414fontlib_font_t" title="fontlib_font_t">fontlib_font_t</a> *<em>font_data</em>, <a class="reference internal" href="#_CPPv422fontlib_load_options_t" title="fontlib_load_options_t">fontlib_load_options_t</a> <em>flags</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv415fontlib_SetFontPK14fontlib_font_t22fontlib_load_options_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Sets the current font. </p>
+<dd><p>Sets the current font </p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>If false is returned, no valid font is currently loaded and trying to print will print garbage! </p>
@@ -971,8 +710,7 @@ In GUIs and games where the benefits of legibility are outweighed by more aggres
 <dl class="cpp function">
 <dt id="_CPPv422fontlib_SetLineSpacing7uint8_t7uint8_t">
 <span id="_CPPv322fontlib_SetLineSpacing7uint8_t7uint8_t"></span><span id="_CPPv222fontlib_SetLineSpacing7uint8_t7uint8_t"></span><span id="fontlib_SetLineSpacing__uint8_t.uint8_t"></span><span class="target" id="fontlibc_8h_1af146bd8f8902c01917c3eb98df35ab70"></span>void <code class="sig-name descname">fontlib_SetLineSpacing</code><span class="sig-paren">(</span>uint8_t <em>space_above</em>, uint8_t <em>space_below</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv422fontlib_SetLineSpacing7uint8_t7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Controls hows much black space will be added above and below each line of text. </p>
-<p>If transparency is set, then the padding will not be overwritten with the background color, but padding will still be added. Padding space is added at the time each glyph is drawn. </p>
+<dd><p>Controls hows much black space will be added above and below each line of text. If transparency is set, then the padding will not be overwritten with the background color, but padding will still be added. Padding space is added at the time each glyph is drawn. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -997,7 +735,7 @@ In GUIs and games where the benefits of legibility are outweighed by more aggres
 <dl class="cpp function">
 <dt id="_CPPv421fontlib_GetSpaceBelowv">
 <span id="_CPPv321fontlib_GetSpaceBelowv"></span><span id="_CPPv221fontlib_GetSpaceBelowv"></span><span id="fontlib_GetSpaceBelow__void"></span><span class="target" id="fontlibc_8h_1ab6d7da24aa7bb02a5f189b9742949682"></span>uint8_t <code class="sig-name descname">fontlib_GetSpaceBelow</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv421fontlib_GetSpaceBelowv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Returns current padding space below. </p>
+<dd><p>Returns current padding space below </p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>Current padding space below </p>
@@ -1008,8 +746,7 @@ In GUIs and games where the benefits of legibility are outweighed by more aggres
 <dl class="cpp function">
 <dt id="_CPPv434fontlib_SetItalicSpacingAdjustment7uint8_t">
 <span id="_CPPv334fontlib_SetItalicSpacingAdjustment7uint8_t"></span><span id="_CPPv234fontlib_SetItalicSpacingAdjustment7uint8_t"></span><span id="fontlib_SetItalicSpacingAdjustment__uint8_t"></span><span class="target" id="fontlibc_8h_1a5ca80cd2aca759d0fa51ec659c3e825f"></span>void <code class="sig-name descname">fontlib_SetItalicSpacingAdjustment</code><span class="sig-paren">(</span>uint8_t <em>italic_spacing_adjustment</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv434fontlib_SetItalicSpacingAdjustment7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Sets current spacing adjustment for italic text. </p>
-<p>This causes the cursor to be moved back a certain number of pixels after every glyph is drawn. </p>
+<dd><p>Sets current spacing adjustment for italic text. This causes the cursor to be moved back a certain number of pixels after every glyph is drawn. </p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This is only useful if transparency mode is set. </p>
@@ -1039,7 +776,7 @@ In GUIs and games where the benefits of legibility are outweighed by more aggres
 <dl class="cpp function">
 <dt id="_CPPv428fontlib_GetCurrentFontHeightv">
 <span id="_CPPv328fontlib_GetCurrentFontHeightv"></span><span id="_CPPv228fontlib_GetCurrentFontHeightv"></span><span id="fontlib_GetCurrentFontHeight__void"></span><span class="target" id="fontlibc_8h_1a40cb5c901931bf242e9bc9946c1eb578"></span>uint8_t <code class="sig-name descname">fontlib_GetCurrentFontHeight</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv428fontlib_GetCurrentFontHeightv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Returns the height of the current font, INCLUDING space above/below. </p>
+<dd><p>Returns the height of the current font, INCLUDING space above/below </p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>Height in pixels </p>
@@ -1050,7 +787,7 @@ In GUIs and games where the benefits of legibility are outweighed by more aggres
 <dl class="cpp function">
 <dt id="_CPPv425fontlib_ValidateCodePointc">
 <span id="_CPPv325fontlib_ValidateCodePointc"></span><span id="_CPPv225fontlib_ValidateCodePointc"></span><span id="fontlib_ValidateCodePoint__c"></span><span class="target" id="fontlibc_8h_1a6a3163396bc9dd8e5fffd7a539a3b179"></span>bool <code class="sig-name descname">fontlib_ValidateCodePoint</code><span class="sig-paren">(</span>char <em>code_point</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv425fontlib_ValidateCodePointc" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Tests whether the current font has the given code point. </p>
+<dd><p>Tests whether the current font has the given code point </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>code_point</strong> – Code point to test </p>
@@ -1094,8 +831,7 @@ In GUIs and games where the benefits of legibility are outweighed by more aggres
 <dl class="cpp function">
 <dt id="_CPPv422fontlib_SetNewlineCodec">
 <span id="_CPPv322fontlib_SetNewlineCodec"></span><span id="_CPPv222fontlib_SetNewlineCodec"></span><span id="fontlib_SetNewlineCode__c"></span><span class="target" id="fontlibc_8h_1a5506d578d27f60fbdb5d850b0246992c"></span>void <code class="sig-name descname">fontlib_SetNewlineCode</code><span class="sig-paren">(</span>char <em>code_point</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv422fontlib_SetNewlineCodec" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Allows you to set the code point that is recognized as being a new line code. </p>
-<p>You can set this to zero to prevent new line code processing. </p>
+<dd><p>Allows you to set the code point that is recognized as being a new line code. You can set this to zero to prevent new line code processing. </p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If FONTLIB_ENABLE_AUTO_WRAP is enabled, then wrapping will still implicitly case a newline. </p>
@@ -1114,8 +850,7 @@ In GUIs and games where the benefits of legibility are outweighed by more aggres
 <dl class="cpp function">
 <dt id="_CPPv422fontlib_GetNewlineCodev">
 <span id="_CPPv322fontlib_GetNewlineCodev"></span><span id="_CPPv222fontlib_GetNewlineCodev"></span><span id="fontlib_GetNewlineCode__void"></span><span class="target" id="fontlibc_8h_1ad7ab65589290885224cd785f6656e06e"></span>char <code class="sig-name descname">fontlib_GetNewlineCode</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv422fontlib_GetNewlineCodev" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Returns the code point that is currently recognized as being a newline. </p>
-<p>If 0, newlines in strings will not be processed. </p>
+<dd><p>Returns the code point that is currently recognized as being a newline. If 0, newlines in strings will not be processed. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>Current newline </p>
@@ -1126,8 +861,7 @@ In GUIs and games where the benefits of legibility are outweighed by more aggres
 <dl class="cpp function">
 <dt id="_CPPv428fontlib_SetAlternateStopCodec">
 <span id="_CPPv328fontlib_SetAlternateStopCodec"></span><span id="_CPPv228fontlib_SetAlternateStopCodec"></span><span id="fontlib_SetAlternateStopCode__c"></span><span class="target" id="fontlibc_8h_1a4c871e4254b30123c71319cc6f2da903"></span>void <code class="sig-name descname">fontlib_SetAlternateStopCode</code><span class="sig-paren">(</span>char <em>code_point</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv428fontlib_SetAlternateStopCodec" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Sets an alternate code point to recognize as a stop code. </p>
-<p>Set this to 0 if you do not want to use the alternate stop code feature. Defaults to 0. </p>
+<dd><p>Sets an alternate code point to recognize as a stop code. Set this to 0 if you do not want to use the alternate stop code feature. Defaults to 0. </p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>You can set this to space to make DrawString and GetStringWidth stop processing when they reach a space. </p>
@@ -1157,8 +891,7 @@ In GUIs and games where the benefits of legibility are outweighed by more aggres
 <dl class="cpp function">
 <dt id="_CPPv434fontlib_SetFirstPrintableCodePointc">
 <span id="_CPPv334fontlib_SetFirstPrintableCodePointc"></span><span id="_CPPv234fontlib_SetFirstPrintableCodePointc"></span><span id="fontlib_SetFirstPrintableCodePoint__c"></span><span class="target" id="fontlibc_8h_1a3a913c73d41d70c2cf89a90525047e0d"></span>void <code class="sig-name descname">fontlib_SetFirstPrintableCodePoint</code><span class="sig-paren">(</span>char <em>code_point</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv434fontlib_SetFirstPrintableCodePointc" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Sets the first code point considered printable. </p>
-<p>All code points before this will be considered control codes. This defaults 0x10. </p>
+<dd><p>Sets the first code point considered printable. All code points before this will be considered control codes. This defaults 0x10. </p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Setting this to 0 (NULL) will NOT cause NULL to be ignored. </p>
@@ -1198,7 +931,7 @@ In GUIs and games where the benefits of legibility are outweighed by more aggres
 <dl class="cpp function">
 <dt id="_CPPv423fontlib_GetDrawIntMinusv">
 <span id="_CPPv323fontlib_GetDrawIntMinusv"></span><span id="_CPPv223fontlib_GetDrawIntMinusv"></span><span id="fontlib_GetDrawIntMinus__void"></span><span class="target" id="fontlibc_8h_1a592be2e20726263ca63a097f56ea7ef1"></span>char <code class="sig-name descname">fontlib_GetDrawIntMinus</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv423fontlib_GetDrawIntMinusv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Returns the code point DrawInt and DrawUInt will use for a minus symbol Defaults to ‘-‘. </p>
+<dd><p>Returns the code point DrawInt and DrawUInt will use for a minus symbol Defaults to ‘-‘ </p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>‘-‘ or whatever you set it to </p>
@@ -1209,7 +942,7 @@ In GUIs and games where the benefits of legibility are outweighed by more aggres
 <dl class="cpp function">
 <dt id="_CPPv422fontlib_GetDrawIntZerov">
 <span id="_CPPv322fontlib_GetDrawIntZerov"></span><span id="_CPPv222fontlib_GetDrawIntZerov"></span><span id="fontlib_GetDrawIntZero__void"></span><span class="target" id="fontlibc_8h_1a5ae52de9301411d04ec2044ffa11ab85"></span>char <code class="sig-name descname">fontlib_GetDrawIntZero</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv422fontlib_GetDrawIntZerov" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Returns the code point DrawInt and DrawUInt will use for ‘0’; it assumes ‘1’-‘9’ follow ‘0’ Defaults to ‘0’. </p>
+<dd><p>Returns the code point DrawInt and DrawUInt will use for ‘0’; it assumes ‘1’-‘9’ follow ‘0’ Defaults to ‘0’ </p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>‘0’ or whatever you set it to </p>
@@ -1220,7 +953,7 @@ In GUIs and games where the benefits of legibility are outweighed by more aggres
 <dl class="cpp function">
 <dt id="_CPPv421fontlib_GetGlyphWidthc">
 <span id="_CPPv321fontlib_GetGlyphWidthc"></span><span id="_CPPv221fontlib_GetGlyphWidthc"></span><span id="fontlib_GetGlyphWidth__c"></span><span class="target" id="fontlibc_8h_1a41889e9a9ed04a9befea09cb90ae94a4"></span>uint8_t <code class="sig-name descname">fontlib_GetGlyphWidth</code><span class="sig-paren">(</span>char <em>codepoint</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv421fontlib_GetGlyphWidthc" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Returns the width of the given glyph. </p>
+<dd><p>Returns the width of the given glyph </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>codepoint</strong> – Codepoint to test </p>
@@ -1234,7 +967,7 @@ In GUIs and games where the benefits of legibility are outweighed by more aggres
 <dl class="cpp function">
 <dt id="_CPPv422fontlib_GetStringWidthPKc">
 <span id="_CPPv322fontlib_GetStringWidthPKc"></span><span id="_CPPv222fontlib_GetStringWidthPKc"></span><span id="fontlib_GetStringWidth__cCP"></span><span class="target" id="fontlibc_8h_1a06871ff3e96ccb8134d03661f6270adf"></span>unsigned int <code class="sig-name descname">fontlib_GetStringWidth</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>str</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv422fontlib_GetStringWidthPKc" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Returns the width of a string printed in the current font. </p>
+<dd><p>Returns the width of a string printed in the current font.</p>
 <p>Stops processing when it encounters ANY control code or a codepoint not in the current font. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1249,7 +982,7 @@ In GUIs and games where the benefits of legibility are outweighed by more aggres
 <dl class="cpp function">
 <dt id="_CPPv423fontlib_GetStringWidthLPKc6size_t">
 <span id="_CPPv323fontlib_GetStringWidthLPKc6size_t"></span><span id="_CPPv223fontlib_GetStringWidthLPKc6size_t"></span><span id="fontlib_GetStringWidthL__cCP.s"></span><span class="target" id="fontlibc_8h_1a62e0d24e13364207931ceab3ca5ed18a"></span>unsigned int <code class="sig-name descname">fontlib_GetStringWidthL</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>str</em>, size_t <em>max_characters</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv423fontlib_GetStringWidthLPKc6size_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Returns the width of a string printed in the current font. </p>
+<dd><p>Returns the width of a string printed in the current font.</p>
 <p>Stops processing when it encounters ANY control code or a codepoint not in the current font, or when max_characters have been processed. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1267,7 +1000,7 @@ In GUIs and games where the benefits of legibility are outweighed by more aggres
 <dl class="cpp function">
 <dt id="_CPPv428fontlib_GetLastCharacterReadv">
 <span id="_CPPv328fontlib_GetLastCharacterReadv"></span><span id="_CPPv228fontlib_GetLastCharacterReadv"></span><span id="fontlib_GetLastCharacterRead__void"></span><span class="target" id="fontlibc_8h_1abd4bf8eb64a29ef87742ca8d384c3876"></span>char *<code class="sig-name descname">fontlib_GetLastCharacterRead</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv428fontlib_GetLastCharacterReadv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Gets the location of the last character processed by GetStringWidth or DrawString. </p>
+<dd><p>Gets the location of the last character processed by GetStringWidth or DrawString </p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>Pointer to character </p>
@@ -1278,8 +1011,7 @@ In GUIs and games where the benefits of legibility are outweighed by more aggres
 <dl class="cpp function">
 <dt id="_CPPv430fontlib_GetCharactersRemainingv">
 <span id="_CPPv330fontlib_GetCharactersRemainingv"></span><span id="_CPPv230fontlib_GetCharactersRemainingv"></span><span id="fontlib_GetCharactersRemaining__void"></span><span class="target" id="fontlibc_8h_1a7f707487e0e259cc16718be475955f0f"></span>size_t <code class="sig-name descname">fontlib_GetCharactersRemaining</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv430fontlib_GetCharactersRemainingv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Returns 0 if DrawStringL or GetStringWidthL returned because max_characters were processed. </p>
-<p>Returns a non-zero number otherwise. </p>
+<dd><p>Returns 0 if DrawStringL or GetStringWidthL returned because max_characters were processed. Returns a non-zero number otherwise. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>Either zero, or a non-zero number depending on the reason DrawStringL or GetStringWidthL returned. </p>
@@ -1312,7 +1044,7 @@ In GUIs and games where the benefits of legibility are outweighed by more aggres
 <dl class="cpp function">
 <dt id="_CPPv418fontlib_DrawStringPKc">
 <span id="_CPPv318fontlib_DrawStringPKc"></span><span id="_CPPv218fontlib_DrawStringPKc"></span><span id="fontlib_DrawString__cCP"></span><span class="target" id="fontlibc_8h_1aac454dc688dc346015fff0ead04ab516"></span>uint24_t <code class="sig-name descname">fontlib_DrawString</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>str</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv418fontlib_DrawStringPKc" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Draws a string. </p>
+<dd><p>Draws a string.</p>
 <p>This will return when it reaches the right edge of the text window if FONTLIB_ENABLE_AUTO_WRAP is turned off.</p>
 <p>This stops drawing upon reaching NULL. It will also stop if it encounters the character code specified with <a class="reference internal" href="#fontlibc_8h_1a4c871e4254b30123c71319cc6f2da903"><span class="std std-ref">fontlib_SetAlternateStopCode()</span></a>. </p>
 <div class="admonition note">
@@ -1340,7 +1072,7 @@ In GUIs and games where the benefits of legibility are outweighed by more aggres
 <dl class="cpp function">
 <dt id="_CPPv419fontlib_DrawStringLPKc6size_t">
 <span id="_CPPv319fontlib_DrawStringLPKc6size_t"></span><span id="_CPPv219fontlib_DrawStringLPKc6size_t"></span><span id="fontlib_DrawStringL__cCP.s"></span><span class="target" id="fontlibc_8h_1ae26275a6591acd60879f4e83ba31efe0"></span>uint24_t <code class="sig-name descname">fontlib_DrawStringL</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>str</em>, size_t <em>max_characters</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv419fontlib_DrawStringLPKc6size_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Draws a string, up to a maximum number of characters. </p>
+<dd><p>Draws a string, up to a maximum number of characters.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This is intended to be used if you only want a portion of a string printed. (Or if you hate null-terminated strings and want length-prefixed strings instead. It still won’t print NULLs though.)</p>
@@ -1365,7 +1097,7 @@ In GUIs and games where the benefits of legibility are outweighed by more aggres
 <dl class="cpp function">
 <dt id="_CPPv415fontlib_DrawInti7uint8_t">
 <span id="_CPPv315fontlib_DrawInti7uint8_t"></span><span id="_CPPv215fontlib_DrawInti7uint8_t"></span><span id="fontlib_DrawInt__i.uint8_t"></span><span class="target" id="fontlibc_8h_1a10a876922304ad81c04e2a18799ad627"></span>void <code class="sig-name descname">fontlib_DrawInt</code><span class="sig-paren">(</span>int <em>n</em>, uint8_t <em>length</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv415fontlib_DrawInti7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Prints a signed integer. </p>
+<dd><p>Prints a signed integer</p>
 <p>Outputs at the current cursor position. Padded with leading zeros if necessary to satisfy the specified minimum length. </p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1388,7 +1120,7 @@ In GUIs and games where the benefits of legibility are outweighed by more aggres
 <dl class="cpp function">
 <dt id="_CPPv416fontlib_DrawUIntj7uint8_t">
 <span id="_CPPv316fontlib_DrawUIntj7uint8_t"></span><span id="_CPPv216fontlib_DrawUIntj7uint8_t"></span><span id="fontlib_DrawUInt__unsigned-i.uint8_t"></span><span class="target" id="fontlibc_8h_1ad028311bab2702052551b6ae6b92132b"></span>void <code class="sig-name descname">fontlib_DrawUInt</code><span class="sig-paren">(</span>unsigned int <em>n</em>, uint8_t <em>length</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv416fontlib_DrawUIntj7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Prints an unsigned integer. </p>
+<dd><p>Prints an unsigned integer</p>
 <p>Outputs at the current cursor position. Padded with leading zeros if necessary to satisfy the specified minimum length. </p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1411,8 +1143,7 @@ In GUIs and games where the benefits of legibility are outweighed by more aggres
 <dl class="cpp function">
 <dt id="_CPPv416fontlib_ClearEOLv">
 <span id="_CPPv316fontlib_ClearEOLv"></span><span id="_CPPv216fontlib_ClearEOLv"></span><span id="fontlib_ClearEOL__void"></span><span class="target" id="fontlibc_8h_1a14be8642d64cafdab002b292207e70da"></span>void <code class="sig-name descname">fontlib_ClearEOL</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv416fontlib_ClearEOLv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Erases everything from the cursor to the right side of the text window (End-Of-Line). </p>
-<p>This ignores the transparent background flag. </p>
+<dd><p>Erases everything from the cursor to the right side of the text window (End-Of-Line). This ignores the transparent background flag. </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -1428,15 +1159,13 @@ In GUIs and games where the benefits of legibility are outweighed by more aggres
 <dl class="cpp function">
 <dt id="_CPPv415fontlib_Newlinev">
 <span id="_CPPv315fontlib_Newlinev"></span><span id="_CPPv215fontlib_Newlinev"></span><span id="fontlib_Newline__void"></span><span class="target" id="fontlibc_8h_1ab1c2770ee01a6d8a555eba4e734b223a"></span>void <code class="sig-name descname">fontlib_Newline</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv415fontlib_Newlinev" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Performs a newline. </p>
-<p>Pays attention to newline flags. </p>
+<dd><p>Performs a newline. Pays attention to newline flags. </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv425fontlib_SetNewlineOptions7uint8_t">
 <span id="_CPPv325fontlib_SetNewlineOptions7uint8_t"></span><span id="_CPPv225fontlib_SetNewlineOptions7uint8_t"></span><span id="fontlib_SetNewlineOptions__uint8_t"></span><span class="target" id="fontlibc_8h_1a9a6814959051d03d5f8b6cd4e60db879"></span>void <code class="sig-name descname">fontlib_SetNewlineOptions</code><span class="sig-paren">(</span>uint8_t <em>options</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv425fontlib_SetNewlineOptions7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Sets options for controlling newline behavior. </p>
-<p><dl class="simple">
+<dd><p>Sets options for controlling newline behavior <dl class="simple">
 <dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#fontlibc_8h_1a33af52aa5db3dc2ad8357328b37a528e"><span class="std std-ref">fontlib_newline_options_t</span></a> </p>
 </dd>
 </dl>
@@ -1462,8 +1191,7 @@ In GUIs and games where the benefits of legibility are outweighed by more aggres
 <dl class="cpp function">
 <dt id="_CPPv424fontlib_ScrollWindowDownv">
 <span id="_CPPv324fontlib_ScrollWindowDownv"></span><span id="_CPPv224fontlib_ScrollWindowDownv"></span><span id="fontlib_ScrollWindowDown__void"></span><span class="target" id="fontlibc_8h_1ab7a5fba085a1ec2c07da2260d120cde4"></span>void <code class="sig-name descname">fontlib_ScrollWindowDown</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv424fontlib_ScrollWindowDownv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Scrolls the contents of the text window down one line, i.e. </p>
-<p>everything in the window is copied UP one line, thus yielding the effect of scrolling down. The current text cursor position is ignored. </p>
+<dd><p>Scrolls the contents of the text window down one line, i.e. everything in the window is copied UP one line, thus yielding the effect of scrolling down. The current text cursor position is ignored. </p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The bottom line is not erased; you must erase or overwrite it yourself. </p>
@@ -1473,8 +1201,7 @@ In GUIs and games where the benefits of legibility are outweighed by more aggres
 <dl class="cpp function">
 <dt id="_CPPv422fontlib_ScrollWindowUpv">
 <span id="_CPPv322fontlib_ScrollWindowUpv"></span><span id="_CPPv222fontlib_ScrollWindowUpv"></span><span id="fontlib_ScrollWindowUp__void"></span><span class="target" id="fontlibc_8h_1a1ee42b75ba524469917f89112f9bbe23"></span>void <code class="sig-name descname">fontlib_ScrollWindowUp</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv422fontlib_ScrollWindowUpv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Scrolls the contents of the text window up one line, i.e. </p>
-<p>everything in the window is copied DOWN one line, thus yielding the effect of scrolling up. The current text cursor position is ignored. </p>
+<dd><p>Scrolls the contents of the text window up one line, i.e. everything in the window is copied DOWN one line, thus yielding the effect of scrolling up. The current text cursor position is ignored. </p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The bottom line is not erased; you must erase or overwrite it yourself. </p>
@@ -1488,8 +1215,7 @@ In GUIs and games where the benefits of legibility are outweighed by more aggres
 <dl class="cpp function">
 <dt id="_CPPv423fontlib_GetFontPackNamePKc">
 <span id="_CPPv323fontlib_GetFontPackNamePKc"></span><span id="_CPPv223fontlib_GetFontPackNamePKc"></span><span id="fontlib_GetFontPackName__cCP"></span><span class="target" id="fontlibc_8h_1a6e5a650f18df76452741b2ead1b7c31b"></span>char *<code class="sig-name descname">fontlib_GetFontPackName</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>appvar_name</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv423fontlib_GetFontPackNamePKc" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Gets the long name associated with a font pack. </p>
-<p>Useful in a loop with <a class="reference internal" href="fileioc.html#fileioc_8h_1a8ab3898aa9f1d56ebf783816e3ce0e17"><span class="std std-ref">ti_Detect()</span></a> when searching a typeface with a specific name. </p>
+<dd><p>Gets the long name associated with a font pack. Useful in a loop with <a class="reference internal" href="fileioc.html#fileioc_8h_1a8ab3898aa9f1d56ebf783816e3ce0e17"><span class="std std-ref">ti_Detect()</span></a> when searching a typeface with a specific name. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>appvar_name</strong> – Pointer to name of appvar </p>
@@ -1503,8 +1229,7 @@ In GUIs and games where the benefits of legibility are outweighed by more aggres
 <dl class="cpp function">
 <dt id="_CPPv425fontlib_GetFontByIndexRawPK19fontlib_font_pack_t7uint8_t">
 <span id="_CPPv325fontlib_GetFontByIndexRawPK19fontlib_font_pack_t7uint8_t"></span><span id="_CPPv225fontlib_GetFontByIndexRawPK19fontlib_font_pack_t7uint8_t"></span><span id="fontlib_GetFontByIndexRaw__fontlib_font_pack_tCP.uint8_t"></span><span class="target" id="fontlibc_8h_1a3178fdaf8d26b0720b648d8bf6dd95ff"></span><a class="reference internal" href="#_CPPv414fontlib_font_t" title="fontlib_font_t">fontlib_font_t</a> *<code class="sig-name descname">fontlib_GetFontByIndexRaw</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv419fontlib_font_pack_t" title="fontlib_font_pack_t">fontlib_font_pack_t</a> *<em>font_pack</em>, uint8_t <em>index</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv425fontlib_GetFontByIndexRawPK19fontlib_font_pack_t7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Gets a pointer to a font, suitable for passing to SetFont(), given a font pack’s address. </p>
-<p>Useful if you know caching the font pack’s address is safe. <dl class="simple">
+<dd><p>Gets a pointer to a font, suitable for passing to SetFont(), given a font pack’s address. Useful if you know caching the font pack’s address is safe. <dl class="simple">
 <dt><strong>See</strong></dt><dd><p><a class="reference internal" href="fileioc.html#fileioc_8h_1afe953ef410b48c76d7ac1ea7e4ee7148"><span class="std std-ref">ti_GetDataPtr()</span></a> </p>
 </dd>
 </dl>
@@ -1525,8 +1250,7 @@ In GUIs and games where the benefits of legibility are outweighed by more aggres
 <dl class="cpp function">
 <dt id="_CPPv422fontlib_GetFontByIndexPKc7uint8_t">
 <span id="_CPPv322fontlib_GetFontByIndexPKc7uint8_t"></span><span id="_CPPv222fontlib_GetFontByIndexPKc7uint8_t"></span><span id="fontlib_GetFontByIndex__cCP.uint8_t"></span><span class="target" id="fontlibc_8h_1ad3bda7b0462f89a6b03a17136d7d13ab"></span><a class="reference internal" href="#_CPPv414fontlib_font_t" title="fontlib_font_t">fontlib_font_t</a> *<code class="sig-name descname">fontlib_GetFontByIndex</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>font_pack_name</em>, uint8_t <em>index</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv422fontlib_GetFontByIndexPKc7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Gets a pointer to a font, suitable for passing to SetFont(), given a font pack’s appvar’s name. </p>
-<p>Recommended to use after any file write, create, delete, or un/archive, as all those operations could invalidate the cached data pointers to the currently loaded font. </p>
+<dd><p>Gets a pointer to a font, suitable for passing to SetFont(), given a font pack’s appvar’s name. Recommended to use after any file write, create, delete, or un/archive, as all those operations could invalidate the cached data pointers to the currently loaded font. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -1543,8 +1267,7 @@ In GUIs and games where the benefits of legibility are outweighed by more aggres
 <dl class="cpp function">
 <dt id="_CPPv425fontlib_GetFontByStyleRawPK19fontlib_font_pack_t7uint8_t7uint8_t7uint8_t7uint8_t7uint8_t7uint8_t">
 <span id="_CPPv325fontlib_GetFontByStyleRawPK19fontlib_font_pack_t7uint8_t7uint8_t7uint8_t7uint8_t7uint8_t7uint8_t"></span><span id="_CPPv225fontlib_GetFontByStyleRawPK19fontlib_font_pack_t7uint8_t7uint8_t7uint8_t7uint8_t7uint8_t7uint8_t"></span><span id="fontlib_GetFontByStyleRaw__fontlib_font_pack_tCP.uint8_t.uint8_t.uint8_t.uint8_t.uint8_t.uint8_t"></span><span class="target" id="fontlibc_8h_1a0cf81ec12186131f9065a2fffda4bf75"></span><a class="reference internal" href="#_CPPv414fontlib_font_t" title="fontlib_font_t">fontlib_font_t</a> *<code class="sig-name descname">fontlib_GetFontByStyleRaw</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv419fontlib_font_pack_t" title="fontlib_font_pack_t">fontlib_font_pack_t</a> *<em>font_pack</em>, uint8_t <em>size_min</em>, uint8_t <em>size_max</em>, uint8_t <em>weight_min</em>, uint8_t <em>weight_max</em>, uint8_t <em>style_bits_set</em>, uint8_t <em>style_bits_reset</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv425fontlib_GetFontByStyleRawPK19fontlib_font_pack_t7uint8_t7uint8_t7uint8_t7uint8_t7uint8_t7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Gets a pointer to a font, suitable for passing to SetFont(), given a font pack’s address and a set of font properties. </p>
-<p>Useful if you know caching the font pack’s address is safe. <dl class="simple">
+<dd><p>Gets a pointer to a font, suitable for passing to SetFont(), given a font pack’s address and a set of font properties. Useful if you know caching the font pack’s address is safe. <dl class="simple">
 <dt><strong>See</strong></dt><dd><p><a class="reference internal" href="fileioc.html#fileioc_8h_1afe953ef410b48c76d7ac1ea7e4ee7148"><span class="std std-ref">ti_GetDataPtr()</span></a> </p>
 </dd>
 </dl>
@@ -1570,8 +1293,7 @@ In GUIs and games where the benefits of legibility are outweighed by more aggres
 <dl class="cpp function">
 <dt id="_CPPv422fontlib_GetFontByStylePKc7uint8_t7uint8_t7uint8_t7uint8_t7uint8_t7uint8_t">
 <span id="_CPPv322fontlib_GetFontByStylePKc7uint8_t7uint8_t7uint8_t7uint8_t7uint8_t7uint8_t"></span><span id="_CPPv222fontlib_GetFontByStylePKc7uint8_t7uint8_t7uint8_t7uint8_t7uint8_t7uint8_t"></span><span id="fontlib_GetFontByStyle__cCP.uint8_t.uint8_t.uint8_t.uint8_t.uint8_t.uint8_t"></span><span class="target" id="fontlibc_8h_1a14c25d5ca8341191713b43e4d4aa6577"></span><a class="reference internal" href="#_CPPv414fontlib_font_t" title="fontlib_font_t">fontlib_font_t</a> *<code class="sig-name descname">fontlib_GetFontByStyle</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>font_pack_name</em>, uint8_t <em>size_min</em>, uint8_t <em>size_max</em>, uint8_t <em>weight_min</em>, uint8_t <em>weight_max</em>, uint8_t <em>style_bits_set</em>, uint8_t <em>style_bits_reset</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv422fontlib_GetFontByStylePKc7uint8_t7uint8_t7uint8_t7uint8_t7uint8_t7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Gets a pointer to a font, suitable for passing to SetFont(), given a font pack’s appvar’s name and a set of font properties. </p>
-<p>Recommended to use after any file write, create, delete, or un/archive, as all those operations could invalidate the cached data pointers to the currently loaded font. </p>
+<dd><p>Gets a pointer to a font, suitable for passing to SetFont(), given a font pack’s appvar’s name and a set of font properties. Recommended to use after any file write, create, delete, or un/archive, as all those operations could invalidate the cached data pointers to the currently loaded font. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -1594,8 +1316,7 @@ In GUIs and games where the benefits of legibility are outweighed by more aggres
 <dl class="cpp struct">
 <dt id="_CPPv418fontlib_metadata_t">
 <span id="_CPPv318fontlib_metadata_t"></span><span id="_CPPv218fontlib_metadata_t"></span><span id="fontlib_metadata_t"></span><span class="target" id="structfontlib__metadata__t"></span><em class="property">struct </em><code class="sig-name descname">fontlib_metadata_t</code><a class="headerlink" href="#_CPPv418fontlib_metadata_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd><em>#include &lt;fontlibc.h&gt;</em><p>Contains references to various metadata strings. </p>
-<p><div class="admonition note">
+<dd><em>#include &lt;fontlibc.h&gt;</em><p>Contains references to various metadata strings. <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Any or all of these offsets may be NULL. </p>
 </div>
@@ -1613,14 +1334,13 @@ In GUIs and games where the benefits of legibility are outweighed by more aggres
 <dl class="cpp var">
 <dt id="_CPPv4N18fontlib_metadata_t6lengthE">
 <span id="_CPPv3N18fontlib_metadata_t6lengthE"></span><span id="_CPPv2N18fontlib_metadata_t6lengthE"></span><span id="fontlib_metadata_t::length__int24_t"></span><span class="target" id="structfontlib__metadata__t_1a12dff264e69b9dafe4edf53a8a2423cd"></span>int24_t <code class="sig-name descname">length</code><a class="headerlink" href="#_CPPv4N18fontlib_metadata_t6lengthE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Size of this struct, basically functions as a version field. </p>
-<p>This does NOT include the lengths of the strings! </p>
+<dd><p>Size of this struct, basically functions as a version field. This does NOT include the lengths of the strings! </p>
 </dd></dl>
 
 <dl class="cpp var">
 <dt id="_CPPv4N18fontlib_metadata_t16font_family_nameE">
 <span id="_CPPv3N18fontlib_metadata_t16font_family_nameE"></span><span id="_CPPv2N18fontlib_metadata_t16font_family_nameE"></span><span id="fontlib_metadata_t::font_family_name__int24_t"></span><span class="target" id="structfontlib__metadata__t_1a296ec51aa258f7f7af2fb1ad6c559dab"></span>int24_t <code class="sig-name descname">font_family_name</code><a class="headerlink" href="#_CPPv4N18fontlib_metadata_t16font_family_nameE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>A short, human-readable typeface name, such as “Times”. </p>
+<dd><p>A short, human-readable typeface name, such as “Times” </p>
 </dd></dl>
 
 <dl class="cpp var">
@@ -1632,8 +1352,7 @@ In GUIs and games where the benefits of legibility are outweighed by more aggres
 <dl class="cpp var">
 <dt id="_CPPv4N18fontlib_metadata_t20font_pseudocopyrightE">
 <span id="_CPPv3N18fontlib_metadata_t20font_pseudocopyrightE"></span><span id="_CPPv2N18fontlib_metadata_t20font_pseudocopyrightE"></span><span id="fontlib_metadata_t::font_pseudocopyright__int24_t"></span><span class="target" id="structfontlib__metadata__t_1a90b74ff876aa222c774e42e2664624bd"></span>int24_t <code class="sig-name descname">font_pseudocopyright</code><a class="headerlink" href="#_CPPv4N18fontlib_metadata_t20font_pseudocopyrightE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>A SHORT copyright claim. </p>
-<p>Do not try to include a complete license in here! Space is limited! </p>
+<dd><p>A SHORT copyright claim. Do not try to include a complete license in here! Space is limited! </p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Typefaces and bitmapped fonts cannot be copyrighted under US law. This field is therefore referred to as a pseudocopyright. HOWEVER, it IS is applicable in other jusrisdictions, such as Germany. </p>
@@ -1660,7 +1379,7 @@ In GUIs and games where the benefits of legibility are outweighed by more aggres
 <dl class="cpp var">
 <dt id="_CPPv4N18fontlib_metadata_t14font_code_pageE">
 <span id="_CPPv3N18fontlib_metadata_t14font_code_pageE"></span><span id="_CPPv2N18fontlib_metadata_t14font_code_pageE"></span><span id="fontlib_metadata_t::font_code_page__int24_t"></span><span class="target" id="structfontlib__metadata__t_1adb3bb8304a1a8a333ee92b47c526b757"></span>int24_t <code class="sig-name descname">font_code_page</code><a class="headerlink" href="#_CPPv4N18fontlib_metadata_t14font_code_pageE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Suggested values: “ASCII” “TIOS” “ISO-8859-1” “Windows 1252” “Calculator 1252”. </p>
+<dd><p>Suggested values: “ASCII” “TIOS” “ISO-8859-1” “Windows 1252” “Calculator 1252” </p>
 </dd></dl>
 
 </div>
@@ -1669,8 +1388,7 @@ In GUIs and games where the benefits of legibility are outweighed by more aggres
 <dl class="cpp struct">
 <dt id="_CPPv414fontlib_font_t">
 <span id="_CPPv314fontlib_font_t"></span><span id="_CPPv214fontlib_font_t"></span><span id="fontlib_font_t"></span><span class="target" id="structfontlib__font__t"></span><em class="property">struct </em><code class="sig-name descname">fontlib_font_t</code><a class="headerlink" href="#_CPPv414fontlib_font_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd><em>#include &lt;fontlibc.h&gt;</em><p>This is the actual font format. </p>
-<p>Directly reading from this struct is the only way to read a font’s cap_height, x_height, and baseline_height metrics.</p>
+<dd><em>#include &lt;fontlibc.h&gt;</em><p>This is the actual font format. Directly reading from this struct is the only way to read a font’s cap_height, x_height, and baseline_height metrics.</p>
 <p>For example: <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>unsigned char baseline;
 fontlib_font_t *my_font = fontlib_GetFontByStyle(&quot;FONTPACK&quot;, 12, 12,
     FONTLIB_NORMAL, FONTLIB_NORMAL, FONTLIB_SERIF, 0);
@@ -1689,7 +1407,7 @@ baseline = my_font-&gt;baseline_height;
 <dl class="cpp var">
 <dt id="_CPPv4N14fontlib_font_t11fontVersionE">
 <span id="_CPPv3N14fontlib_font_t11fontVersionE"></span><span id="_CPPv2N14fontlib_font_t11fontVersionE"></span><span id="fontlib_font_t::fontVersion__uint8_t"></span><span class="target" id="structfontlib__font__t_1abebdded4b386f80c845f0075078de331"></span>uint8_t <code class="sig-name descname">fontVersion</code><a class="headerlink" href="#_CPPv4N14fontlib_font_t11fontVersionE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Version ID. </p>
+<dd><p>Version ID </p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This must be zero or the font will be rejected as invalid. </p>
@@ -1699,7 +1417,7 @@ baseline = my_font-&gt;baseline_height;
 <dl class="cpp var">
 <dt id="_CPPv4N14fontlib_font_t6heightE">
 <span id="_CPPv3N14fontlib_font_t6heightE"></span><span id="_CPPv2N14fontlib_font_t6heightE"></span><span id="fontlib_font_t::height__uint8_t"></span><span class="target" id="structfontlib__font__t_1ac2559151f28b0b5089e98fb36289c7eb"></span>uint8_t <code class="sig-name descname">height</code><a class="headerlink" href="#_CPPv4N14fontlib_font_t6heightE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Height in pixels not including space above/below. </p>
+<dd><p>Height in pixels not including space above/below </p>
 </dd></dl>
 
 <dl class="cpp var">
@@ -1715,15 +1433,13 @@ baseline = my_font-&gt;baseline_height;
 <dl class="cpp var">
 <dt id="_CPPv4N14fontlib_font_t11first_glyphE">
 <span id="_CPPv3N14fontlib_font_t11first_glyphE"></span><span id="_CPPv2N14fontlib_font_t11first_glyphE"></span><span id="fontlib_font_t::first_glyph__uint8_t"></span><span class="target" id="structfontlib__font__t_1a48411bdfb58e0ee0f88c1a4b7c57563f"></span>uint8_t <code class="sig-name descname">first_glyph</code><a class="headerlink" href="#_CPPv4N14fontlib_font_t11first_glyphE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Number of first glyph. </p>
-<p>If you have no codepoints below 32, for example, you can omit the first 32 bitmaps. </p>
+<dd><p>Number of first glyph. If you have no codepoints below 32, for example, you can omit the first 32 bitmaps. </p>
 </dd></dl>
 
 <dl class="cpp var">
 <dt id="_CPPv4N14fontlib_font_t12widths_tableE">
 <span id="_CPPv3N14fontlib_font_t12widths_tableE"></span><span id="_CPPv2N14fontlib_font_t12widths_tableE"></span><span id="fontlib_font_t::widths_table__int24_t"></span><span class="target" id="structfontlib__font__t_1a23d14891c01b8ee4ffd9fcaaa402deb0"></span>int24_t <code class="sig-name descname">widths_table</code><a class="headerlink" href="#_CPPv4N14fontlib_font_t12widths_tableE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Offset/pointer to glyph widths table. </p>
-<p>This is an OFFSET from the fontVersion member </p>
+<dd><p>Offset/pointer to glyph widths table. This is an OFFSET from the fontVersion member </p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>It is 24-bits long because it becomes a real pointer upon loading. </p>
@@ -1747,8 +1463,7 @@ baseline = my_font-&gt;baseline_height;
 <dl class="cpp var">
 <dt id="_CPPv4N14fontlib_font_t19italic_space_adjustE">
 <span id="_CPPv3N14fontlib_font_t19italic_space_adjustE"></span><span id="_CPPv2N14fontlib_font_t19italic_space_adjustE"></span><span id="fontlib_font_t::italic_space_adjust__uint8_t"></span><span class="target" id="structfontlib__font__t_1ad3aa19442a24737a0818a8f399e49712"></span>uint8_t <code class="sig-name descname">italic_space_adjust</code><a class="headerlink" href="#_CPPv4N14fontlib_font_t19italic_space_adjustE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Specifies how much to move the cursor left after each glyph. </p>
-<p>Total movement is width - overhang. </p>
+<dd><p>Specifies how much to move the cursor left after each glyph. Total movement is width - overhang. </p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Intended for italics. </p>
@@ -1777,8 +1492,7 @@ baseline = my_font-&gt;baseline_height;
 <dl class="cpp var">
 <dt id="_CPPv4N14fontlib_font_t6weightE">
 <span id="_CPPv3N14fontlib_font_t6weightE"></span><span id="_CPPv2N14fontlib_font_t6weightE"></span><span id="fontlib_font_t::weight__uint8_t"></span><span class="target" id="structfontlib__font__t_1a00f01d655c6c6b8d2c0bec10809aa195"></span>uint8_t <code class="sig-name descname">weight</code><a class="headerlink" href="#_CPPv4N14fontlib_font_t6weightE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Specifies the boldness of the font. </p>
-<p><dl class="simple">
+<dd><p>Specifies the boldness of the font. <dl class="simple">
 <dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#fontlibc_8h_1a7254f40632cd9129d608dbf019099389"><span class="std std-ref">fontlib_weights_t</span></a> </p>
 </dd>
 </dl>
@@ -1788,8 +1502,7 @@ baseline = my_font-&gt;baseline_height;
 <dl class="cpp var">
 <dt id="_CPPv4N14fontlib_font_t5styleE">
 <span id="_CPPv3N14fontlib_font_t5styleE"></span><span id="_CPPv2N14fontlib_font_t5styleE"></span><span id="fontlib_font_t::style__uint8_t"></span><span class="target" id="structfontlib__font__t_1aed79013d64b16a77eb8a67e4b43a4702"></span>uint8_t <code class="sig-name descname">style</code><a class="headerlink" href="#_CPPv4N14fontlib_font_t5styleE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Specifies the style of the font. </p>
-<p><dl class="simple">
+<dd><p>Specifies the style of the font. <dl class="simple">
 <dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#fontlibc_8h_1af74209031f5e28cfeb61e863db3dcdbc"><span class="std std-ref">fontlib_styles_t</span></a> </p>
 </dd>
 </dl>
@@ -1799,8 +1512,7 @@ baseline = my_font-&gt;baseline_height;
 <dl class="cpp var">
 <dt id="_CPPv4N14fontlib_font_t10cap_heightE">
 <span id="_CPPv3N14fontlib_font_t10cap_heightE"></span><span id="_CPPv2N14fontlib_font_t10cap_heightE"></span><span id="fontlib_font_t::cap_height__uint8_t"></span><span class="target" id="structfontlib__font__t_1a6293542b035aedd6675fa752d4f5632e"></span>uint8_t <code class="sig-name descname">cap_height</code><a class="headerlink" href="#_CPPv4N14fontlib_font_t10cap_heightE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>For layout, allows aligning text of differing fonts vertically. </p>
-<p>These count pixels going down, i.e. 0 means the top of the glyph. </p>
+<dd><p>For layout, allows aligning text of differing fonts vertically. These count pixels going down, i.e. 0 means the top of the glyph. </p>
 </dd></dl>
 
 <dl class="cpp var">
@@ -1819,8 +1531,7 @@ baseline = my_font-&gt;baseline_height;
 <dl class="cpp struct">
 <dt id="_CPPv419fontlib_font_pack_t">
 <span id="_CPPv319fontlib_font_pack_t"></span><span id="_CPPv219fontlib_font_pack_t"></span><span id="fontlib_font_pack_t"></span><span class="target" id="structfontlib__font__pack__t"></span><em class="property">struct </em><code class="sig-name descname">fontlib_font_pack_t</code><a class="headerlink" href="#_CPPv419fontlib_font_pack_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd><em>#include &lt;fontlibc.h&gt;</em><p>This is the format of a font pack appvar. </p>
-<p>Parsing this directly is the only way to get metadata other than the typeface name. <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>FILE font_pack_file;
+<dd><em>#include &lt;fontlibc.h&gt;</em><p>This is the format of a font pack appvar. Parsing this directly is the only way to get metadata other than the typeface name. <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>FILE font_pack_file;
 fontlib_font_pack_t *font_pack;
 fontlib_metadata_t *metadata;
 char *var_name;
@@ -1856,7 +1567,7 @@ ti_Close(font_pack_file);
 <dl class="cpp var">
 <dt id="_CPPv4N19fontlib_font_pack_t6headerE">
 <span id="_CPPv3N19fontlib_font_pack_t6headerE"></span><span id="_CPPv2N19fontlib_font_pack_t6headerE"></span><span id="fontlib_font_pack_t::header__cA"></span><span class="target" id="structfontlib__font__pack__t_1a46654c578ced20cbca0d82f8a3c68be2"></span>char <code class="sig-name descname">header</code>[8]<a class="headerlink" href="#_CPPv4N19fontlib_font_pack_t6headerE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Must be “FONTPACK”. </p>
+<dd><p>Must be “FONTPACK” </p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This is NOT null-terminated! </p>
@@ -1866,14 +1577,13 @@ ti_Close(font_pack_file);
 <dl class="cpp var">
 <dt id="_CPPv4N19fontlib_font_pack_t8metadataE">
 <span id="_CPPv3N19fontlib_font_pack_t8metadataE"></span><span id="_CPPv2N19fontlib_font_pack_t8metadataE"></span><span id="fontlib_font_pack_t::metadata__int24_t"></span><span class="target" id="structfontlib__font__pack__t_1a99515d49f3723e04e14de956e5232169"></span>int24_t <code class="sig-name descname">metadata</code><a class="headerlink" href="#_CPPv4N19fontlib_font_pack_t8metadataE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Offset from first byte of header. </p>
+<dd><p>Offset from first byte of header </p>
 </dd></dl>
 
 <dl class="cpp var">
 <dt id="_CPPv4N19fontlib_font_pack_t9fontCountE">
 <span id="_CPPv3N19fontlib_font_pack_t9fontCountE"></span><span id="_CPPv2N19fontlib_font_pack_t9fontCountE"></span><span id="fontlib_font_pack_t::fontCount__uint8_t"></span><span class="target" id="structfontlib__font__pack__t_1ab782d6ee1dd8f207d3b8723759f815fb"></span>uint8_t <code class="sig-name descname">fontCount</code><a class="headerlink" href="#_CPPv4N19fontlib_font_pack_t9fontCountE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Number of fonts present. </p>
-<p>Should be greater than zero… . </p>
+<dd><p>Number of fonts present. Should be greater than zero… . </p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Frankly, if you have more than 127 fonts in a pack, you have a problem. </p>

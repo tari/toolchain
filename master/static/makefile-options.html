@@ -93,12 +93,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Welcome to the CE C Toolchain!</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Helpful Information</span></p>
-<ul>
 <li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently Asked Questions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="git.html">Using Git For Revision Control</a></li>
-<li class="toctree-l1"><a class="reference internal" href="coding-guidelines.html">General Coding Guidelines</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Toolchain Documentation</span></p>
 <ul class="current">
@@ -113,7 +108,6 @@
 <li class="toctree-l2"><a class="reference internal" href="#description">DESCRIPTION</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#compressed">COMPRESSED</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#archived">ARCHIVED</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#deps">DEPS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#cflags-cxxflags">CFLAGS / CXXFLAGS</a></li>
 </ul>
 </li>
@@ -229,20 +223,6 @@ This does not change the execution size, but rather the executable’s storage s
 <p>Programs can be built to be stored in the archive rather than RAM.
 To enable this feature, open the project’s makefile and change the line:</p>
 <div class="highlight-makefile notranslate"><div class="highlight"><pre><span></span><span class="nv">ARCHIVED</span> <span class="o">?=</span> YES
-</pre></div>
-</div>
-</div>
-<div class="section" id="deps">
-<h2>DEPS<a class="headerlink" href="#deps" title="Permalink to this headline">¶</a></h2>
-<p>Add any files that you want to be built by the toolchain to this variable.
-Define rules for the files after including the main CEdev makefile.</p>
-<div class="highlight-makefile notranslate"><div class="highlight"><pre><span></span><span class="nv">DEPS</span> <span class="o">=</span> <span class="k">$(</span>BINDIR<span class="k">)</span>/levelpack.bin
-
-<span class="cp">include $(CEDEV)/meta/makefile.mk</span>
-
-<span class="nf">$(BINDIR)/levelpack.bin</span><span class="o">:</span>
-    <span class="k">$(</span>call MKDIR,<span class="k">$(</span>@D<span class="k">))</span>
-    <span class="nb">echo</span> <span class="s2">&quot;levelpack&quot;</span> &gt; <span class="k">$(</span>BINDIR<span class="k">)</span>/levelpack.bin
 </pre></div>
 </div>
 </div>

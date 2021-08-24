@@ -93,12 +93,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Welcome to the CE C Toolchain!</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../static/getting-started.html">Getting Started</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Helpful Information</span></p>
-<ul>
 <li class="toctree-l1"><a class="reference internal" href="../static/faq.html">Frequently Asked Questions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../static/git.html">Using Git For Revision Control</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../static/coding-guidelines.html">General Coding Guidelines</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Toolchain Documentation</span></p>
 <ul class="current">
@@ -280,7 +275,7 @@ This file provides routines for setting custom interrupt vectors for your progra
 <dl class="cpp macro">
 <dt id="c.RTC_IVECT">
 <span class="target" id="intce_8h_1a3c995b90c817e81b1f019d59be93a127"></span><code class="sig-name descname">RTC_IVECT</code><a class="headerlink" href="#c.RTC_IVECT" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Real Time Clock interrupt source. </p>
+<dd><p>Real Time Clock interrupt source </p>
 </dd></dl>
 
 <dl class="cpp macro">
@@ -334,7 +329,7 @@ This file provides routines for setting custom interrupt vectors for your progra
 <dl class="cpp macro">
 <dt id="c.INT_RTC">
 <span class="target" id="intce_8h_1ab7e8fc199a616a345ec378ad6ff1364e"></span><code class="sig-name descname">INT_RTC</code><a class="headerlink" href="#c.INT_RTC" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Real Time Clock interrupt source mask. </p>
+<dd><p>Real Time Clock interrupt source mask </p>
 </dd></dl>
 
 <dl class="cpp macro">
@@ -352,7 +347,7 @@ This file provides routines for setting custom interrupt vectors for your progra
 <dl class="cpp macro">
 <dt id="c.int_MaskedStatus">
 <span class="target" id="intce_8h_1a75e09bb113a1b881a08a2ee3bc5f8ce3"></span><code class="sig-name descname">int_MaskedStatus</code><a class="headerlink" href="#c.int_MaskedStatus" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Masked state of interrupt signals. </p>
+<dd><p>Masked state of interrupt signals </p>
 </dd></dl>
 
 <dl class="cpp macro">
@@ -385,7 +380,7 @@ This file provides routines for setting custom interrupt vectors for your progra
 <dl class="cpp function">
 <dt id="_CPPv414int_Initializev">
 <span id="_CPPv314int_Initializev"></span><span id="_CPPv214int_Initializev"></span><span id="int_Initialize__void"></span><span class="target" id="intce_8h_1ac3d0c796883acc43e5cc74b37b83b167"></span>void <code class="sig-name descname">int_Initialize</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv414int_Initializev" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Initizalize to use custom interrupts. </p>
+<dd><p>Initizalize to use custom interrupts.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Saves status of current interrupt state. </p>
@@ -399,7 +394,7 @@ This file provides routines for setting custom interrupt vectors for your progra
 <dl class="cpp function">
 <dt id="_CPPv49int_Resetv">
 <span id="_CPPv39int_Resetv"></span><span id="_CPPv29int_Resetv"></span><span id="int_Reset__void"></span><span class="target" id="intce_8h_1a1ec1e47453492910a36a5e7fc6bb46ea"></span>void <code class="sig-name descname">int_Reset</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv49int_Resetv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Resets interrupts back to the OS expected values. </p>
+<dd><p>Resets interrupts back to the OS expected values.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Must have called int_Initialize before using. </p>
@@ -413,7 +408,7 @@ This file provides routines for setting custom interrupt vectors for your progra
 <dl class="cpp function">
 <dt id="_CPPv413int_SetVector7uint8_tPFvvE">
 <span id="_CPPv313int_SetVector7uint8_tPFvvE"></span><span id="_CPPv213int_SetVector7uint8_tPFvvE"></span><span class="target" id="intce_8h_1a3c525272c01a36854d6d231f78ffb226"></span>void <code class="sig-name descname">int_SetVector</code><span class="sig-paren">(</span>uint8_t <em>ivect</em>, void (*<em>handler</em>)<span class="sig-paren">(</span>void<span class="sig-paren">)</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv413int_SetVector7uint8_tPFvvE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Sets up an interrupt vector given an ISR. </p>
+<dd><p>Sets up an interrupt vector given an ISR.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>TI broke interrupt support on CE models with hardware revision &gt;= I. </p>

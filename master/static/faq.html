@@ -39,7 +39,7 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Using Git For Revision Control" href="git.html" />
+    <link rel="next" title="Using printf Functions" href="printf.html" />
     <link rel="prev" title="Getting Started" href="getting-started.html" /> 
 </head>
 
@@ -90,24 +90,18 @@
             
             
               <p class="caption"><span class="caption-text">Overview</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Welcome to the CE C Toolchain!</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Helpful Information</span></p>
-<ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Frequently Asked Questions</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#i-found-a-bug-help">I Found A Bug, Help!?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#i-have-a-bug-help">I Have A Bug, Help!?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#what-is-the-c-runtime-memory-layout">What is the C Runtime Memory Layout?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#linking-assembly-source-files">Linking Assembly Source Files</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#arguments">Arguments</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#returns">Returns</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#arguments-and-returns">Arguments and Returns</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="git.html">Using Git For Revision Control</a></li>
-<li class="toctree-l1"><a class="reference internal" href="coding-guidelines.html">General Coding Guidelines</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Toolchain Documentation</span></p>
 <ul>
@@ -188,20 +182,16 @@
             
   <div class="section" id="frequently-asked-questions">
 <span id="faq"></span><h1>Frequently Asked Questions<a class="headerlink" href="#frequently-asked-questions" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="i-found-a-bug-help">
-<h2>I Found A Bug, Help!?<a class="headerlink" href="#i-found-a-bug-help" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="i-have-a-bug-help">
+<h2>I Have A Bug, Help!?<a class="headerlink" href="#i-have-a-bug-help" title="Permalink to this headline">¶</a></h2>
 <p>Nice work, now create an <a class="reference external" href="https://github.com/CE-Programming/toolchain/issues">issue report here</a> with details on what caused the crash.
 Uploading a zip of your code and/or a minimal reproducible example is very appreciated, and will make bug fixes faster.</p>
 </div>
 <div class="section" id="what-is-the-c-runtime-memory-layout">
 <h2>What is the C Runtime Memory Layout?<a class="headerlink" href="#what-is-the-c-runtime-memory-layout" title="Permalink to this headline">¶</a></h2>
-<p>The CE has a limited amount of memory.</p>
-<ul class="simple">
-<li><p>The stack is roughly 4KiB.</p></li>
-<li><p>The code/data/rodata sections can be up to 64KiB.</p></li>
-<li><p>The bss/heap occupy a shared 60KiB region of memory and grow into each other.</p></li>
-</ul>
-<p>The following graphic breaks down the address space.</p>
+<p>The CE has a limited amount of memory.
+The stack is roughly 4KiB bytes in size, while the bss/heap grow into each other and consume roughly 64KiB.
+The following graphic breaks down the address space.</p>
 <img alt="../_images/mem_layout.png" class="align-center" src="../_images/mem_layout.png" />
 </div>
 <div class="section" id="linking-assembly-source-files">
@@ -232,8 +222,8 @@ Uploading a zip of your code and/or a minimal reproducible example is very appre
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">asm_func</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">);</span>
 </pre></div>
 </div>
-<div class="section" id="arguments">
-<h3>Arguments<a class="headerlink" href="#arguments" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="arguments-and-returns">
+<h3>Arguments and Returns<a class="headerlink" href="#arguments-and-returns" title="Permalink to this headline">¶</a></h3>
 <p>Arguments are pushed from last to first corresponding to the C prototype.
 In eZ80, 3 bytes are always pushed to the stack regardless of the actual size.
 However, the assembly function must be careful to only use the valid bytes that are pushed.
@@ -282,9 +272,6 @@ This table lists the locations relative to <em>sp</em> from within the called fu
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="returns">
-<h3>Returns<a class="headerlink" href="#returns" title="Permalink to this headline">¶</a></h3>
 <p>This table lists which registers are used for return values.
 The type’s sign does not affect the registers used, but may affect the value returned.</p>
 <div class="admonition note">
@@ -347,7 +334,7 @@ The type’s sign does not affect the registers used, but may affect the value r
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="git.html" class="btn btn-neutral float-right" title="Using Git For Revision Control" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="printf.html" class="btn btn-neutral float-right" title="Using printf Functions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
         <a href="getting-started.html" class="btn btn-neutral float-left" title="Getting Started" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
