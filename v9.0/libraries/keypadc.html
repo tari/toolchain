@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>keypadc.h &mdash; CE C Toolchain  documentation</title>
+  <title>keypadc.h &mdash; CE C Toolchain v9.0-devel documentation</title>
   
 
   
@@ -63,10 +63,6 @@
           
             
             
-              <div class="version">
-                v9.0
-              </div>
-            
           
 
           
@@ -93,12 +89,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Welcome to the CE C Toolchain!</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../static/getting-started.html">Getting Started</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Helpful Information</span></p>
-<ul>
 <li class="toctree-l1"><a class="reference internal" href="../static/faq.html">Frequently Asked Questions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../static/git.html">Using Git For Revision Control</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../static/coding-guidelines.html">General Coding Guidelines</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Toolchain Documentation</span></p>
 <ul class="current">
@@ -112,7 +103,6 @@
 <li class="toctree-l3"><a class="reference internal" href="#helpful-key-dection">Helpful key dection</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#detecting-a-single-press">Detecting a single press</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#detecting-a-single-release">Detecting a single release</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#getting-getcsc-codes-with-keypadc">Getting GetCSC codes with keypadc</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#api-documentation">API Documentation</a></li>
@@ -207,10 +197,9 @@ It supports multi-key presses, and can be used for extremely responsive input co
 <ul>
 <li><p><a class="reference internal" href="#detecting-a-single-press" id="id3">Detecting a single press</a></p></li>
 <li><p><a class="reference internal" href="#detecting-a-single-release" id="id4">Detecting a single release</a></p></li>
-<li><p><a class="reference internal" href="#getting-getcsc-codes-with-keypadc" id="id5">Getting GetCSC codes with keypadc</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#api-documentation" id="id6">API Documentation</a></p></li>
+<li><p><a class="reference internal" href="#api-documentation" id="id5">API Documentation</a></p></li>
 </ul>
 </div>
 <div class="section" id="helpful-key-dection">
@@ -245,37 +234,9 @@ The following code sets up a simple falling edge detector to catch this.</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="getting-getcsc-codes-with-keypadc">
-<h3><a class="toc-backref" href="#id5">Getting GetCSC codes with keypadc</a><a class="headerlink" href="#getting-getcsc-codes-with-keypadc" title="Permalink to this headline">¶</a></h3>
-<p>This code (written by Jacobly) scans c kb_Data</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">uint8_t</span> <span class="nf">get_single_key_pressed</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">static</span> <span class="kt">uint8_t</span> <span class="n">last_key</span><span class="p">;</span>
-    <span class="kt">uint8_t</span> <span class="n">only_key</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="n">kb_Scan</span><span class="p">();</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">uint8_t</span> <span class="n">key</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">group</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span> <span class="n">group</span><span class="p">;</span> <span class="o">--</span><span class="n">group</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">for</span> <span class="p">(</span><span class="kt">uint8_t</span> <span class="n">mask</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">mask</span><span class="p">;</span> <span class="n">mask</span> <span class="o">&lt;&lt;=</span> <span class="mi">1</span><span class="p">,</span> <span class="o">++</span><span class="n">key</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">kb_Data</span><span class="p">[</span><span class="n">group</span><span class="p">]</span> <span class="o">&amp;</span> <span class="n">mask</span><span class="p">)</span> <span class="p">{</span>
-                <span class="k">if</span> <span class="p">(</span><span class="n">only_key</span><span class="p">)</span> <span class="p">{</span>
-                    <span class="n">last_key</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-                    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-                <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-                    <span class="n">only_key</span> <span class="o">=</span> <span class="n">key</span><span class="p">;</span>
-                <span class="p">}</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">only_key</span> <span class="o">==</span> <span class="n">last_key</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="n">last_key</span> <span class="o">=</span> <span class="n">only_key</span><span class="p">;</span>
-    <span class="k">return</span> <span class="n">only_key</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</div>
 </div>
 <div class="section" id="api-documentation">
-<h2><a class="toc-backref" href="#id6">API Documentation</a><a class="headerlink" href="#api-documentation" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id5">API Documentation</a><a class="headerlink" href="#api-documentation" title="Permalink to this headline">¶</a></h2>
 <p>keypadc is a simple direct-input keypad library. </p>
 <p><dl class="simple">
 <dt><strong>Author</strong></dt><dd><p>Matt “MateoConLechuga” Waltz </p>
@@ -335,16 +296,14 @@ The following code sets up a simple falling edge detector to catch this.</p>
 <dl class="cpp macro">
 <dt id="c.kb_IsDown">
 <span class="target" id="keypadc_8h_1a131ac75acf182051fe82d518b75109d8"></span><code class="sig-name descname">kb_IsDown</code><span class="sig-paren">(</span><em>lkey</em><span class="sig-paren">)</span><a class="headerlink" href="#c.kb_IsDown" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Checks if a key is pressed. </p>
-<p>This uses the long key type (kb_lkey_t), which includes the group as well. It can be used in place of reading directly from <code class="docutils literal notranslate"><span class="pre">kb_Data</span></code>.</p>
-<p>Long key types have the same name as the normal key types, but are prefixed with kb_Key* rather than kb_*.</p>
-<p>It does not call <code class="docutils literal notranslate"><a class="reference internal" href="#keypadc_8h_1a8cea914fc7256292713f6cd915e111ac"><span class="std std-ref"><span class="pre">kb_Scan()</span></span></a></code> internally, so you have to do so before calling this if you want the keyboard data to get updated. </p>
+<dd><p>Checks if a key is pressed. This uses the long key type, which includes the group as well. It can be used in place of reading directly from <code class="docutils literal notranslate"><span class="pre">kb_Data</span></code>.</p>
+<p>Long key types have the same name as the normal key types, but are prefixed with kb_Key* rather than kb_*. </p>
 </dd></dl>
 
 <dl class="cpp macro">
 <dt id="c.kb_Data">
 <span class="target" id="keypadc_8h_1a4a4296b5cbbc1f0cd963a36abd456e97"></span><code class="sig-name descname">kb_Data</code><a class="headerlink" href="#c.kb_Data" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Keypad Data registers. </p>
+<dd><p>Keypad Data registers</p>
 <p><table class="docutils align-default">
 <colgroup>
 <col style="width: 8%" />
@@ -448,14 +407,7 @@ The following code sets up a simple falling edge detector to catch this.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-</p>
-<p>Likewise, you can test keys with the following general format: <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">kb_Data</span><span class="p">[</span><span class="n">group</span><span class="p">]</span> <span class="o">&amp;</span> <span class="n">kb_Name</span><span class="p">){</span>
-    <span class="o">...</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</p>
-<p><dl class="simple">
+ <dl class="simple">
 <dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#keypadc_8h_1aefead9ca152e96406af497bb3f7a20e7"><span class="std std-ref">kb_On</span></a> </p>
 </dd>
 </dl>
@@ -465,8 +417,7 @@ The following code sets up a simple falling edge detector to catch this.</p>
 <dl class="cpp macro">
 <dt id="c.kb_On">
 <span class="target" id="keypadc_8h_1aefead9ca152e96406af497bb3f7a20e7"></span><code class="sig-name descname">kb_On</code><a class="headerlink" href="#c.kb_On" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>ON key signal. </p>
-<p><dl class="simple">
+<dd><p>ON key signal. <dl class="simple">
 <dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#keypadc_8h_1ad5e1693dfac50389f67005242a3ebe71"><span class="std std-ref">kb_DisableOnLatch</span></a> <a class="reference internal" href="#keypadc_8h_1a2fa5f7d791ab9995e5b7045a49fde25d"><span class="std std-ref">kb_EnableOnLatch</span></a> <a class="reference internal" href="#keypadc_8h_1ad45ec00dab415b6a0c5256ca8e11609c"><span class="std std-ref">kb_ClearOnLatch</span></a> </p>
 </dd>
 </dl>
@@ -493,8 +444,7 @@ The following code sets up a simple falling edge detector to catch this.</p>
 <dl class="cpp macro">
 <dt id="c.kb_EnableOnLatch">
 <span class="target" id="keypadc_8h_1a2fa5f7d791ab9995e5b7045a49fde25d"></span><code class="sig-name descname">kb_EnableOnLatch</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#c.kb_EnableOnLatch" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Causes kb_On to latch when the ON is key pressed: once the ON key is pressed, kb_On will remain true until reset with <a class="reference internal" href="#keypadc_8h_1ad45ec00dab415b6a0c5256ca8e11609c"><span class="std std-ref">kb_ClearOnLatch()</span></a>. </p>
-<p>This may be useful if you want to check the ON key occasionally, for example as a break signal. <dl class="simple">
+<dd><p>Causes kb_On to latch when the ON is key pressed: once the ON key is pressed, kb_On will remain true until reset with <a class="reference internal" href="#keypadc_8h_1ad45ec00dab415b6a0c5256ca8e11609c"><span class="std std-ref">kb_ClearOnLatch()</span></a>. This may be useful if you want to check the ON key occasionally, for example as a break signal. <dl class="simple">
 <dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#keypadc_8h_1ad5e1693dfac50389f67005242a3ebe71"><span class="std std-ref">kb_DisableOnLatch</span></a> <a class="reference internal" href="#keypadc_8h_1ad45ec00dab415b6a0c5256ca8e11609c"><span class="std std-ref">kb_ClearOnLatch</span></a> </p>
 </dd>
 </dl>
@@ -508,8 +458,7 @@ The following code sets up a simple falling edge detector to catch this.</p>
 <dl class="cpp macro">
 <dt id="c.kb_DisableOnLatch">
 <span class="target" id="keypadc_8h_1ad5e1693dfac50389f67005242a3ebe71"></span><code class="sig-name descname">kb_DisableOnLatch</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#c.kb_DisableOnLatch" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Disables ON key latching behavior. </p>
-<p><dl class="simple">
+<dd><p>Disables ON key latching behavior. <dl class="simple">
 <dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#keypadc_8h_1a2fa5f7d791ab9995e5b7045a49fde25d"><span class="std std-ref">kb_EnableOnLatch</span></a> </p>
 </dd>
 </dl>
@@ -523,8 +472,7 @@ The following code sets up a simple falling edge detector to catch this.</p>
 <dl class="cpp macro">
 <dt id="c.kb_ClearOnLatch">
 <span class="target" id="keypadc_8h_1ad45ec00dab415b6a0c5256ca8e11609c"></span><code class="sig-name descname">kb_ClearOnLatch</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#c.kb_ClearOnLatch" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>When ON key latching has been enabled with <a class="reference internal" href="#keypadc_8h_1a2fa5f7d791ab9995e5b7045a49fde25d"><span class="std std-ref">kb_EnableOnLatch()</span></a>, this will reset kb_On back to false (assuming the user is no longer pressing ON). </p>
-<p><dl class="simple">
+<dd><p>When ON key latching has been enabled with <a class="reference internal" href="#keypadc_8h_1a2fa5f7d791ab9995e5b7045a49fde25d"><span class="std std-ref">kb_EnableOnLatch()</span></a>, this will reset kb_On back to false (assuming the user is no longer pressing ON). <dl class="simple">
 <dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#keypadc_8h_1a2fa5f7d791ab9995e5b7045a49fde25d"><span class="std std-ref">kb_EnableOnLatch</span></a> </p>
 </dd>
 </dl>
@@ -567,22 +515,19 @@ The following code sets up a simple falling edge detector to catch this.</p>
 <dl class="cpp enumerator">
 <dt id="_CPPv4N14kb_scan_mode_t21MODE_1_INDISCRIMINATEE">
 <span id="_CPPv3N14kb_scan_mode_t21MODE_1_INDISCRIMINATEE"></span><span id="_CPPv2N14kb_scan_mode_t21MODE_1_INDISCRIMINATEE"></span><span class="target" id="keypadc_8h_1af86f29e15b4b14d3aa66ced481a63424aed87e811fb621ebe07f303a28b1e9f5e"></span><em class="property">enumerator </em><code class="sig-name descname">MODE_1_INDISCRIMINATE</code><a class="headerlink" href="#_CPPv4N14kb_scan_mode_t21MODE_1_INDISCRIMINATEE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Indiscriminate key detection. </p>
-<p>Data registers are invalid, but when any key is pressed, interrupt KB_MODE_1_PRESS is set (and cannot be cleared until the key is released). </p>
+<dd><p>Indiscriminate key detection. Data registers are invalid, but when any key is pressed, interrupt KB_MODE_1_PRESS is set (and cannot be cleared until the key is released). </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N14kb_scan_mode_t13MODE_2_SINGLEE">
 <span id="_CPPv3N14kb_scan_mode_t13MODE_2_SINGLEE"></span><span id="_CPPv2N14kb_scan_mode_t13MODE_2_SINGLEE"></span><span class="target" id="keypadc_8h_1af86f29e15b4b14d3aa66ced481a63424ab79420dfbec0f787f896b02d753b1bd7"></span><em class="property">enumerator </em><code class="sig-name descname">MODE_2_SINGLE</code><a class="headerlink" href="#_CPPv4N14kb_scan_mode_t13MODE_2_SINGLEE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Single scan. </p>
-<p>The keypad is scanned once, and then the mode returns to MODE_0_IDLE. </p>
+<dd><p>Single scan. The keypad is scanned once, and then the mode returns to MODE_0_IDLE. </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N14kb_scan_mode_t17MODE_3_CONTINUOUSE">
 <span id="_CPPv3N14kb_scan_mode_t17MODE_3_CONTINUOUSE"></span><span id="_CPPv2N14kb_scan_mode_t17MODE_3_CONTINUOUSE"></span><span class="target" id="keypadc_8h_1af86f29e15b4b14d3aa66ced481a63424ab1c43d362b2ffc7e1b5b16f2abb7e1cb"></span><em class="property">enumerator </em><code class="sig-name descname">MODE_3_CONTINUOUS</code><a class="headerlink" href="#_CPPv4N14kb_scan_mode_t17MODE_3_CONTINUOUSE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Continuous scan. </p>
-<p>When scanning completes, it just starts over again after a delay. </p>
+<dd><p>Continuous scan. When scanning completes, it just starts over again after a delay. </p>
 </dd></dl>
 
 </dd></dl>
@@ -590,24 +535,24 @@ The following code sets up a simple falling edge detector to catch this.</p>
 <dl class="cpp enum">
 <dt id="_CPPv415kb_int_signal_t">
 <span id="_CPPv315kb_int_signal_t"></span><span id="_CPPv215kb_int_signal_t"></span><span class="target" id="keypadc_8h_1a563ca39e35b2a344a3ecef7f1c990e66"></span><em class="property">enum </em><code class="sig-name descname">kb_int_signal_t</code><a class="headerlink" href="#_CPPv415kb_int_signal_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Different available interrupt signals. </p>
+<dd><p>Different available interrupt signals </p>
 <p><em>Values:</em></p>
 <dl class="cpp enumerator">
 <dt id="_CPPv4N15kb_int_signal_t16KB_SCAN_COMPLETEE">
 <span id="_CPPv3N15kb_int_signal_t16KB_SCAN_COMPLETEE"></span><span id="_CPPv2N15kb_int_signal_t16KB_SCAN_COMPLETEE"></span><span class="target" id="keypadc_8h_1a563ca39e35b2a344a3ecef7f1c990e66a00291a05f50f5e096d81e5bed54f0e3b"></span><em class="property">enumerator </em><code class="sig-name descname">KB_SCAN_COMPLETE</code><a class="headerlink" href="#_CPPv4N15kb_int_signal_t16KB_SCAN_COMPLETEE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Interrupt set when keypad is done scanning. </p>
+<dd><p>Interrupt set when keypad is done scanning </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N15kb_int_signal_t15KB_DATA_CHANGEDE">
 <span id="_CPPv3N15kb_int_signal_t15KB_DATA_CHANGEDE"></span><span id="_CPPv2N15kb_int_signal_t15KB_DATA_CHANGEDE"></span><span class="target" id="keypadc_8h_1a563ca39e35b2a344a3ecef7f1c990e66a462e5c3f6ce21b0b4734f03bec1445ee"></span><em class="property">enumerator </em><code class="sig-name descname">KB_DATA_CHANGED</code><a class="headerlink" href="#_CPPv4N15kb_int_signal_t15KB_DATA_CHANGEDE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Interrupt set when data is changed on a press or a release. </p>
+<dd><p>Interrupt set when data is changed on a press or a release </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N15kb_int_signal_t15KB_MODE_1_PRESSE">
 <span id="_CPPv3N15kb_int_signal_t15KB_MODE_1_PRESSE"></span><span id="_CPPv2N15kb_int_signal_t15KB_MODE_1_PRESSE"></span><span class="target" id="keypadc_8h_1a563ca39e35b2a344a3ecef7f1c990e66a2aae3e5b9909b0da4fd1524b484fb17b"></span><em class="property">enumerator </em><code class="sig-name descname">KB_MODE_1_PRESS</code><a class="headerlink" href="#_CPPv4N15kb_int_signal_t15KB_MODE_1_PRESSE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Interrupt set when a key is pressed in MODE_1_INDISCRIMINATE. </p>
+<dd><p>Interrupt set when a key is pressed in MODE_1_INDISCRIMINATE </p>
 </dd></dl>
 
 </dd></dl>
@@ -678,7 +623,7 @@ The following code sets up a simple falling edge detector to catch this.</p>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2015-2021 CE Programming.
+        &#169; Copyright 2015-2020 CE Programming.
 
     </p>
   </div>
@@ -699,34 +644,6 @@ The following code sets up a simple falling edge detector to catch this.</p>
 
   </div>
   
-  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
-    <span class="rst-current-version" data-toggle="rst-current-version">
-      <span class="fa fa-book"> Documentation Version</span>
-      v9.0
-      <span class="fa fa-caret-down"></span>
-    </span>
-    <div class="rst-other-versions">
-      
-      <dl>
-        <dt>Versions</dt>
-        
-          
-          <dd><a href="/toolchain/master/index.html">master</a></dd>
-          
-        
-          
-          <dd><a href="/toolchain/v9.1/index.html">v9.1</a></dd>
-          
-        
-           <strong> 
-          <dd><a href="/toolchain/v9.0/index.html">v9.0</a></dd>
-           </strong> 
-        
-      </dl>
-      
-    </div>
-  </div>
-
 
   <script type="text/javascript">
       jQuery(function () {
