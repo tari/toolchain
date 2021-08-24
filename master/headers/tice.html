@@ -93,7 +93,12 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Welcome to the CE C Toolchain!</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../static/getting-started.html">Getting Started</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Helpful Information</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../static/faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../static/git.html">Using Git For Revision Control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../static/coding-guidelines.html">General Coding Guidelines</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Toolchain Documentation</span></p>
 <ul class="current">
@@ -226,7 +231,7 @@
 <dl class="cpp macro">
 <dt id="c.rtc_Enable">
 <span class="target" id="tice_8h_1af38bd3da371f5716dcb636a4d6b56652"></span><code class="sig-name descname">rtc_Enable</code><span class="sig-paren">(</span><em>int</em><span class="sig-paren">)</span><a class="headerlink" href="#c.rtc_Enable" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Enables the Real-Time-Clock (RTC).</p>
+<dd><p>Enables the Real-Time-Clock (RTC). </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -239,7 +244,7 @@
 <dl class="cpp macro">
 <dt id="c.rtc_Set">
 <span class="target" id="tice_8h_1aab80d3dacdd411b50a40364553de96b4"></span><code class="sig-name descname">rtc_Set</code><span class="sig-paren">(</span><em>sec</em>, <em>min</em>, <em>hr</em>, <em>day</em><span class="sig-paren">)</span><a class="headerlink" href="#c.rtc_Set" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Sets the Real-Time-Clock (RTC) with new values.</p>
+<dd><p>Sets the Real-Time-Clock (RTC) with new values. </p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The set values do not take effect until the next RTC second. Verify the values have been loaded by waiting for <a class="reference internal" href="#tice_8h_1aa9ae5e22b622db44e86ec52249e879b5"><span class="std std-ref">rtc_IsBusy()</span></a> to be false. The RTC will also need to be enabled. </p>
@@ -259,7 +264,7 @@
 <dl class="cpp macro">
 <dt id="c.rtc_SetAlarm">
 <span class="target" id="tice_8h_1aa05424a8261e7d8df9f75981e7d5adcc"></span><code class="sig-name descname">rtc_SetAlarm</code><span class="sig-paren">(</span><em>sec</em>, <em>min</em>, <em>hr</em><span class="sig-paren">)</span><a class="headerlink" href="#c.rtc_SetAlarm" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Sets the Real-Time-Clock (RTC) alarm with new values.</p>
+<dd><p>Sets the Real-Time-Clock (RTC) alarm with new values. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -286,7 +291,8 @@
 <dl class="cpp macro">
 <dt id="c.rtc_AckInterrupt">
 <span class="target" id="tice_8h_1ab83cb4c555d2feb16a25f7a6e3773762"></span><code class="sig-name descname">rtc_AckInterrupt</code><span class="sig-paren">(</span><em>mask</em><span class="sig-paren">)</span><a class="headerlink" href="#c.rtc_AckInterrupt" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Acknowledges an RTC interrupt. This should be used to clear the condition that is causing the interrupt.</p>
+<dd><p>Acknowledges an RTC interrupt. </p>
+<p>This should be used to clear the condition that is causing the interrupt.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -299,7 +305,7 @@
 <dl class="cpp macro">
 <dt id="c.rtc_ChkInterrupt">
 <span class="target" id="tice_8h_1a2e3372f51332cff448996dffc8f6fef7"></span><code class="sig-name descname">rtc_ChkInterrupt</code><span class="sig-paren">(</span><em>mask</em><span class="sig-paren">)</span><a class="headerlink" href="#c.rtc_ChkInterrupt" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Checks if a RTC interrupt condition has occurred.</p>
+<dd><p>Checks if a RTC interrupt condition has occurred. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -318,52 +324,53 @@
 <dl class="cpp macro">
 <dt id="c.rtc_Seconds">
 <span class="target" id="tice_8h_1abdf23d88ecf555286569e28be144a3f5"></span><code class="sig-name descname">rtc_Seconds</code><a class="headerlink" href="#c.rtc_Seconds" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>RTC seconds </p>
+<dd><p>RTC seconds. </p>
 </dd></dl>
 
 <dl class="cpp macro">
 <dt id="c.rtc_Minutes">
 <span class="target" id="tice_8h_1af8e4c18b56727e449acd6d88598a8e6e"></span><code class="sig-name descname">rtc_Minutes</code><a class="headerlink" href="#c.rtc_Minutes" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>RTC minutes </p>
+<dd><p>RTC minutes. </p>
 </dd></dl>
 
 <dl class="cpp macro">
 <dt id="c.rtc_Hours">
 <span class="target" id="tice_8h_1abdd5bbe4dc80ec7acd84323cd33bff74"></span><code class="sig-name descname">rtc_Hours</code><a class="headerlink" href="#c.rtc_Hours" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>RTC hours </p>
+<dd><p>RTC hours. </p>
 </dd></dl>
 
 <dl class="cpp macro">
 <dt id="c.rtc_Days">
 <span class="target" id="tice_8h_1a726fdd385318e31d8a7702d9c08c4523"></span><code class="sig-name descname">rtc_Days</code><a class="headerlink" href="#c.rtc_Days" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>RTC days </p>
+<dd><p>RTC days. </p>
 </dd></dl>
 
 <dl class="cpp macro">
 <dt id="c.rtc_AlarmSeconds">
 <span class="target" id="tice_8h_1aabea150de0a86ae8482df851d364b401"></span><code class="sig-name descname">rtc_AlarmSeconds</code><a class="headerlink" href="#c.rtc_AlarmSeconds" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>RTC alarm seconds </p>
+<dd><p>RTC alarm seconds. </p>
 </dd></dl>
 
 <dl class="cpp macro">
 <dt id="c.rtc_AlarmMinutes">
 <span class="target" id="tice_8h_1aa7e4bb06f40fb201c28c37ff90e65022"></span><code class="sig-name descname">rtc_AlarmMinutes</code><a class="headerlink" href="#c.rtc_AlarmMinutes" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>RTC alarm minutes </p>
+<dd><p>RTC alarm minutes. </p>
 </dd></dl>
 
 <dl class="cpp macro">
 <dt id="c.rtc_AlarmHours">
 <span class="target" id="tice_8h_1a2fb848758b7a3287e9aa02e680235fb1"></span><code class="sig-name descname">rtc_AlarmHours</code><a class="headerlink" href="#c.rtc_AlarmHours" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>RTC alarm hours </p>
+<dd><p>RTC alarm hours. </p>
 </dd></dl>
 
 <dl class="cpp macro">
 <dt id="c.timer_Enable">
 <span class="target" id="tice_8h_1ab1c8a0f621a66ae2820897da064f19a8"></span><code class="sig-name descname">timer_Enable</code><span class="sig-paren">(</span><em>n</em>, <em>rate</em>, <em>int</em>, <em>dir</em><span class="sig-paren">)</span><a class="headerlink" href="#c.timer_Enable" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Enables timer <code class="docutils literal notranslate"><span class="pre">n</span></code> with the specified settings. The CE has 3 different timers.</p>
+<dd><p>Enables timer <code class="docutils literal notranslate"><span class="pre">n</span></code> with the specified settings. </p>
+<p>The CE has 3 different timers.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Timer 3 is usually employed by USB. Use it at your own risk. </p>
+<p>Timer 2 is needed by library functions like clock() and <a class="reference internal" href="#tice_8h_1a69c97039c9ec10a30e5edbdf365e3bbd"><span class="std std-ref">sleep()</span></a>. Timer 3 is needed by USB. </p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -380,7 +387,7 @@
 <dl class="cpp macro">
 <dt id="c.timer_Disable">
 <span class="target" id="tice_8h_1a40b279c3b9b2941301a95f833e3b3330"></span><code class="sig-name descname">timer_Disable</code><span class="sig-paren">(</span><em>n</em><span class="sig-paren">)</span><a class="headerlink" href="#c.timer_Disable" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Disables a timer.</p>
+<dd><p>Disables a timer. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -393,7 +400,7 @@
 <dl class="cpp macro">
 <dt id="c.timer_Get">
 <span class="target" id="tice_8h_1ad46c222ff7504317965ff89751016c71"></span><code class="sig-name descname">timer_Get</code><span class="sig-paren">(</span><em>n</em><span class="sig-paren">)</span><a class="headerlink" href="#c.timer_Get" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Gets the current count value of a timer.</p>
+<dd><p>Gets the current count value of a timer. </p>
 <p><dl class="simple">
 <dt><strong>Attention</strong></dt><dd><p>Do not use this function if the timer is configured with TIMER_CPU. Use the <a class="reference internal" href="#tice_8h_1aa8b70fe0981344cf759bc432528d6d05"><span class="std std-ref">timer_GetSafe()</span></a> function instead. </p>
 </dd>
@@ -411,7 +418,8 @@
 <dl class="cpp macro">
 <dt id="c.timer_GetSafe">
 <span class="target" id="tice_8h_1aa8b70fe0981344cf759bc432528d6d05"></span><code class="sig-name descname">timer_GetSafe</code><span class="sig-paren">(</span><em>n</em>, <em>dir</em><span class="sig-paren">)</span><a class="headerlink" href="#c.timer_GetSafe" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Safely gets the current count value of a timer. This should be used if the timer is ticking at &gt;= 1MHz.</p>
+<dd><p>Safely gets the current count value of a timer. </p>
+<p>This should be used if the timer is ticking at &gt;= 1MHz.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -423,22 +431,9 @@
 </dd></dl>
 
 <dl class="cpp macro">
-<dt id="c.timer_GetLow">
-<span class="target" id="tice_8h_1a941a7f760a6ab0fa48d6f8e6193dfef6"></span><code class="sig-name descname">timer_GetLow</code><span class="sig-paren">(</span><em>n</em><span class="sig-paren">)</span><a class="headerlink" href="#c.timer_GetLow" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>If the timer count value will never exceed (2^24)-1, this function can be used in place of both timer_Get and timer_GetSafe. It returns the low 24 bits value of the full 32 bit count value, and is atomic safe.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>n</strong> – Timer to get count value of (range 1 - 3 inclusive). </p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp macro">
 <dt id="c.timer_Set">
 <span class="target" id="tice_8h_1a197d3a26928edd545f5cc41d260469e6"></span><code class="sig-name descname">timer_Set</code><span class="sig-paren">(</span><em>n</em>, <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#c.timer_Set" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Sets the count value of a timer.</p>
+<dd><p>Sets the count value of a timer. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -452,7 +447,8 @@
 <dl class="cpp macro">
 <dt id="c.timer_GetReload">
 <span class="target" id="tice_8h_1aba348b237a735827f68ad7f5c75f47f6"></span><code class="sig-name descname">timer_GetReload</code><span class="sig-paren">(</span><em>n</em><span class="sig-paren">)</span><a class="headerlink" href="#c.timer_GetReload" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Gets the current reload value of a timer. The reload value is loaded into the timer count when the timer reaches zero.</p>
+<dd><p>Gets the current reload value of a timer. </p>
+<p>The reload value is loaded into the timer count when the timer reaches zero.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -465,7 +461,8 @@
 <dl class="cpp macro">
 <dt id="c.timer_SetReload">
 <span class="target" id="tice_8h_1a368f9ea7d4c7f4c47168558516258c57"></span><code class="sig-name descname">timer_SetReload</code><span class="sig-paren">(</span><em>n</em>, <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#c.timer_SetReload" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Sets the reload value of a timer. The reload value is loaded into the timer count when the timer reaches zero.</p>
+<dd><p>Sets the reload value of a timer. </p>
+<p>The reload value is loaded into the timer count when the timer reaches zero.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -479,7 +476,8 @@
 <dl class="cpp macro">
 <dt id="c.timer_GetMatch">
 <span class="target" id="tice_8h_1a2eb1a68d79d6570230bde2688be03c69"></span><code class="sig-name descname">timer_GetMatch</code><span class="sig-paren">(</span><em>n</em>, <em>m</em><span class="sig-paren">)</span><a class="headerlink" href="#c.timer_GetMatch" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Gets the match <code class="docutils literal notranslate"><span class="pre">m</span></code> value of a timer. There are two match value comparators per timer.</p>
+<dd><p>Gets the match <code class="docutils literal notranslate"><span class="pre">m</span></code> value of a timer. </p>
+<p>There are two match value comparators per timer.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -493,7 +491,8 @@
 <dl class="cpp macro">
 <dt id="c.timer_SetMatch">
 <span class="target" id="tice_8h_1a905ef7069cea62c1c11fe6444d92b11c"></span><code class="sig-name descname">timer_SetMatch</code><span class="sig-paren">(</span><em>n</em>, <em>m</em>, <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#c.timer_SetMatch" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Sets the match <code class="docutils literal notranslate"><span class="pre">m</span></code> value of a timer. There are two match value comparators per timer.</p>
+<dd><p>Sets the match <code class="docutils literal notranslate"><span class="pre">m</span></code> value of a timer. </p>
+<p>There are two match value comparators per timer.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -508,7 +507,8 @@
 <dl class="cpp macro">
 <dt id="c.timer_AckInterrupt">
 <span class="target" id="tice_8h_1abdd67cddccbd717e9fc6fc670eee35e2"></span><code class="sig-name descname">timer_AckInterrupt</code><span class="sig-paren">(</span><em>n</em>, <em>mask</em><span class="sig-paren">)</span><a class="headerlink" href="#c.timer_AckInterrupt" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Acknowledges a timer interrupt. This should be used to clear the condition that is causing the interrupt.</p>
+<dd><p>Acknowledges a timer interrupt. </p>
+<p>This should be used to clear the condition that is causing the interrupt.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -522,7 +522,7 @@
 <dl class="cpp macro">
 <dt id="c.timer_ChkInterrupt">
 <span class="target" id="tice_8h_1aa3144074004c401e75b33f35be96cdc6"></span><code class="sig-name descname">timer_ChkInterrupt</code><span class="sig-paren">(</span><em>n</em>, <em>mask</em><span class="sig-paren">)</span><a class="headerlink" href="#c.timer_ChkInterrupt" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Checks if a timer interrupt condition has occurred.</p>
+<dd><p>Checks if a timer interrupt condition has occurred. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -536,7 +536,7 @@
 <dl class="cpp macro">
 <dt id="c.matrix_element">
 <span class="target" id="tice_8h_1a5d9e4f37175df52ece5e95789224e1f0"></span><code class="sig-name descname">matrix_element</code><span class="sig-paren">(</span><em>matrix</em>, <em>row</em>, <em>col</em><span class="sig-paren">)</span><a class="headerlink" href="#c.matrix_element" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Gets an element from a matrix</p>
+<dd><p>Gets an element from a matrix. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -554,31 +554,33 @@
 <dl class="cpp macro">
 <dt id="c.lcd_Ram">
 <span class="target" id="tice_8h_1a550fea7380cc26f7854121b5bfcc3f68"></span><code class="sig-name descname">lcd_Ram</code><a class="headerlink" href="#c.lcd_Ram" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Base address of memory-mapped RAM for the LCD </p>
+<dd><p>Base address of memory-mapped RAM for the LCD. </p>
 </dd></dl>
 
 <dl class="cpp macro">
 <dt id="c.lcd_Control">
 <span class="target" id="tice_8h_1a7e7056ed0c178571fdabbbe9d3808ecc"></span><code class="sig-name descname">lcd_Control</code><a class="headerlink" href="#c.lcd_Control" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>LCD Control register </p>
+<dd><p>LCD Control register. </p>
 </dd></dl>
 
 <dl class="cpp macro">
 <dt id="c.lcd_Palette">
 <span class="target" id="tice_8h_1af42c4802c41b7c1aad630435159be25c"></span><code class="sig-name descname">lcd_Palette</code><a class="headerlink" href="#c.lcd_Palette" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>LCD palette registers, 512 bytes </p>
+<dd><p>LCD palette registers, 512 bytes. </p>
 </dd></dl>
 
 <dl class="cpp macro">
 <dt id="c.lcd_BacklightLevel">
 <span class="target" id="tice_8h_1a7803d6e2b15d1b44e08195d94f89cd52"></span><code class="sig-name descname">lcd_BacklightLevel</code><a class="headerlink" href="#c.lcd_BacklightLevel" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Current backlight level of the LCD. 0 is bright. 255 is dark. </p>
+<dd><p>Current backlight level of the LCD. </p>
+<p>0 is bright. 255 is dark. </p>
 </dd></dl>
 
 <dl class="cpp macro">
 <dt id="c.os_SmallFont">
 <span class="target" id="tice_8h_1affcbdd2a87eba7c1dc19d60ec1e34315"></span><code class="sig-name descname">os_SmallFont</code><a class="headerlink" href="#c.os_SmallFont" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>TIOS small font. <dl class="simple">
+<dd><p>TIOS small font. </p>
+<p><dl class="simple">
 <dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#tice_8h_1a6cf85044a75dc8122639287851b9c84a"><span class="std std-ref">os_FontSelect</span></a> </p>
 </dd>
 </dl>
@@ -588,7 +590,8 @@
 <dl class="cpp macro">
 <dt id="c.os_LargeFont">
 <span class="target" id="tice_8h_1a9db5af494b520cf19f331cfea623e541"></span><code class="sig-name descname">os_LargeFont</code><a class="headerlink" href="#c.os_LargeFont" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>TIOS large font. <dl class="simple">
+<dd><p>TIOS large font. </p>
+<p><dl class="simple">
 <dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#tice_8h_1a6cf85044a75dc8122639287851b9c84a"><span class="std std-ref">os_FontSelect</span></a> </p>
 </dd>
 </dl>
@@ -622,103 +625,104 @@
 <dl class="cpp macro">
 <dt id="c.os_OP1">
 <span class="target" id="tice_8h_1afd0ee65ef148f595560c98fc2e4b023a"></span><code class="sig-name descname">os_OP1</code><a class="headerlink" href="#c.os_OP1" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>OP1 Variable </p>
+<dd><p>OP1 Variable. </p>
 </dd></dl>
 
 <dl class="cpp macro">
 <dt id="c.os_OP2">
 <span class="target" id="tice_8h_1aea7e22c5e0edbee268c718eab9e1aacf"></span><code class="sig-name descname">os_OP2</code><a class="headerlink" href="#c.os_OP2" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>OP2 Variable </p>
+<dd><p>OP2 Variable. </p>
 </dd></dl>
 
 <dl class="cpp macro">
 <dt id="c.os_OP3">
 <span class="target" id="tice_8h_1a07ea703291a7b2212b95621bbb952def"></span><code class="sig-name descname">os_OP3</code><a class="headerlink" href="#c.os_OP3" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>OP3 Variable </p>
+<dd><p>OP3 Variable. </p>
 </dd></dl>
 
 <dl class="cpp macro">
 <dt id="c.os_OP4">
 <span class="target" id="tice_8h_1ac03454a82ac8abc8c0d89ca30c5865f5"></span><code class="sig-name descname">os_OP4</code><a class="headerlink" href="#c.os_OP4" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>OP4 Variable </p>
+<dd><p>OP4 Variable. </p>
 </dd></dl>
 
 <dl class="cpp macro">
 <dt id="c.os_OP5">
 <span class="target" id="tice_8h_1a231d95d39e94c45daf5d2ce8ec095f0a"></span><code class="sig-name descname">os_OP5</code><a class="headerlink" href="#c.os_OP5" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>OP5 Variable </p>
+<dd><p>OP5 Variable. </p>
 </dd></dl>
 
 <dl class="cpp macro">
 <dt id="c.os_OP6">
 <span class="target" id="tice_8h_1a1973b57a9ca1398d0e3dc68235e49a7d"></span><code class="sig-name descname">os_OP6</code><a class="headerlink" href="#c.os_OP6" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>OP6 Variable </p>
+<dd><p>OP6 Variable. </p>
 </dd></dl>
 
 <dl class="cpp macro">
 <dt id="c.os_OP7">
 <span class="target" id="tice_8h_1a5aa2d855066534e0477d5aedcf987b21"></span><code class="sig-name descname">os_OP7</code><a class="headerlink" href="#c.os_OP7" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>OP7 Variable </p>
+<dd><p>OP7 Variable. </p>
 </dd></dl>
 
 <dl class="cpp macro">
 <dt id="c.LCD_WIDTH">
 <span class="target" id="tice_8h_1a19693eac3018d3e7800fde141921b812"></span><code class="sig-name descname">LCD_WIDTH</code><a class="headerlink" href="#c.LCD_WIDTH" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Width of LCD in pixels </p>
+<dd><p>Width of LCD in pixels. </p>
 </dd></dl>
 
 <dl class="cpp macro">
 <dt id="c.LCD_HEIGHT">
 <span class="target" id="tice_8h_1a53a8b2a971de4b88047192655a48b651"></span><code class="sig-name descname">LCD_HEIGHT</code><a class="headerlink" href="#c.LCD_HEIGHT" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Height of LCD in pixels </p>
+<dd><p>Height of LCD in pixels. </p>
 </dd></dl>
 
 <dl class="cpp macro">
 <dt id="c.LCD_SIZE">
 <span class="target" id="tice_8h_1a4b5774fa14ff71cbc1c3f3001b4a8713"></span><code class="sig-name descname">LCD_SIZE</code><a class="headerlink" href="#c.LCD_SIZE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Total number of pixels in LCD </p>
+<dd><p>Total number of pixels in LCD. </p>
 </dd></dl>
 
 <dl class="cpp macro">
 <dt id="c.TIMER_32K">
 <span class="target" id="tice_8h_1aa43d5737c4f25b5e7dc193507986856a"></span><code class="sig-name descname">TIMER_32K</code><a class="headerlink" href="#c.TIMER_32K" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Use the 32K clock for timer </p>
+<dd><p>Use the 32K clock for timer. </p>
 </dd></dl>
 
 <dl class="cpp macro">
 <dt id="c.TIMER_CPU">
 <span class="target" id="tice_8h_1a1bab2bfb1a5c83158ad85e90ed540322"></span><code class="sig-name descname">TIMER_CPU</code><a class="headerlink" href="#c.TIMER_CPU" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Use the CPU clock rate for timer </p>
+<dd><p>Use the CPU clock rate for timer. </p>
 </dd></dl>
 
 <dl class="cpp macro">
 <dt id="c.TIMER_0INT">
 <span class="target" id="tice_8h_1aa43a8074d7f31f3140e4622582a29960"></span><code class="sig-name descname">TIMER_0INT</code><a class="headerlink" href="#c.TIMER_0INT" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Enable an interrupt when 0 is reached for the timer </p>
+<dd><p>Enable an interrupt when 0 is reached for the timer. </p>
 </dd></dl>
 
 <dl class="cpp macro">
 <dt id="c.TIMER_NOINT">
 <span class="target" id="tice_8h_1a8fc77df9a73b89d0b4d2b21335aeb9c9"></span><code class="sig-name descname">TIMER_NOINT</code><a class="headerlink" href="#c.TIMER_NOINT" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Disable interrupts for the timer </p>
+<dd><p>Disable interrupts for the timer. </p>
 </dd></dl>
 
 <dl class="cpp macro">
 <dt id="c.TIMER_UP">
 <span class="target" id="tice_8h_1addc1518d1f46480d649464c06c85b867"></span><code class="sig-name descname">TIMER_UP</code><a class="headerlink" href="#c.TIMER_UP" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Timer counts up </p>
+<dd><p>Timer counts up. </p>
 </dd></dl>
 
 <dl class="cpp macro">
 <dt id="c.TIMER_DOWN">
 <span class="target" id="tice_8h_1ace39e9ba355335d866481ba1fef7598f"></span><code class="sig-name descname">TIMER_DOWN</code><a class="headerlink" href="#c.TIMER_DOWN" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Timer counts down </p>
+<dd><p>Timer counts down. </p>
 </dd></dl>
 
 <dl class="cpp macro">
 <dt id="c.TIMER_MATCH">
 <span class="target" id="tice_8h_1a63e950e3b3da15e2e7ce96f586e43c3d"></span><code class="sig-name descname">TIMER_MATCH</code><span class="sig-paren">(</span><em>i</em><span class="sig-paren">)</span><a class="headerlink" href="#c.TIMER_MATCH" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Timer hit the match value. There are 2 match values per timer </p>
+<dd><p>Timer hit the match value. </p>
+<p>There are 2 match values per timer </p>
 </dd></dl>
 
 <dl class="cpp macro">
@@ -730,44 +734,49 @@
 <dl class="cpp macro">
 <dt id="c.RTC_LOAD_INT">
 <span class="target" id="tice_8h_1a0353ddf54b01271354466d33ef2bd85e"></span><code class="sig-name descname">RTC_LOAD_INT</code><a class="headerlink" href="#c.RTC_LOAD_INT" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>RTC load operation complete </p>
+<dd><p>RTC load operation complete. </p>
 </dd></dl>
 
 <dl class="cpp macro">
 <dt id="c.RTC_ALARM_INT">
 <span class="target" id="tice_8h_1ad49cab3be02397c38e4e9142ff03e4a8"></span><code class="sig-name descname">RTC_ALARM_INT</code><a class="headerlink" href="#c.RTC_ALARM_INT" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>RTC alarm interrupt </p>
+<dd><p>RTC alarm interrupt. </p>
 </dd></dl>
 
 <dl class="cpp macro">
 <dt id="c.RTC_DAY_INT">
 <span class="target" id="tice_8h_1a7667a27467dee9355571996216680b37"></span><code class="sig-name descname">RTC_DAY_INT</code><a class="headerlink" href="#c.RTC_DAY_INT" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>RTC interrupt on day change </p>
+<dd><p>RTC interrupt on day change. </p>
 </dd></dl>
 
 <dl class="cpp macro">
 <dt id="c.RTC_HR_INT">
 <span class="target" id="tice_8h_1ad5dd377a093ff767ce43bc7d61b6e06e"></span><code class="sig-name descname">RTC_HR_INT</code><a class="headerlink" href="#c.RTC_HR_INT" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>RTC interrupt on hour change </p>
+<dd><p>RTC interrupt on hour change. </p>
 </dd></dl>
 
 <dl class="cpp macro">
 <dt id="c.RTC_MIN_INT">
 <span class="target" id="tice_8h_1a186ff169ce776960273e096baeef810c"></span><code class="sig-name descname">RTC_MIN_INT</code><a class="headerlink" href="#c.RTC_MIN_INT" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>RTC interrupt on minute change </p>
+<dd><p>RTC interrupt on minute change. </p>
 </dd></dl>
 
 <dl class="cpp macro">
 <dt id="c.RTC_SEC_INT">
 <span class="target" id="tice_8h_1aebf00bff844a0a69af360e24c0945d38"></span><code class="sig-name descname">RTC_SEC_INT</code><a class="headerlink" href="#c.RTC_SEC_INT" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>RTC interrupt on second change </p>
+<dd><p>RTC interrupt on second change. </p>
 </dd></dl>
 
 <dl class="cpp macro">
 <dt id="c.RTC_INT_MASK">
 <span class="target" id="tice_8h_1a5842b31b337c7f949a0414c8f9aeb7ec"></span><code class="sig-name descname">RTC_INT_MASK</code><a class="headerlink" href="#c.RTC_INT_MASK" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>RTC mask for all interrupts </p>
+<dd><p>RTC mask for all interrupts. </p>
 </dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.timer_GetLow">
+<span class="target" id="tice_8h_1a941a7f760a6ab0fa48d6f8e6193dfef6"></span><code class="sig-name descname">timer_GetLow</code><span class="sig-paren">(</span><em>n</em><span class="sig-paren">)</span><a class="headerlink" href="#c.timer_GetLow" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
 
 </div>
 <div class="breathe-sectiondef docutils container">
@@ -778,6 +787,17 @@
 <dd><p>Structure of font description. </p>
 <p><dl class="simple">
 <dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#tice_8h_1a6cf85044a75dc8122639287851b9c84a"><span class="std std-ref">os_FontSelect</span></a> </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp type">
+<dt id="_CPPv410useconds_t">
+<span id="_CPPv310useconds_t"></span><span id="_CPPv210useconds_t"></span><span id="useconds_t"></span><span class="target" id="tice_8h_1a4e3322434ea918ae562e0ea5237ab191"></span><em class="property">typedef </em>unsigned int <code class="sig-name descname">useconds_t</code><a class="headerlink" href="#_CPPv410useconds_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>An unsigned integer type capable of holding integers in the range [0,1000000]. </p>
+<p><dl class="simple">
+<dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#tice_8h_1ac0383719bafa9b5b2aa25fabc586bd1f"><span class="std std-ref">usleep</span></a> </p>
 </dd>
 </dl>
 </p>
@@ -800,7 +820,7 @@
 <dl class="cpp enum">
 <dt id="_CPPv411os_colors_t">
 <span id="_CPPv311os_colors_t"></span><span id="_CPPv211os_colors_t"></span><span class="target" id="tice_8h_1a33b96d8def662e168dd4a51d8233b7be"></span><em class="property">enum </em><code class="sig-name descname">os_colors_t</code><a class="headerlink" href="#_CPPv411os_colors_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Colors used by the OS </p>
+<dd><p>Colors used by the OS. </p>
 <p><em>Values:</em></p>
 <dl class="cpp enumerator">
 <dt id="_CPPv4N11os_colors_t13OS_COLOR_BLUEE">
@@ -885,11 +905,14 @@
 <dl class="cpp function">
 <dt id="_CPPv45delay8uint16_t">
 <span id="_CPPv35delay8uint16_t"></span><span id="_CPPv25delay8uint16_t"></span><span id="delay__uint16_t"></span><span class="target" id="tice_8h_1acfd12579679c85d5f1c716509b2587f6"></span>void <code class="sig-name descname">delay</code><span class="sig-paren">(</span>uint16_t <em>msec</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv45delay8uint16_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Delays for a number of milliseconds.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Counts time spent while interrupted. Assumes a CPU clock speed of 48MHz.</p>
-</div>
+<dd><p>Suspends execution of the calling thread for (at least) <code class="docutils literal notranslate"><span class="pre">msec</span></code> milliseconds. </p>
+<p><dl class="simple">
+<dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#tice_8h_1a69c97039c9ec10a30e5edbdf365e3bbd"><span class="std std-ref">sleep</span></a> </p>
+</dd>
+<dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#tice_8h_1ac0383719bafa9b5b2aa25fabc586bd1f"><span class="std std-ref">usleep</span></a> </p>
+</dd>
+</dl>
+</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>msec</strong> – number of milliseconds </p>
@@ -898,9 +921,88 @@
 </dd></dl>
 
 <dl class="cpp function">
+<dt id="_CPPv46msleep8uint16_t">
+<span id="_CPPv36msleep8uint16_t"></span><span id="_CPPv26msleep8uint16_t"></span><span id="msleep__uint16_t"></span><span class="target" id="tice_8h_1a883d291cfa3fa060430e9da88e3f610e"></span>void <code class="sig-name descname">msleep</code><span class="sig-paren">(</span>uint16_t <em>msec</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv46msleep8uint16_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Suspends execution of the calling thread for (at least) <code class="docutils literal notranslate"><span class="pre">msec</span></code> milliseconds. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv45sleepj">
+<span id="_CPPv35sleepj"></span><span id="_CPPv25sleepj"></span><span id="sleep__unsigned-i"></span><span class="target" id="tice_8h_1a69c97039c9ec10a30e5edbdf365e3bbd"></span>unsigned int <code class="sig-name descname">sleep</code><span class="sig-paren">(</span>unsigned int <em>seconds</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv45sleepj" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sleeps until the number of real-time seconds specified in <code class="docutils literal notranslate"><span class="pre">seconds</span></code> have elapsed or until a signal arrives which is not ignored. </p>
+<p><dl class="simple">
+<dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#tice_8h_1acfd12579679c85d5f1c716509b2587f6"><span class="std std-ref">delay</span></a> </p>
+</dd>
+<dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#tice_8h_1ac0383719bafa9b5b2aa25fabc586bd1f"><span class="std std-ref">usleep</span></a> </p>
+</dd>
+</dl>
+</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Currently, signals do not exist, so this will never be interrupted.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>seconds</strong> – number of seconds </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>zero if the requested time has elapsed, or the number of seconds left to sleep, if the call was interrupted by a signal handler </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv49ticksleepm">
+<span id="_CPPv39ticksleepm"></span><span id="_CPPv29ticksleepm"></span><span id="ticksleep__unsigned-l"></span><span class="target" id="tice_8h_1a98eb33ff885799cbd6fc7849c4e33968"></span>void <code class="sig-name descname">ticksleep</code><span class="sig-paren">(</span>unsigned long <em>ticks</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv49ticksleepm" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Suspends execution of the calling thread for (at least) <code class="docutils literal notranslate"><span class="pre">ticks</span></code> clock ticks. </p>
+<p><dl class="simple">
+<dt><strong>See</strong></dt><dd><p>CLOCKS_PER_SEC </p>
+</dd>
+<dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#tice_8h_1acfd12579679c85d5f1c716509b2587f6"><span class="std std-ref">delay</span></a> </p>
+</dd>
+<dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#tice_8h_1ac0383719bafa9b5b2aa25fabc586bd1f"><span class="std std-ref">usleep</span></a> </p>
+</dd>
+</dl>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>ticks</strong> – number of clock ticks </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv46usleep10useconds_t">
+<span id="_CPPv36usleep10useconds_t"></span><span id="_CPPv26usleep10useconds_t"></span><span id="usleep__useconds_t"></span><span class="target" id="tice_8h_1ac0383719bafa9b5b2aa25fabc586bd1f"></span>int <code class="sig-name descname">usleep</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv410useconds_t" title="useconds_t">useconds_t</a> <em>usec</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv46usleep10useconds_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Suspends execution of the calling thread for (at least) <code class="docutils literal notranslate"><span class="pre">usec</span></code> microseconds. </p>
+<p>The sleep may be lengthened slightly by any system activity or by the time spent processing the call or by the granularity of system timers.</p>
+<p><dl class="simple">
+<dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#tice_8h_1acfd12579679c85d5f1c716509b2587f6"><span class="std std-ref">delay</span></a> </p>
+</dd>
+<dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#tice_8h_1a69c97039c9ec10a30e5edbdf365e3bbd"><span class="std std-ref">sleep</span></a> </p>
+</dd>
+<dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#tice_8h_1a4e3322434ea918ae562e0ea5237ab191"><span class="std std-ref">useconds_t</span></a> </p>
+</dd>
+</dl>
+</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Currently, no errors are possible.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>usec</strong> – number of microseconds </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>0 on success, or -1 on error, with ::errno set to indicate the error </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
 <dt id="_CPPv46randomv">
 <span id="_CPPv36randomv"></span><span id="_CPPv26randomv"></span><span id="random__void"></span><span class="target" id="tice_8h_1a25238a98affe26c3faf9bcdb58855c48"></span>uint32_t <code class="sig-name descname">random</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv46randomv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Returns a pseudo-random 32-bit integer.</p>
+<dd><p>Returns a pseudo-random 32-bit integer. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>the random integer </p>
@@ -911,7 +1013,7 @@
 <dl class="cpp function">
 <dt id="_CPPv47srandom8uint32_t">
 <span id="_CPPv37srandom8uint32_t"></span><span id="_CPPv27srandom8uint32_t"></span><span id="srandom__uint32_t"></span><span class="target" id="tice_8h_1a54cd8fd0f6b913a116bf0cbf21fab044"></span>void <code class="sig-name descname">srandom</code><span class="sig-paren">(</span>uint32_t <em>seed</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv47srandom8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Seeds the pseudo-random number generator used by <a class="reference internal" href="#tice_8h_1a25238a98affe26c3faf9bcdb58855c48"><span class="std std-ref">random()</span></a> and rand() with the value seed.</p>
+<dd><p>Seeds the pseudo-random number generator used by <a class="reference internal" href="#tice_8h_1a25238a98affe26c3faf9bcdb58855c48"><span class="std std-ref">random()</span></a> and rand() with the value seed. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>seed</strong> – the seed value </p>
@@ -922,7 +1024,7 @@
 <dl class="cpp function">
 <dt id="_CPPv412boot_SetDate7uint8_t7uint8_t8uint16_t">
 <span id="_CPPv312boot_SetDate7uint8_t7uint8_t8uint16_t"></span><span id="_CPPv212boot_SetDate7uint8_t7uint8_t8uint16_t"></span><span id="boot_SetDate__uint8_t.uint8_t.uint16_t"></span><span class="target" id="tice_8h_1ad8aa16bfaaeea4a827bce2d7baa90745"></span>void <code class="sig-name descname">boot_SetDate</code><span class="sig-paren">(</span>uint8_t <em>day</em>, uint8_t <em>month</em>, uint16_t <em>year</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv412boot_SetDate7uint8_t7uint8_t8uint16_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Sets the calculator’s date</p>
+<dd><p>Sets the calculator’s date. </p>
 <p>Performs checks to ensure date is within range </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -938,7 +1040,7 @@
 <dl class="cpp function">
 <dt id="_CPPv412boot_GetDateP7uint8_tP7uint8_tP8uint16_t">
 <span id="_CPPv312boot_GetDateP7uint8_tP7uint8_tP8uint16_t"></span><span id="_CPPv212boot_GetDateP7uint8_tP7uint8_tP8uint16_t"></span><span id="boot_GetDate__uint8_tP.uint8_tP.uint16_tP"></span><span class="target" id="tice_8h_1ae0315dfff7eec682d38467a99415d4c4"></span>void <code class="sig-name descname">boot_GetDate</code><span class="sig-paren">(</span>uint8_t *<em>day</em>, uint8_t *<em>month</em>, uint16_t *<em>year</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv412boot_GetDateP7uint8_tP7uint8_tP8uint16_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Gets the calculator’s date</p>
+<dd><p>Gets the calculator’s date. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -953,7 +1055,7 @@
 <dl class="cpp function">
 <dt id="_CPPv412boot_SetTime7uint8_t7uint8_t7uint8_t">
 <span id="_CPPv312boot_SetTime7uint8_t7uint8_t7uint8_t"></span><span id="_CPPv212boot_SetTime7uint8_t7uint8_t7uint8_t"></span><span id="boot_SetTime__uint8_t.uint8_t.uint8_t"></span><span class="target" id="tice_8h_1ac1200f2b4cbbc346d0e6a2f5c353f9c8"></span>void <code class="sig-name descname">boot_SetTime</code><span class="sig-paren">(</span>uint8_t <em>seconds</em>, uint8_t <em>minutes</em>, uint8_t <em>hours</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv412boot_SetTime7uint8_t7uint8_t7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Sets the calculator’s time</p>
+<dd><p>Sets the calculator’s time. </p>
 <p>Performs checks to ensure time is within range </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -969,7 +1071,7 @@
 <dl class="cpp function">
 <dt id="_CPPv412boot_GetTimeP7uint8_tP7uint8_tP7uint8_t">
 <span id="_CPPv312boot_GetTimeP7uint8_tP7uint8_tP7uint8_t"></span><span id="_CPPv212boot_GetTimeP7uint8_tP7uint8_tP7uint8_t"></span><span id="boot_GetTime__uint8_tP.uint8_tP.uint8_tP"></span><span class="target" id="tice_8h_1a718df11f85fe8ddab8d5b2e54b1eb668"></span>void <code class="sig-name descname">boot_GetTime</code><span class="sig-paren">(</span>uint8_t *<em>seconds</em>, uint8_t *<em>minutes</em>, uint8_t *<em>hours</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv412boot_GetTimeP7uint8_tP7uint8_tP7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Gets the calculator’s time</p>
+<dd><p>Gets the calculator’s time. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -984,7 +1086,7 @@
 <dl class="cpp function">
 <dt id="_CPPv416boot_IsAfterNoonv">
 <span id="_CPPv316boot_IsAfterNoonv"></span><span id="_CPPv216boot_IsAfterNoonv"></span><span id="boot_IsAfterNoon__void"></span><span class="target" id="tice_8h_1aa96977eb1d9ee88829c13cde9b2bb8fd"></span>bool <code class="sig-name descname">boot_IsAfterNoon</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv416boot_IsAfterNoonv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Checks if past noon</p>
+<dd><p>Checks if past noon. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>True if past noon </p>
@@ -1031,7 +1133,7 @@
 <dl class="cpp function">
 <dt id="_CPPv419boot_CheckOnPressedv">
 <span id="_CPPv319boot_CheckOnPressedv"></span><span id="_CPPv219boot_CheckOnPressedv"></span><span id="boot_CheckOnPressed__void"></span><span class="target" id="tice_8h_1ab2e816a24c2b94e7b10ec6ed83c1bf68"></span>bool <code class="sig-name descname">boot_CheckOnPressed</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv419boot_CheckOnPressedv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Checks if the [on] key was pressed</p>
+<dd><p>Checks if the [on] key was pressed. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>True is returned if [on] key was pressed </p>
@@ -1042,12 +1144,18 @@
 <dl class="cpp function">
 <dt id="_CPPv416boot_DebugPrintfPKc">
 <span id="_CPPv316boot_DebugPrintfPKc"></span><span id="_CPPv216boot_DebugPrintfPKc"></span><span id="boot_DebugPrintf__cCP"></span><span class="target" id="tice_8h_1ad44d57a7e88323c7de8db7989cef4b28"></span>void <code class="sig-name descname">boot_DebugPrintf</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>string</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv416boot_DebugPrintfPKc" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Basically a reimplemented form of printf that prints to some debugging device</p>
+<dd><p>Basically a reimplemented form of printf that prints to some debugging device. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>string</strong> – String to send to debug device </p>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv411boot_TurnOnv">
+<span id="_CPPv311boot_TurnOnv"></span><span id="_CPPv211boot_TurnOnv"></span><span id="boot_TurnOn__void"></span><span class="target" id="tice_8h_1ae921631bfe6870b0ea08b41db9089681"></span>void <code class="sig-name descname">boot_TurnOn</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv411boot_TurnOnv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Turns on the calculator. </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -1073,33 +1181,89 @@
 </dd></dl>
 
 <dl class="cpp function">
+<dt id="_CPPv420boot_BatteryChargingv">
+<span id="_CPPv320boot_BatteryChargingv"></span><span id="_CPPv220boot_BatteryChargingv"></span><span id="boot_BatteryCharging__void"></span><span class="target" id="tice_8h_1a2478734f97c9a0f161509c335d2cbcaf"></span>bool <code class="sig-name descname">boot_BatteryCharging</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv420boot_BatteryChargingv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if the battery is currently charging. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv418boot_USBBusPoweredv">
+<span id="_CPPv318boot_USBBusPoweredv"></span><span id="_CPPv218boot_USBBusPoweredv"></span><span id="boot_USBBusPowered__void"></span><span class="target" id="tice_8h_1a6ed6b2415b060e9cca9bbf8550b31bde"></span>bool <code class="sig-name descname">boot_USBBusPowered</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv418boot_USBBusPoweredv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if the USB bus is powered by a host. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv419boot_USBSelfPoweredv">
+<span id="_CPPv319boot_USBSelfPoweredv"></span><span id="_CPPv219boot_USBSelfPoweredv"></span><span id="boot_USBSelfPowered__void"></span><span class="target" id="tice_8h_1aaf21c99cfd342d4638f264b870f13c74"></span>bool <code class="sig-name descname">boot_USBSelfPowered</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv419boot_USBSelfPoweredv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if the USB bus is self-powered. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv417boot_USBResetChipv">
+<span id="_CPPv317boot_USBResetChipv"></span><span id="_CPPv217boot_USBResetChipv"></span><span id="boot_USBResetChip__void"></span><span class="target" id="tice_8h_1aa472c3b36e148ff5f876255389cbbd0d"></span>void <code class="sig-name descname">boot_USBResetChip</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv417boot_USBResetChipv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Resets the USB controller. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv421boot_USBDisableTimersv">
+<span id="_CPPv321boot_USBDisableTimersv"></span><span id="_CPPv221boot_USBDisableTimersv"></span><span id="boot_USBDisableTimers__void"></span><span class="target" id="tice_8h_1ad940c6847ea993047faef4c18e16039b"></span>void <code class="sig-name descname">boot_USBDisableTimers</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv421boot_USBDisableTimersv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Disables the USB Timers. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv420boot_USBEnableTimersv">
+<span id="_CPPv320boot_USBEnableTimersv"></span><span id="_CPPv220boot_USBEnableTimersv"></span><span id="boot_USBEnableTimers__void"></span><span class="target" id="tice_8h_1a7194dc89e082ebf78391b2ec29ca4452"></span>void <code class="sig-name descname">boot_USBEnableTimers</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv420boot_USBEnableTimersv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Enables the USB Timers. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv419boot_USBResetTimersv">
+<span id="_CPPv319boot_USBResetTimersv"></span><span id="_CPPv219boot_USBResetTimersv"></span><span id="boot_USBResetTimers__void"></span><span class="target" id="tice_8h_1aeb2621c4c7b36bda103da3ee20308e38"></span>void <code class="sig-name descname">boot_USBResetTimers</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv419boot_USBResetTimersv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Resets the USB Timers. </p>
+</dd></dl>
+
+<dl class="cpp function">
 <dt id="_CPPv414boot_WaitShortv">
 <span id="_CPPv314boot_WaitShortv"></span><span id="_CPPv214boot_WaitShortv"></span><span id="boot_WaitShort__void"></span><span class="target" id="tice_8h_1a4751701988751e498490608739b3def1"></span>void <code class="sig-name descname">boot_WaitShort</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv414boot_WaitShortv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Waits for ~10 ms </p>
+<dd><p>Waits for ~10 ms. </p>
+<p>In most cases it is better to use the <a class="reference internal" href="#tice_8h_1acfd12579679c85d5f1c716509b2587f6"><span class="std std-ref">delay()</span></a> function. </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv410os_NewLinev">
 <span id="_CPPv310os_NewLinev"></span><span id="_CPPv210os_NewLinev"></span><span id="os_NewLine__void"></span><span class="target" id="tice_8h_1a42b2cb04bc3d20d2a259cc956cb64d2b"></span>void <code class="sig-name descname">os_NewLine</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv410os_NewLinev" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Inserts a new line at the current cursor posistion on the homescreen. Does scroll. </p>
+<dd><p>Inserts a new line at the current cursor posistion on the homescreen. </p>
+<p>Does scroll. </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv416os_DisableCursorv">
 <span id="_CPPv316os_DisableCursorv"></span><span id="_CPPv216os_DisableCursorv"></span><span id="os_DisableCursor__void"></span><span class="target" id="tice_8h_1afe1b552868eb4844aace0efc6dbee0c4"></span>void <code class="sig-name descname">os_DisableCursor</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv416os_DisableCursorv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Disables the OS cursor </p>
+<dd><p>Disables the OS cursor. </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv415os_EnableCursorv">
 <span id="_CPPv315os_EnableCursorv"></span><span id="_CPPv215os_EnableCursorv"></span><span id="os_EnableCursor__void"></span><span class="target" id="tice_8h_1aeaea1d3a3cfe9d2405cdad509a6ee591"></span>void <code class="sig-name descname">os_EnableCursor</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv415os_EnableCursorv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Enables the OS cursor </p>
+<dd><p>Enables the OS cursor. </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv417os_SetDrawFGColor8uint24_t">
 <span id="_CPPv317os_SetDrawFGColor8uint24_t"></span><span id="_CPPv217os_SetDrawFGColor8uint24_t"></span><span id="os_SetDrawFGColor__uint24_t"></span><span class="target" id="tice_8h_1abe70f3b6bc7dc87a24bea99839ab7968"></span>void <code class="sig-name descname">os_SetDrawFGColor</code><span class="sig-paren">(</span>uint24_t <em>color</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv417os_SetDrawFGColor8uint24_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Sets the foreground color used to draw text on the graphscreen </p>
+<dd><p>Sets the foreground color used to draw text on the graphscreen. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>color</strong> – 565 BGR color to set text foreground to </p>
@@ -1110,7 +1274,7 @@
 <dl class="cpp function">
 <dt id="_CPPv417os_GetDrawFGColorv">
 <span id="_CPPv317os_GetDrawFGColorv"></span><span id="_CPPv217os_GetDrawFGColorv"></span><span id="os_GetDrawFGColor__void"></span><span class="target" id="tice_8h_1a04f297c914cee4f29f90a981c395b84f"></span>uint24_t <code class="sig-name descname">os_GetDrawFGColor</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv417os_GetDrawFGColorv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Gets the foreground color used to draw text on the graphscreen </p>
+<dd><p>Gets the foreground color used to draw text on the graphscreen. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>565 BGR color of text foreground </p>
@@ -1121,7 +1285,7 @@
 <dl class="cpp function">
 <dt id="_CPPv417os_SetDrawBGColor8uint24_t">
 <span id="_CPPv317os_SetDrawBGColor8uint24_t"></span><span id="_CPPv217os_SetDrawBGColor8uint24_t"></span><span id="os_SetDrawBGColor__uint24_t"></span><span class="target" id="tice_8h_1aa282c55ac71cb8a9f04eb16d39e4f8d3"></span>void <code class="sig-name descname">os_SetDrawBGColor</code><span class="sig-paren">(</span>uint24_t <em>color</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv417os_SetDrawBGColor8uint24_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Sets the background color used to draw text on the graphscreen </p>
+<dd><p>Sets the background color used to draw text on the graphscreen. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>color</strong> – 565 BGR color to set text background to </p>
@@ -1132,7 +1296,7 @@
 <dl class="cpp function">
 <dt id="_CPPv417os_GetDrawBGColorv">
 <span id="_CPPv317os_GetDrawBGColorv"></span><span id="_CPPv217os_GetDrawBGColorv"></span><span id="os_GetDrawBGColor__void"></span><span class="target" id="tice_8h_1a7a67f4155bda58ca6716c8e4782eeae3"></span>uint24_t <code class="sig-name descname">os_GetDrawBGColor</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv417os_GetDrawBGColorv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Gets the background color used to draw text on the graphscreen</p>
+<dd><p>Gets the background color used to draw text on the graphscreen. </p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Only useable in OS 5.2 and above; use at your own risk </p>
@@ -1147,7 +1311,7 @@
 <dl class="cpp function">
 <dt id="_CPPv415os_SetCursorPos7uint8_t7uint8_t">
 <span id="_CPPv315os_SetCursorPos7uint8_t7uint8_t"></span><span id="_CPPv215os_SetCursorPos7uint8_t7uint8_t"></span><span id="os_SetCursorPos__uint8_t.uint8_t"></span><span class="target" id="tice_8h_1a0fcf624fd8a7b43375fd0aa925b02872"></span>void <code class="sig-name descname">os_SetCursorPos</code><span class="sig-paren">(</span>uint8_t <em>curRow</em>, uint8_t <em>curCol</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv415os_SetCursorPos7uint8_t7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Set the cursor posistion used on the homescreen</p>
+<dd><p>Set the cursor posistion used on the homescreen. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -1161,7 +1325,7 @@
 <dl class="cpp function">
 <dt id="_CPPv415os_GetCursorPosPjPj">
 <span id="_CPPv315os_GetCursorPosPjPj"></span><span id="_CPPv215os_GetCursorPosPjPj"></span><span id="os_GetCursorPos__unsigned-iP.unsigned-iP"></span><span class="target" id="tice_8h_1a92cfe934f3c43d8235d678d97a9080b8"></span>void <code class="sig-name descname">os_GetCursorPos</code><span class="sig-paren">(</span>unsigned int *<em>curRow</em>, unsigned int *<em>curCol</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv415os_GetCursorPosPjPj" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Gets the cursor posistion used on the homescreen</p>
+<dd><p>Gets the cursor posistion used on the homescreen. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -1175,7 +1339,7 @@
 <dl class="cpp function">
 <dt id="_CPPv413os_FontSelectP6font_t">
 <span id="_CPPv313os_FontSelectP6font_t"></span><span id="_CPPv213os_FontSelectP6font_t"></span><span id="os_FontSelect__font_tP"></span><span class="target" id="tice_8h_1a6cf85044a75dc8122639287851b9c84a"></span>void <code class="sig-name descname">os_FontSelect</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv46font_t" title="font_t">font_t</a> *<em>font</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv413os_FontSelectP6font_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Selects the (monospace) font to use when drawing on the graphscreen</p>
+<dd><p>Selects the (monospace) font to use when drawing on the graphscreen. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>font</strong> – <p>font id/pointer to use os_SmallFont</p>
@@ -1188,7 +1352,7 @@
 <dl class="cpp function">
 <dt id="_CPPv412os_FontGetIDv">
 <span id="_CPPv312os_FontGetIDv"></span><span id="_CPPv212os_FontGetIDv"></span><span id="os_FontGetID__void"></span><span class="target" id="tice_8h_1af430adcf15f31b5b469286eb0690ff29"></span><a class="reference internal" href="#_CPPv46font_t" title="font_t">font_t</a> *<code class="sig-name descname">os_FontGetID</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv412os_FontGetIDv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Gets the font to use when drawing on the graphscreen</p>
+<dd><p>Gets the font to use when drawing on the graphscreen. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><p>0: small font</p>
@@ -1224,7 +1388,7 @@
 <dl class="cpp function">
 <dt id="_CPPv415os_FontDrawTextPKc8uint16_t7uint8_t">
 <span id="_CPPv315os_FontDrawTextPKc8uint16_t7uint8_t"></span><span id="_CPPv215os_FontDrawTextPKc8uint16_t7uint8_t"></span><span id="os_FontDrawText__cCP.uint16_t.uint8_t"></span><span class="target" id="tice_8h_1a002b1a506b96eefa7e6193d9ec19205d"></span>uint24_t <code class="sig-name descname">os_FontDrawText</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>string</em>, uint16_t <em>col</em>, uint8_t <em>row</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv415os_FontDrawTextPKc8uint16_t7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Draws text using the small font to the screen</p>
+<dd><p>Draws text using the small font to the screen. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -1242,7 +1406,7 @@
 <dl class="cpp function">
 <dt id="_CPPv420os_FontDrawTransTextPKc8uint16_t7uint8_t">
 <span id="_CPPv320os_FontDrawTransTextPKc8uint16_t7uint8_t"></span><span id="_CPPv220os_FontDrawTransTextPKc8uint16_t7uint8_t"></span><span id="os_FontDrawTransText__cCP.uint16_t.uint8_t"></span><span class="target" id="tice_8h_1aa2ac7abeec2959dc64b763ceb1ca5cc0"></span>uint24_t <code class="sig-name descname">os_FontDrawTransText</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>string</em>, uint16_t <em>col</em>, uint8_t <em>row</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv420os_FontDrawTransTextPKc8uint16_t7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Draws transparent text using the small font to the screen</p>
+<dd><p>Draws transparent text using the small font to the screen. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -1260,10 +1424,10 @@
 <dl class="cpp function">
 <dt id="_CPPv413os_PutStrFullPKc">
 <span id="_CPPv313os_PutStrFullPKc"></span><span id="_CPPv213os_PutStrFullPKc"></span><span id="os_PutStrFull__cCP"></span><span class="target" id="tice_8h_1a5316ce240dc00c400d1f30af6579d666"></span>uint24_t <code class="sig-name descname">os_PutStrFull</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>string</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv413os_PutStrFullPKc" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Puts some text at the current homescreen cursor location</p>
+<dd><p>Puts some text at the current homescreen cursor location. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>string</strong> – Test to put on homescreen </p>
+<dd class="field-odd"><p><strong>string</strong> – Text to put on homescreen </p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>1 if string fits on screen, 0 otherwise </p>
@@ -1274,10 +1438,10 @@
 <dl class="cpp function">
 <dt id="_CPPv413os_PutStrLinePKc">
 <span id="_CPPv313os_PutStrLinePKc"></span><span id="_CPPv213os_PutStrLinePKc"></span><span id="os_PutStrLine__cCP"></span><span class="target" id="tice_8h_1a37908b624f2bd7c37f46e8b0533394b8"></span>uint24_t <code class="sig-name descname">os_PutStrLine</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>string</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv413os_PutStrLinePKc" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Puts some text at the current homescreen cursor location</p>
+<dd><p>Puts some text at the current homescreen cursor location. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>string</strong> – Test to put on homescreen </p>
+<dd class="field-odd"><p><strong>string</strong> – Text to put on homescreen </p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>1 if string fits on line, 0 otherwise </p>
@@ -1288,7 +1452,7 @@
 <dl class="cpp function">
 <dt id="_CPPv414os_SetFlagBytei7uint8_t">
 <span id="_CPPv314os_SetFlagBytei7uint8_t"></span><span id="_CPPv214os_SetFlagBytei7uint8_t"></span><span id="os_SetFlagByte__i.uint8_t"></span><span class="target" id="tice_8h_1ae4fc41906c9e93c4e1b64a2ba56e80c5"></span>void <code class="sig-name descname">os_SetFlagByte</code><span class="sig-paren">(</span>int <em>offset</em>, uint8_t <em>set</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv414os_SetFlagBytei7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Set a particular flag variable</p>
+<dd><p>Set a particular OS flag. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -1302,7 +1466,7 @@
 <dl class="cpp function">
 <dt id="_CPPv414os_GetFlagBytei">
 <span id="_CPPv314os_GetFlagBytei"></span><span id="_CPPv214os_GetFlagBytei"></span><span id="os_GetFlagByte__i"></span><span class="target" id="tice_8h_1a3b4341e60ac25d890127813aa441406d"></span>uint8_t <code class="sig-name descname">os_GetFlagByte</code><span class="sig-paren">(</span>int <em>offset</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv414os_GetFlagBytei" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Get a particular flag variable</p>
+<dd><p>Get a particular OS flag. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>offset</strong> – Offset to particular flag in list </p>
@@ -1316,21 +1480,22 @@
 <dl class="cpp function">
 <dt id="_CPPv49os_MemChkPPv">
 <span id="_CPPv39os_MemChkPPv"></span><span id="_CPPv29os_MemChkPPv"></span><span id="os_MemChk__voidPP"></span><span class="target" id="tice_8h_1ac8a018c90c6e1d6a922afe8f7b2a3c9b"></span>size_t <code class="sig-name descname">os_MemChk</code><span class="sig-paren">(</span>void **<em>free</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv49os_MemChkPPv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Get amount of free ram in order to allocate extra ram</p>
+<dd><p>Returns the size in bytes of free RAM that the user isn’t using. </p>
+<p>A pointer is also returned to the start of this region; you can use it for your own purposes but do not exceed the size returned. This function is useful if you are running out of space in the bss or heap and need a little extra memory.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>free</strong> – Set to start of free available ram </p>
+<dd class="field-odd"><p><strong>free</strong> – Set to start of free available RAM </p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Size of available ram </p>
+<dd class="field-even"><p>Size of available RAM </p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv413os_ThrowError7uint8_t">
-<span id="_CPPv313os_ThrowError7uint8_t"></span><span id="_CPPv213os_ThrowError7uint8_t"></span><span id="os_ThrowError__uint8_t"></span><span class="target" id="tice_8h_1a9f3acd9481c7a931a5a8cf3c2c92ee18"></span>void <code class="sig-name descname">os_ThrowError</code><span class="sig-paren">(</span>uint8_t <em>error</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv413os_ThrowError7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Throws an OS error</p>
+<span id="_CPPv313os_ThrowError7uint8_t"></span><span id="_CPPv213os_ThrowError7uint8_t"></span><span id="os_ThrowError__uint8_t"></span><span class="target" id="tice_8h_1aa252830284164d05fd60dee151a4b0f1"></span>void <code class="sig-name descname">os_ThrowError</code><span class="sig-paren">(</span>uint8_t <em>error</em><span class="sig-paren">)</span> __attribute__((noreturn))<a class="headerlink" href="#_CPPv413os_ThrowError7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Throws an OS error. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>error</strong> – Error code to throw </p>
@@ -1341,7 +1506,7 @@
 <dl class="cpp function">
 <dt id="_CPPv416os_GetSystemInfov">
 <span id="_CPPv316os_GetSystemInfov"></span><span id="_CPPv216os_GetSystemInfov"></span><span id="os_GetSystemInfo__void"></span><span class="target" id="tice_8h_1addb4349f09deb4c99c6fd82bfb6f4d74"></span><em class="property">const</em> <a class="reference internal" href="#_CPPv413system_info_t" title="system_info_t">system_info_t</a> *<code class="sig-name descname">os_GetSystemInfo</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv416os_GetSystemInfov" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Gets the system info</p>
+<dd><p>Gets the system info. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>A pointer to system_info_t </p>
@@ -1351,8 +1516,9 @@
 
 <dl class="cpp function">
 <dt id="_CPPv419os_PushErrorHandlerv">
-<span id="_CPPv319os_PushErrorHandlerv"></span><span id="_CPPv219os_PushErrorHandlerv"></span><span id="os_PushErrorHandler__void"></span><span class="target" id="tice_8h_1a45b3d694bcbee88b84e5e49c9d7f50b4"></span>int <code class="sig-name descname">os_PushErrorHandler</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv419os_PushErrorHandlerv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>This function can return twice (like setjmp). First return always happens with a return value of 0. Second return only happens if an error occurs before os_PopErrorHandler is called, with the errNo as the return value.</p>
+<span id="_CPPv319os_PushErrorHandlerv"></span><span id="_CPPv219os_PushErrorHandlerv"></span><span id="os_PushErrorHandler__void"></span><span class="target" id="tice_8h_1a322bb5e2d345a8e1206084df4251dbc3"></span>int <code class="sig-name descname">os_PushErrorHandler</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span> __attribute__((returns_twice))<a class="headerlink" href="#_CPPv419os_PushErrorHandlerv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>This function can return twice (like setjmp). </p>
+<p>First return always happens with a return value of 0. Second return only happens if an error occurs before os_PopErrorHandler is called, with the errNo as the return value.</p>
 <p><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span> <span class="n">errno</span> <span class="o">=</span> <span class="n">os_PushErrorHandler</span><span class="p">();</span>
 <span class="k">if</span> <span class="p">(</span><span class="n">errno</span><span class="p">)</span> <span class="p">{</span>
     <span class="o">//</span> <span class="n">handle</span> <span class="n">error</span><span class="p">,</span> <span class="n">but</span> <span class="n">no</span> <span class="n">longer</span> <span class="n">under</span> <span class="n">the</span> <span class="n">protection</span> <span class="n">of</span> <span class="n">the</span> <span class="n">error</span> <span class="n">handler</span> <span class="n">so</span> <span class="n">do</span> <span class="ow">not</span> <span class="n">call</span> <span class="n">os_PopErrorHandler</span><span class="p">()</span>
@@ -1373,9 +1539,10 @@
 <dl class="cpp function">
 <dt id="_CPPv418os_PopErrorHandlerv">
 <span id="_CPPv318os_PopErrorHandlerv"></span><span id="_CPPv218os_PopErrorHandlerv"></span><span id="os_PopErrorHandler__void"></span><span class="target" id="tice_8h_1a2862dc222a72179213b2b9ed6eb0a3d9"></span>void <code class="sig-name descname">os_PopErrorHandler</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv418os_PopErrorHandlerv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Restores stack state after a call to os_PushErrorHandler. Must be called with stack in the same state as it was when os_PushErrorHandler returned with 0, and should not be called along the error path.</p>
+<dd><p>Restores stack state after a call to os_PushErrorHandler. </p>
+<p>Must be called with stack in the same state as it was when os_PushErrorHandler returned with 0, and should not be called along the error path.</p>
 <p><dl class="simple">
-<dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#tice_8h_1a45b3d694bcbee88b84e5e49c9d7f50b4"><span class="std std-ref">os_PushErrorHandler</span></a> </p>
+<dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#tice_8h_1a322bb5e2d345a8e1206084df4251dbc3"><span class="std std-ref">os_PushErrorHandler</span></a> </p>
 </dd>
 </dl>
 </p>
@@ -1404,7 +1571,7 @@
 <dl class="cpp function">
 <dt id="_CPPv414os_DelSymEntryPv">
 <span id="_CPPv314os_DelSymEntryPv"></span><span id="_CPPv214os_DelSymEntryPv"></span><span id="os_DelSymEntry__voidP"></span><span class="target" id="tice_8h_1a2349c485689ae1ff8dba93b5ccb4e4fe"></span>int <code class="sig-name descname">os_DelSymEntry</code><span class="sig-paren">(</span>void *<em>entry</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv414os_DelSymEntryPv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Delete a var from RAM.</p>
+<dd><p>Delete a var from RAM. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>entry</strong> – An entry as returned from <a class="reference internal" href="#tice_8h_1a84681c61e0ea353e3448306918ce399a"><span class="std std-ref">os_NextSymEntry()</span></a>. </p>
@@ -1418,7 +1585,7 @@
 <dl class="cpp function">
 <dt id="_CPPv415os_CreateAppVarPKc8uint16_t">
 <span id="_CPPv315os_CreateAppVarPKc8uint16_t"></span><span id="_CPPv215os_CreateAppVarPKc8uint16_t"></span><span id="os_CreateAppVar__cCP.uint16_t"></span><span class="target" id="tice_8h_1a9ed29e2009e191202482ee7334726ffd"></span><a class="reference internal" href="#_CPPv45var_t" title="var_t">var_t</a> *<code class="sig-name descname">os_CreateAppVar</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>name</em>, uint16_t <em>size</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv415os_CreateAppVarPKc8uint16_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Creates an AppVar.</p>
+<dd><p>Creates an AppVar. </p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Returns NULL if creation failed for some reason, otherwise a pointer to the size bytes </p>
@@ -1439,7 +1606,7 @@
 <dl class="cpp function">
 <dt id="_CPPv416os_GetAppVarDataPKcPi">
 <span id="_CPPv316os_GetAppVarDataPKcPi"></span><span id="_CPPv216os_GetAppVarDataPKcPi"></span><span id="os_GetAppVarData__cCP.iP"></span><span class="target" id="tice_8h_1a6a6e7fe15135a5bb0c4eb31bf9504e34"></span><a class="reference internal" href="#_CPPv45var_t" title="var_t">var_t</a> *<code class="sig-name descname">os_GetAppVarData</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>name</em>, int *<em>archived</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv416os_GetAppVarDataPKcPi" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Gets a pointer to an AppVar’s data, which may be in archive.</p>
+<dd><p>Gets a pointer to an AppVar’s data, which may be in archive. </p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Returns NULL if the AppVar doesn’t exist, otherwise a pointer to the size bytes </p>
@@ -1460,7 +1627,7 @@
 <dl class="cpp function">
 <dt id="_CPPv412os_DelAppVarPKc">
 <span id="_CPPv312os_DelAppVarPKc"></span><span id="_CPPv212os_DelAppVarPKc"></span><span id="os_DelAppVar__cCP"></span><span class="target" id="tice_8h_1afc6c8e88138816d153c48d170ff2f027"></span>void <code class="sig-name descname">os_DelAppVar</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv412os_DelAppVarPKc" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Deletes an AppVar from RAM.</p>
+<dd><p>Deletes an AppVar from RAM. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>name</strong> – Name of the AppVar to delete. </p>
@@ -1471,7 +1638,7 @@
 <dl class="cpp function">
 <dt id="_CPPv413os_ChkFindSym7uint8_tPKcPPvPPv">
 <span id="_CPPv313os_ChkFindSym7uint8_tPKcPPvPPv"></span><span id="_CPPv213os_ChkFindSym7uint8_tPKcPPvPPv"></span><span id="os_ChkFindSym__uint8_t.cCP.voidPP.voidPP"></span><span class="target" id="tice_8h_1a03c7b7fd5d27d43d38717c3a0a9db1f0"></span>int <code class="sig-name descname">os_ChkFindSym</code><span class="sig-paren">(</span>uint8_t <em>type</em>, <em class="property">const</em> char *<em>name</em>, void **<em>entry</em>, void **<em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv413os_ChkFindSym7uint8_tPKcPPvPPv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Locates a symbol in the symtable</p>
+<dd><p>Locates a symbol in the symtable. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -1490,7 +1657,7 @@
 <dl class="cpp function">
 <dt id="_CPPv413os_GetVarSizePKcP6size_t">
 <span id="_CPPv313os_GetVarSizePKcP6size_t"></span><span id="_CPPv213os_GetVarSizePKcP6size_t"></span><span id="os_GetVarSize__cCP.sP"></span><span class="target" id="tice_8h_1a34d09157e27f7dbad5267fa34a231017"></span>int <code class="sig-name descname">os_GetVarSize</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>name</em>, size_t *<em>size</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv413os_GetVarSizePKcP6size_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Gets the size of sized vars such as equations, string, programs, appvars, or the dimension of a list.</p>
+<dd><p>Gets the size of sized vars such as equations, string, programs, appvars, or the dimension of a list. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -1507,7 +1674,7 @@
 <dl class="cpp function">
 <dt id="_CPPv416os_GetMatrixDimsPKcPiPi">
 <span id="_CPPv316os_GetMatrixDimsPKcPiPi"></span><span id="_CPPv216os_GetMatrixDimsPKcPiPi"></span><span id="os_GetMatrixDims__cCP.iP.iP"></span><span class="target" id="tice_8h_1afd19d240bb5ec417bd93c2989d3df77a"></span>int <code class="sig-name descname">os_GetMatrixDims</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>name</em>, int *<em>rows</em>, int *<em>cols</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv416os_GetMatrixDimsPKcPiPi" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Gets the dimensions of a matrix.</p>
+<dd><p>Gets the dimensions of a matrix. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -1525,7 +1692,7 @@
 <dl class="cpp function">
 <dt id="_CPPv421os_GetRealListElementPKciP6real_t">
 <span id="_CPPv321os_GetRealListElementPKciP6real_t"></span><span id="_CPPv221os_GetRealListElementPKciP6real_t"></span><span id="os_GetRealListElement__cCP.i.real_tP"></span><span class="target" id="tice_8h_1a3d4c4814a5325b3f3dd5ffb44a2d272c"></span>int <code class="sig-name descname">os_GetRealListElement</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>name</em>, int <em>index</em>, <a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> *<em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv421os_GetRealListElementPKciP6real_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Gets a real value from a real list or a complex list where the selected element has no imaginary component.</p>
+<dd><p>Gets a real value from a real list or a complex list where the selected element has no imaginary component. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -1543,7 +1710,7 @@
 <dl class="cpp function">
 <dt id="_CPPv419os_GetMatrixElementPKciiP6real_t">
 <span id="_CPPv319os_GetMatrixElementPKciiP6real_t"></span><span id="_CPPv219os_GetMatrixElementPKciiP6real_t"></span><span id="os_GetMatrixElement__cCP.i.i.real_tP"></span><span class="target" id="tice_8h_1a851c08e538b9ba7c6bb07660271d05e6"></span>int <code class="sig-name descname">os_GetMatrixElement</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>name</em>, int <em>row</em>, int <em>col</em>, <a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> *<em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv419os_GetMatrixElementPKciiP6real_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Gets a real value from a matrix.</p>
+<dd><p>Gets a real value from a matrix. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -1562,7 +1729,7 @@
 <dl class="cpp function">
 <dt id="_CPPv413os_GetRealVarPKcP6real_t">
 <span id="_CPPv313os_GetRealVarPKcP6real_t"></span><span id="_CPPv213os_GetRealVarPKcP6real_t"></span><span id="os_GetRealVar__cCP.real_tP"></span><span class="target" id="tice_8h_1a459ee6f7031fdecd984ea5003e770724"></span>int <code class="sig-name descname">os_GetRealVar</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>name</em>, <a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> *<em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv413os_GetRealVarPKcP6real_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Gets the real value of a real variable or a complex variable with no imaginary component.</p>
+<dd><p>Gets the real value of a real variable or a complex variable with no imaginary component. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -1579,7 +1746,7 @@
 <dl class="cpp function">
 <dt id="_CPPv413os_SetListDimPKci">
 <span id="_CPPv313os_SetListDimPKci"></span><span id="_CPPv213os_SetListDimPKci"></span><span id="os_SetListDim__cCP.i"></span><span class="target" id="tice_8h_1ad3dce8652a5d17b8a1da6d989f6a0543"></span>int <code class="sig-name descname">os_SetListDim</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>name</em>, int <em>dim</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv413os_SetListDimPKci" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>If list <code class="docutils literal notranslate"><span class="pre">name</span></code> doesn’t exist, create it with <code class="docutils literal notranslate"><span class="pre">dim</span></code> elements, otherwise resize the list, with new elements being set to 0.</p>
+<dd><p>If list <code class="docutils literal notranslate"><span class="pre">name</span></code> doesn’t exist, create it with <code class="docutils literal notranslate"><span class="pre">dim</span></code> elements, otherwise resize the list, with new elements being set to 0. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -1596,7 +1763,7 @@
 <dl class="cpp function">
 <dt id="_CPPv416os_SetMatrixDimsPKcii">
 <span id="_CPPv316os_SetMatrixDimsPKcii"></span><span id="_CPPv216os_SetMatrixDimsPKcii"></span><span id="os_SetMatrixDims__cCP.i.i"></span><span class="target" id="tice_8h_1a9a7a5fd90a78e4f12cb8d11a33d28790"></span>int <code class="sig-name descname">os_SetMatrixDims</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>name</em>, int <em>rows</em>, int <em>cols</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv416os_SetMatrixDimsPKcii" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>If matrix <code class="docutils literal notranslate"><span class="pre">name</span></code> doesn’t exist, create it with dimensions <code class="docutils literal notranslate"><span class="pre">rows</span></code> and <code class="docutils literal notranslate"><span class="pre">cols</span></code>, otherwise resize the matrix, with new elements being set to 0.</p>
+<dd><p>If matrix <code class="docutils literal notranslate"><span class="pre">name</span></code> doesn’t exist, create it with dimensions <code class="docutils literal notranslate"><span class="pre">rows</span></code> and <code class="docutils literal notranslate"><span class="pre">cols</span></code>, otherwise resize the matrix, with new elements being set to 0. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -1614,7 +1781,8 @@
 <dl class="cpp function">
 <dt id="_CPPv421os_SetRealListElementPKciPK6real_t">
 <span id="_CPPv321os_SetRealListElementPKciPK6real_t"></span><span id="_CPPv221os_SetRealListElementPKciPK6real_t"></span><span id="os_SetRealListElement__cCP.i.real_tCP"></span><span class="target" id="tice_8h_1aad69f93573bdcd79d60b626dcc094596"></span>int <code class="sig-name descname">os_SetRealListElement</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>name</em>, int <em>index</em>, <em class="property">const</em> <a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> *<em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv421os_SetRealListElementPKciPK6real_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Sets a list element to a real value. If the list doesn’t exist, then index must be 1 and it creates a 1 element list.</p>
+<dd><p>Sets a list element to a real value. </p>
+<p>If the list doesn’t exist, then index must be 1 and it creates a 1 element list.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -1632,7 +1800,7 @@
 <dl class="cpp function">
 <dt id="_CPPv419os_SetMatrixElementPKciiPK6real_t">
 <span id="_CPPv319os_SetMatrixElementPKciiPK6real_t"></span><span id="_CPPv219os_SetMatrixElementPKciiPK6real_t"></span><span id="os_SetMatrixElement__cCP.i.i.real_tCP"></span><span class="target" id="tice_8h_1a0ff9bdfa9fbf2912607ae9c041259215"></span>int <code class="sig-name descname">os_SetMatrixElement</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>name</em>, int <em>row</em>, int <em>col</em>, <em class="property">const</em> <a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> *<em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv419os_SetMatrixElementPKciiPK6real_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Sets a matrix element to a real value.</p>
+<dd><p>Sets a matrix element to a real value. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -1651,7 +1819,7 @@
 <dl class="cpp function">
 <dt id="_CPPv413os_SetRealVarPKcPK6real_t">
 <span id="_CPPv313os_SetRealVarPKcPK6real_t"></span><span id="_CPPv213os_SetRealVarPKcPK6real_t"></span><span id="os_SetRealVar__cCP.real_tCP"></span><span class="target" id="tice_8h_1abf0d56cc9ac0755e77d96a0d9b7e0f60"></span>int <code class="sig-name descname">os_SetRealVar</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>name</em>, <em class="property">const</em> <a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> *<em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv413os_SetRealVarPKcPK6real_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Sets a variable to a real value, creating it if it doesn’t exist.</p>
+<dd><p>Sets a variable to a real value, creating it if it doesn’t exist. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -1668,7 +1836,7 @@
 <dl class="cpp function">
 <dt id="_CPPv413os_GetAnsDataP7uint8_t">
 <span id="_CPPv313os_GetAnsDataP7uint8_t"></span><span id="_CPPv213os_GetAnsDataP7uint8_t"></span><span id="os_GetAnsData__uint8_tP"></span><span class="target" id="tice_8h_1a247dc2286f39a2e79ff6c6c7740b23a6"></span>void *<code class="sig-name descname">os_GetAnsData</code><span class="sig-paren">(</span>uint8_t *<em>type</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv413os_GetAnsDataP7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Gets the Ans variable</p>
+<dd><p>Gets the Ans variable. </p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Returns NULL if Ans doesn’t exist or type is NULL </p>
@@ -1686,7 +1854,7 @@
 <dl class="cpp function">
 <dt id="_CPPv411os_RealCopyPK6real_t">
 <span id="_CPPv311os_RealCopyPK6real_t"></span><span id="_CPPv211os_RealCopyPK6real_t"></span><span id="os_RealCopy__real_tCP"></span><span class="target" id="tice_8h_1a1e6b19531259bccf09f0f07565d6803f"></span><a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> <code class="sig-name descname">os_RealCopy</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> *<em>src</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv411os_RealCopyPK6real_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Copies a <a class="reference internal" href="#structreal__t"><span class="std std-ref">real_t</span></a> type</p>
+<dd><p>Copies a <a class="reference internal" href="#structreal__t"><span class="std std-ref">real_t</span></a> type. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>src</strong> – Pointer to original <a class="reference internal" href="#structreal__t"><span class="std std-ref">real_t</span></a> </p>
@@ -1698,9 +1866,207 @@
 </dd></dl>
 
 <dl class="cpp function">
+<dt id="_CPPv414os_RealAcosRadPK6real_t">
+<span id="_CPPv314os_RealAcosRadPK6real_t"></span><span id="_CPPv214os_RealAcosRadPK6real_t"></span><span id="os_RealAcosRad__real_tCP"></span><span class="target" id="tice_8h_1a8c5d0e925ec9cde41547068ea66b54e6"></span><a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> <code class="sig-name descname">os_RealAcosRad</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> *<em>arg</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv414os_RealAcosRadPK6real_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Takes the arccosine of a <a class="reference internal" href="#structreal__t"><span class="std std-ref">real_t</span></a>, giving the answer in radians. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Ensure -1 &lt;= *arg &lt;= 1, or program will crash. </p>
+</div>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv414os_RealAsinRadPK6real_t">
+<span id="_CPPv314os_RealAsinRadPK6real_t"></span><span id="_CPPv214os_RealAsinRadPK6real_t"></span><span id="os_RealAsinRad__real_tCP"></span><span class="target" id="tice_8h_1abd0de87b59547692a8077a3273c38b9c"></span><a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> <code class="sig-name descname">os_RealAsinRad</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> *<em>arg</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv414os_RealAsinRadPK6real_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Takes the arcsine of a <a class="reference internal" href="#structreal__t"><span class="std std-ref">real_t</span></a>, giving the answer in radians. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Ensure -1 &lt;= *arg &lt;= 1, or program will crash. </p>
+</div>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv414os_RealAtanRadPK6real_t">
+<span id="_CPPv314os_RealAtanRadPK6real_t"></span><span id="_CPPv214os_RealAtanRadPK6real_t"></span><span id="os_RealAtanRad__real_tCP"></span><span class="target" id="tice_8h_1a53df4d64e3c99d75ddc01ee9b3f32f03"></span><a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> <code class="sig-name descname">os_RealAtanRad</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> *<em>arg</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv414os_RealAtanRadPK6real_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Takes the arctangent of a <a class="reference internal" href="#structreal__t"><span class="std std-ref">real_t</span></a>, giving the answers in radians. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv413os_RealCosRadPK6real_t">
+<span id="_CPPv313os_RealCosRadPK6real_t"></span><span id="_CPPv213os_RealCosRadPK6real_t"></span><span id="os_RealCosRad__real_tCP"></span><span class="target" id="tice_8h_1aaf13fee9c0d2f4bbc14bca1df9ec296b"></span><a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> <code class="sig-name descname">os_RealCosRad</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> *<em>arg</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv413os_RealCosRadPK6real_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Takes the cosine of a <a class="reference internal" href="#structreal__t"><span class="std std-ref">real_t</span></a> given in radians. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv415os_RealRadToDegPK6real_t">
+<span id="_CPPv315os_RealRadToDegPK6real_t"></span><span id="_CPPv215os_RealRadToDegPK6real_t"></span><span id="os_RealRadToDeg__real_tCP"></span><span class="target" id="tice_8h_1adeced7ffc903b927466e900f774a82b9"></span><a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> <code class="sig-name descname">os_RealRadToDeg</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> *<em>arg</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv415os_RealRadToDegPK6real_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Converts a <a class="reference internal" href="#structreal__t"><span class="std std-ref">real_t</span></a> from radians to degrees. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv410os_RealExpPK6real_t">
+<span id="_CPPv310os_RealExpPK6real_t"></span><span id="_CPPv210os_RealExpPK6real_t"></span><span id="os_RealExp__real_tCP"></span><span class="target" id="tice_8h_1ae6bc469dab695c654b16dbfe37ba34a8"></span><a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> <code class="sig-name descname">os_RealExp</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> *<em>arg</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv410os_RealExpPK6real_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Evaluates the exponential function (e^x, where e=2.717..) of a <a class="reference internal" href="#structreal__t"><span class="std std-ref">real_t</span></a>. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv412os_RealFloorPK6real_t">
+<span id="_CPPv312os_RealFloorPK6real_t"></span><span id="_CPPv212os_RealFloorPK6real_t"></span><span id="os_RealFloor__real_tCP"></span><span class="target" id="tice_8h_1ac624006aae9cbcc5ce45fe1a497221b4"></span><a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> <code class="sig-name descname">os_RealFloor</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> *<em>arg</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv412os_RealFloorPK6real_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Takes the floor of a <a class="reference internal" href="#structreal__t"><span class="std std-ref">real_t</span></a>. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv411os_RealFracPK6real_t">
+<span id="_CPPv311os_RealFracPK6real_t"></span><span id="_CPPv211os_RealFracPK6real_t"></span><span id="os_RealFrac__real_tCP"></span><span class="target" id="tice_8h_1a68cc21ed5672f91d2c0baf7bb2b27108"></span><a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> <code class="sig-name descname">os_RealFrac</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> *<em>arg</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv411os_RealFracPK6real_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Extracts the fractional part of a <a class="reference internal" href="#structreal__t"><span class="std std-ref">real_t</span></a>. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv415os_RealRoundIntPK6real_t">
+<span id="_CPPv315os_RealRoundIntPK6real_t"></span><span id="_CPPv215os_RealRoundIntPK6real_t"></span><span id="os_RealRoundInt__real_tCP"></span><span class="target" id="tice_8h_1afeb88cd32ffdee0086d31c14465924b4"></span><a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> <code class="sig-name descname">os_RealRoundInt</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> *<em>arg</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv415os_RealRoundIntPK6real_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Rounds a <a class="reference internal" href="#structreal__t"><span class="std std-ref">real_t</span></a> to the nearest integer. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv410os_RealLogPK6real_t">
+<span id="_CPPv310os_RealLogPK6real_t"></span><span id="_CPPv210os_RealLogPK6real_t"></span><span id="os_RealLog__real_tCP"></span><span class="target" id="tice_8h_1aad6164802d170ef6536d2cf49590ffd6"></span><a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> <code class="sig-name descname">os_RealLog</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> *<em>arg</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv410os_RealLogPK6real_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Takes the natural logarithm of a <a class="reference internal" href="#structreal__t"><span class="std std-ref">real_t</span></a>. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To take log base 10, divide this value by ln(10) </p>
+</div>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv410os_RealNegPK6real_t">
+<span id="_CPPv310os_RealNegPK6real_t"></span><span id="_CPPv210os_RealNegPK6real_t"></span><span id="os_RealNeg__real_tCP"></span><span class="target" id="tice_8h_1a6d42712be23fd6b3faf05b9cd3c7518a"></span><a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> <code class="sig-name descname">os_RealNeg</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> *<em>arg</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv410os_RealNegPK6real_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Negates a <a class="reference internal" href="#structreal__t"><span class="std std-ref">real_t</span></a>. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv415os_RealDegToRadPK6real_t">
+<span id="_CPPv315os_RealDegToRadPK6real_t"></span><span id="_CPPv215os_RealDegToRadPK6real_t"></span><span id="os_RealDegToRad__real_tCP"></span><span class="target" id="tice_8h_1a6e5e2f9de82eb7b7d4fe814713f6039a"></span><a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> <code class="sig-name descname">os_RealDegToRad</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> *<em>arg</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv415os_RealDegToRadPK6real_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Converts a <a class="reference internal" href="#structreal__t"><span class="std std-ref">real_t</span></a> from degrees to radians. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv410os_RealInvPK6real_t">
+<span id="_CPPv310os_RealInvPK6real_t"></span><span id="_CPPv210os_RealInvPK6real_t"></span><span id="os_RealInv__real_tCP"></span><span class="target" id="tice_8h_1ae58ace2c4c823821a6b000e4454aef75"></span><a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> <code class="sig-name descname">os_RealInv</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> *<em>arg</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv410os_RealInvPK6real_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Takes the reciprocal of a <a class="reference internal" href="#structreal__t"><span class="std std-ref">real_t</span></a>. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv413os_RealSinRadPK6real_t">
+<span id="_CPPv313os_RealSinRadPK6real_t"></span><span id="_CPPv213os_RealSinRadPK6real_t"></span><span id="os_RealSinRad__real_tCP"></span><span class="target" id="tice_8h_1a52c0d6cc93e18ca96ba662018e3cd86c"></span><a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> <code class="sig-name descname">os_RealSinRad</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> *<em>arg</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv413os_RealSinRadPK6real_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Takes the sine of a <a class="reference internal" href="#structreal__t"><span class="std std-ref">real_t</span></a> given in radians. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv411os_RealSqrtPK6real_t">
+<span id="_CPPv311os_RealSqrtPK6real_t"></span><span id="_CPPv211os_RealSqrtPK6real_t"></span><span id="os_RealSqrt__real_tCP"></span><span class="target" id="tice_8h_1afc0f2e79e884de62967e9a8a5f192f26"></span><a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> <code class="sig-name descname">os_RealSqrt</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> *<em>arg</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv411os_RealSqrtPK6real_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Takes the square root of a <a class="reference internal" href="#structreal__t"><span class="std std-ref">real_t</span></a>. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv413os_RealTanRadPK6real_t">
+<span id="_CPPv313os_RealTanRadPK6real_t"></span><span id="_CPPv213os_RealTanRadPK6real_t"></span><span id="os_RealTanRad__real_tCP"></span><span class="target" id="tice_8h_1a5fad40465e9d4b20f7825a7fef747229"></span><a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> <code class="sig-name descname">os_RealTanRad</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> *<em>arg</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv413os_RealTanRadPK6real_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Takes the tangent of a <a class="reference internal" href="#structreal__t"><span class="std std-ref">real_t</span></a> given in radians. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv410os_RealIntPK6real_t">
+<span id="_CPPv310os_RealIntPK6real_t"></span><span id="_CPPv210os_RealIntPK6real_t"></span><span id="os_RealInt__real_tCP"></span><span class="target" id="tice_8h_1a8ab2232f8c933e590bf5d2f98ba3bede"></span><a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> <code class="sig-name descname">os_RealInt</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> *<em>arg</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv410os_RealIntPK6real_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Extracts the integer part of a <a class="reference internal" href="#structreal__t"><span class="std std-ref">real_t</span></a>. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv413os_CplxSquarePK6cplx_t">
+<span id="_CPPv313os_CplxSquarePK6cplx_t"></span><span id="_CPPv213os_CplxSquarePK6cplx_t"></span><span id="os_CplxSquare__cplx_tCP"></span><span class="target" id="tice_8h_1a8b361cf308ab9a345f1b886c652515d1"></span><a class="reference internal" href="#_CPPv46cplx_t" title="cplx_t">cplx_t</a> <code class="sig-name descname">os_CplxSquare</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv46cplx_t" title="cplx_t">cplx_t</a> *<em>arg</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv413os_CplxSquarePK6cplx_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Calculates the square of a <a class="reference internal" href="#structcplx__t"><span class="std std-ref">cplx_t</span></a>. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv410os_RealAddPK6real_tPK6real_t">
+<span id="_CPPv310os_RealAddPK6real_tPK6real_t"></span><span id="_CPPv210os_RealAddPK6real_tPK6real_t"></span><span id="os_RealAdd__real_tCP.real_tCP"></span><span class="target" id="tice_8h_1a0e2c8044f070e6d6e2469899fcb12538"></span><a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> <code class="sig-name descname">os_RealAdd</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> *<em>arg1</em>, <em class="property">const</em> <a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> *<em>arg2</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv410os_RealAddPK6real_tPK6real_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Adds two <a class="reference internal" href="#structreal__t"><span class="std std-ref">real_t</span></a> values. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv410os_RealDivPK6real_tPK6real_t">
+<span id="_CPPv310os_RealDivPK6real_tPK6real_t"></span><span id="_CPPv210os_RealDivPK6real_tPK6real_t"></span><span id="os_RealDiv__real_tCP.real_tCP"></span><span class="target" id="tice_8h_1a4f208c842e0da3a02e0d05f6500c4b30"></span><a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> <code class="sig-name descname">os_RealDiv</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> *<em>arg1</em>, <em class="property">const</em> <a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> *<em>arg2</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv410os_RealDivPK6real_tPK6real_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Divides two <a class="reference internal" href="#structreal__t"><span class="std std-ref">real_t</span></a> values. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv410os_RealGcdPK6real_tPK6real_t">
+<span id="_CPPv310os_RealGcdPK6real_tPK6real_t"></span><span id="_CPPv210os_RealGcdPK6real_tPK6real_t"></span><span id="os_RealGcd__real_tCP.real_tCP"></span><span class="target" id="tice_8h_1abb0cd44d49d132aefefe222fcd71a5e2"></span><a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> <code class="sig-name descname">os_RealGcd</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> *<em>arg1</em>, <em class="property">const</em> <a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> *<em>arg2</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv410os_RealGcdPK6real_tPK6real_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Calculates the Greatest Common Divisor of two <a class="reference internal" href="#structreal__t"><span class="std std-ref">real_t</span></a> values. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv410os_RealLcmPK6real_tPK6real_t">
+<span id="_CPPv310os_RealLcmPK6real_tPK6real_t"></span><span id="_CPPv210os_RealLcmPK6real_tPK6real_t"></span><span id="os_RealLcm__real_tCP.real_tCP"></span><span class="target" id="tice_8h_1a8b33b9d3ec28a5fe9d3b56fad761e4a5"></span><a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> <code class="sig-name descname">os_RealLcm</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> *<em>arg1</em>, <em class="property">const</em> <a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> *<em>arg2</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv410os_RealLcmPK6real_tPK6real_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Calculates the Least Common Multiple of two <a class="reference internal" href="#structreal__t"><span class="std std-ref">real_t</span></a> values. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv410os_RealMaxPK6real_tPK6real_t">
+<span id="_CPPv310os_RealMaxPK6real_tPK6real_t"></span><span id="_CPPv210os_RealMaxPK6real_tPK6real_t"></span><span id="os_RealMax__real_tCP.real_tCP"></span><span class="target" id="tice_8h_1ab1ce14a304371f1362fcc0bd0ff82ceb"></span><a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> <code class="sig-name descname">os_RealMax</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> *<em>arg1</em>, <em class="property">const</em> <a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> *<em>arg2</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv410os_RealMaxPK6real_tPK6real_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns the larger of two <a class="reference internal" href="#structreal__t"><span class="std std-ref">real_t</span></a> values. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv410os_RealMinPK6real_tPK6real_t">
+<span id="_CPPv310os_RealMinPK6real_tPK6real_t"></span><span id="_CPPv210os_RealMinPK6real_tPK6real_t"></span><span id="os_RealMin__real_tCP.real_tCP"></span><span class="target" id="tice_8h_1a5e6744776d45be8870e210c0a4542d40"></span><a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> <code class="sig-name descname">os_RealMin</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> *<em>arg1</em>, <em class="property">const</em> <a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> *<em>arg2</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv410os_RealMinPK6real_tPK6real_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns the smaller of two <a class="reference internal" href="#structreal__t"><span class="std std-ref">real_t</span></a> values. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv410os_RealMulPK6real_tPK6real_t">
+<span id="_CPPv310os_RealMulPK6real_tPK6real_t"></span><span id="_CPPv210os_RealMulPK6real_tPK6real_t"></span><span id="os_RealMul__real_tCP.real_tCP"></span><span class="target" id="tice_8h_1adfd070720a46d3c395608e0727afd50c"></span><a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> <code class="sig-name descname">os_RealMul</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> *<em>arg1</em>, <em class="property">const</em> <a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> *<em>arg2</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv410os_RealMulPK6real_tPK6real_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Multiplies two <a class="reference internal" href="#structreal__t"><span class="std std-ref">real_t</span></a> values. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv410os_RealNcrPK6real_tPK6real_t">
+<span id="_CPPv310os_RealNcrPK6real_tPK6real_t"></span><span id="_CPPv210os_RealNcrPK6real_tPK6real_t"></span><span id="os_RealNcr__real_tCP.real_tCP"></span><span class="target" id="tice_8h_1ad9617a72db64dae91109ad2b0ddb19bf"></span><a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> <code class="sig-name descname">os_RealNcr</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> *<em>total</em>, <em class="property">const</em> <a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> *<em>num</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv410os_RealNcrPK6real_tPK6real_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Calculates the value of nCr (binomial coefficient) for two <a class="reference internal" href="#structreal__t"><span class="std std-ref">real_t</span></a> values. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv410os_RealNprPK6real_tPK6real_t">
+<span id="_CPPv310os_RealNprPK6real_tPK6real_t"></span><span id="_CPPv210os_RealNprPK6real_tPK6real_t"></span><span id="os_RealNpr__real_tCP.real_tCP"></span><span class="target" id="tice_8h_1a4fed358b7da2dc27c07aa7e616f1b774"></span><a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> <code class="sig-name descname">os_RealNpr</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> *<em>total</em>, <em class="property">const</em> <a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> *<em>num</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv410os_RealNprPK6real_tPK6real_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Calculates the value of nPr (permutation number) for two <a class="reference internal" href="#structreal__t"><span class="std std-ref">real_t</span></a> values. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv410os_RealPowPK6real_tPK6real_t">
+<span id="_CPPv310os_RealPowPK6real_tPK6real_t"></span><span id="_CPPv210os_RealPowPK6real_tPK6real_t"></span><span id="os_RealPow__real_tCP.real_tCP"></span><span class="target" id="tice_8h_1a79757bf03bd0084bf65ac5fc546d9d26"></span><a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> <code class="sig-name descname">os_RealPow</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> *<em>base</em>, <em class="property">const</em> <a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> *<em>exp</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv410os_RealPowPK6real_tPK6real_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Raises one <a class="reference internal" href="#structreal__t"><span class="std std-ref">real_t</span></a> value to the power of another. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv414os_RealRandIntPK6real_tPK6real_t">
+<span id="_CPPv314os_RealRandIntPK6real_tPK6real_t"></span><span id="_CPPv214os_RealRandIntPK6real_tPK6real_t"></span><span id="os_RealRandInt__real_tCP.real_tCP"></span><span class="target" id="tice_8h_1a8c9ea24fb776d9746b7b5f7adcc321e6"></span><a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> <code class="sig-name descname">os_RealRandInt</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> *<em>min</em>, <em class="property">const</em> <a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> *<em>max</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv414os_RealRandIntPK6real_tPK6real_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns a random <a class="reference internal" href="#structreal__t"><span class="std std-ref">real_t</span></a> between min and max. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv410os_RealModPK6real_tPK6real_t">
+<span id="_CPPv310os_RealModPK6real_tPK6real_t"></span><span id="_CPPv210os_RealModPK6real_tPK6real_t"></span><span id="os_RealMod__real_tCP.real_tCP"></span><span class="target" id="tice_8h_1ac3f35ea63444d9d80dce627f56875d08"></span><a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> <code class="sig-name descname">os_RealMod</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> *<em>arg1</em>, <em class="property">const</em> <a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> *<em>arg2</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv410os_RealModPK6real_tPK6real_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Calculates the remainder (modulo) of two <a class="reference internal" href="#structreal__t"><span class="std std-ref">real_t</span></a> values. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv410os_RealSubPK6real_tPK6real_t">
+<span id="_CPPv310os_RealSubPK6real_tPK6real_t"></span><span id="_CPPv210os_RealSubPK6real_tPK6real_t"></span><span id="os_RealSub__real_tCP.real_tCP"></span><span class="target" id="tice_8h_1aecc96bceea9d384b607edd9f6c3a5c89"></span><a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> <code class="sig-name descname">os_RealSub</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> *<em>arg1</em>, <em class="property">const</em> <a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> *<em>arg2</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv410os_RealSubPK6real_tPK6real_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Subtracts two <a class="reference internal" href="#structreal__t"><span class="std std-ref">real_t</span></a> values. </p>
+</dd></dl>
+
+<dl class="cpp function">
 <dt id="_CPPv412os_RealRoundPK6real_tc">
 <span id="_CPPv312os_RealRoundPK6real_tc"></span><span id="_CPPv212os_RealRoundPK6real_tc"></span><span id="os_RealRound__real_tCP.c"></span><span class="target" id="tice_8h_1a1b45f9fc846040f840cc85c4c95c59ab"></span><a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> <code class="sig-name descname">os_RealRound</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> *<em>arg</em>, char <em>digits</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv412os_RealRoundPK6real_tc" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Rounds a <a class="reference internal" href="#structreal__t"><span class="std std-ref">real_t</span></a></p>
+<dd><p>Rounds a <a class="reference internal" href="#structreal__t"><span class="std std-ref">real_t</span></a>. </p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>digits must be in the range 0 - 9 </p>
@@ -1718,7 +2084,7 @@
 <dl class="cpp function">
 <dt id="_CPPv414os_RealComparePK6real_tPK6real_t">
 <span id="_CPPv314os_RealComparePK6real_tPK6real_t"></span><span id="_CPPv214os_RealComparePK6real_tPK6real_t"></span><span id="os_RealCompare__real_tCP.real_tCP"></span><span class="target" id="tice_8h_1ac12d5e48a1c3577d15b33bbfc73790dc"></span>int <code class="sig-name descname">os_RealCompare</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> *<em>arg1</em>, <em class="property">const</em> <a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> *<em>arg2</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv414os_RealComparePK6real_tPK6real_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Compares two <a class="reference internal" href="#structreal__t"><span class="std std-ref">real_t</span></a></p>
+<dd><p>Compares two <a class="reference internal" href="#structreal__t"><span class="std std-ref">real_t</span></a>. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -1735,7 +2101,7 @@
 <dl class="cpp function">
 <dt id="_CPPv414os_RealToInt24PK6real_t">
 <span id="_CPPv314os_RealToInt24PK6real_t"></span><span id="_CPPv214os_RealToInt24PK6real_t"></span><span id="os_RealToInt24__real_tCP"></span><span class="target" id="tice_8h_1a3e943f7b734e3d769b1ecf8787cb4187"></span>int24_t <code class="sig-name descname">os_RealToInt24</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> *<em>arg</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv414os_RealToInt24PK6real_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Converts a <a class="reference internal" href="#structreal__t"><span class="std std-ref">real_t</span></a> to an integer</p>
+<dd><p>Converts a <a class="reference internal" href="#structreal__t"><span class="std std-ref">real_t</span></a> to an integer. </p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Saturates on overflow </p>
@@ -1750,7 +2116,7 @@
 <dl class="cpp function">
 <dt id="_CPPv414os_Int24ToReal7int24_t">
 <span id="_CPPv314os_Int24ToReal7int24_t"></span><span id="_CPPv214os_Int24ToReal7int24_t"></span><span id="os_Int24ToReal__int24_t"></span><span class="target" id="tice_8h_1a83cd18115c9638421c1e44c7e1ec7380"></span><a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> <code class="sig-name descname">os_Int24ToReal</code><span class="sig-paren">(</span>int24_t <em>arg</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv414os_Int24ToReal7int24_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Converts an integer to a <a class="reference internal" href="#structreal__t"><span class="std std-ref">real_t</span></a></p>
+<dd><p>Converts an integer to a <a class="reference internal" href="#structreal__t"><span class="std std-ref">real_t</span></a>. </p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Saturates on overflow </p>
@@ -1765,7 +2131,7 @@
 <dl class="cpp function">
 <dt id="_CPPv414os_RealToFloatPK6real_t">
 <span id="_CPPv314os_RealToFloatPK6real_t"></span><span id="_CPPv214os_RealToFloatPK6real_t"></span><span id="os_RealToFloat__real_tCP"></span><span class="target" id="tice_8h_1a29e3aa966dadbd18298ad0791f7917c8"></span>float <code class="sig-name descname">os_RealToFloat</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> *<em>arg</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv414os_RealToFloatPK6real_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Converts a <a class="reference internal" href="#structreal__t"><span class="std std-ref">real_t</span></a> to a float</p>
+<dd><p>Converts a <a class="reference internal" href="#structreal__t"><span class="std std-ref">real_t</span></a> to a float. </p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Saturates on overflow </p>
@@ -1780,7 +2146,7 @@
 <dl class="cpp function">
 <dt id="_CPPv414os_FloatToRealf">
 <span id="_CPPv314os_FloatToRealf"></span><span id="_CPPv214os_FloatToRealf"></span><span id="os_FloatToReal__float"></span><span class="target" id="tice_8h_1a2d8395d37160b196d48467b377a42b53"></span><a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> <code class="sig-name descname">os_FloatToReal</code><span class="sig-paren">(</span>float <em>arg</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv414os_FloatToRealf" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Converts an float to a <a class="reference internal" href="#structreal__t"><span class="std std-ref">real_t</span></a></p>
+<dd><p>Converts an float to a <a class="reference internal" href="#structreal__t"><span class="std std-ref">real_t</span></a>. </p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Saturates on overflow </p>
@@ -1795,7 +2161,7 @@
 <dl class="cpp function">
 <dt id="_CPPv412os_RealToStrPcPK6real_t6int8_t7uint8_t6int8_t">
 <span id="_CPPv312os_RealToStrPcPK6real_t6int8_t7uint8_t6int8_t"></span><span id="_CPPv212os_RealToStrPcPK6real_t6int8_t7uint8_t6int8_t"></span><span id="os_RealToStr__cP.real_tCP.int8_t.uint8_t.int8_t"></span><span class="target" id="tice_8h_1a613e51097b40c4c9df803f5e67058b64"></span>int <code class="sig-name descname">os_RealToStr</code><span class="sig-paren">(</span>char *<em>result</em>, <em class="property">const</em> <a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> *<em>arg</em>, int8_t <em>maxLength</em>, uint8_t <em>mode</em>, int8_t <em>digits</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv412os_RealToStrPcPK6real_t6int8_t7uint8_t6int8_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>This converts a ti-float to a ti-ascii string.</p>
+<dd><p>This converts a ti-float to a ti-ascii string. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -1824,7 +2190,7 @@
 <dl class="cpp function">
 <dt id="_CPPv412os_StrToRealPKcPPc">
 <span id="_CPPv312os_StrToRealPKcPPc"></span><span id="_CPPv212os_StrToRealPKcPPc"></span><span id="os_StrToReal__cCP.cPP"></span><span class="target" id="tice_8h_1a8c87da7e79da4f15ab80fcc40628ece9"></span><a class="reference internal" href="#_CPPv46real_t" title="real_t">real_t</a> <code class="sig-name descname">os_StrToReal</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>string</em>, char **<em>end</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv412os_StrToRealPKcPPc" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>This converts a ti-ascii string to a ti-float.</p>
+<dd><p>This converts a ti-ascii string to a ti-float. </p>
 <p>String format regexp: / *[-\032+]?[0-9]*(.[0-9]*)?([eE\033][-\032+]?[0-9]*)?/ </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1842,7 +2208,7 @@
 <dl class="cpp function">
 <dt id="_CPPv415os_TestFlagBits8uint16_t">
 <span id="_CPPv315os_TestFlagBits8uint16_t"></span><span id="_CPPv215os_TestFlagBits8uint16_t"></span><span id="os_TestFlagBits__uint16_t"></span><span class="target" id="tice_8h_1a0bd74157b99a61df8b9c654ea90bfa5f"></span>int <code class="sig-name descname">os_TestFlagBits</code><span class="sig-paren">(</span>uint16_t <em>offset_pattern</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv415os_TestFlagBits8uint16_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>High 8 is unsigned offset, low 8 is bits to test </p>
+<dd><p>High 8 is unsigned offset, low 8 is bits to test. </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -1863,7 +2229,8 @@
 <dl class="cpp function">
 <dt id="_CPPv417os_GetStringInputPcPc6size_t">
 <span id="_CPPv317os_GetStringInputPcPc6size_t"></span><span id="_CPPv217os_GetStringInputPcPc6size_t"></span><span id="os_GetStringInput__cP.cP.s"></span><span class="target" id="tice_8h_1a2018609a10a2182e2ebe65f49f6dc452"></span>void <code class="sig-name descname">os_GetStringInput</code><span class="sig-paren">(</span>char *<em>string</em>, char *<em>buf</em>, size_t <em>bufsize</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv417os_GetStringInputPcPc6size_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Custom implementation input routine for use in conjunction with the TIOS. It is HIGHLY recommended you implement your own routine, this routine has some quirks. It is good enough for getting basic input however.</p>
+<dd><p>Custom implementation input routine for use in conjunction with the TIOS. </p>
+<p>It is HIGHLY recommended you implement your own routine, this routine has some quirks. It is good enough for getting basic input however.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -1881,7 +2248,7 @@
 <dl class="cpp function">
 <dt id="_CPPv49os_GetKeyv">
 <span id="_CPPv39os_GetKeyv"></span><span id="_CPPv29os_GetKeyv"></span><span id="os_GetKey__void"></span><span class="target" id="tice_8h_1a2fe1d4602b3181350157d3c5cec287a7"></span>uint16_t <code class="sig-name descname">os_GetKey</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv49os_GetKeyv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Gets a key from the OS</p>
+<dd><p>Gets a key from the OS. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>Key code </p>
@@ -1895,19 +2262,21 @@
 <dl class="cpp function">
 <dt id="_CPPv424os_DisableHomeTextBufferv">
 <span id="_CPPv324os_DisableHomeTextBufferv"></span><span id="_CPPv224os_DisableHomeTextBufferv"></span><span id="os_DisableHomeTextBuffer__void"></span><span class="target" id="tice_8h_1a530453db72aabb7bda179e244bfec63c"></span>void <code class="sig-name descname">os_DisableHomeTextBuffer</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv424os_DisableHomeTextBufferv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Disable text buffering on the homescreen. C programs use this area by default for the BSS / Heap. </p>
+<dd><p>Disable text buffering on the homescreen. </p>
+<p>C programs use this area by default for the BSS / Heap. </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv423os_EnableHomeTextBufferv">
 <span id="_CPPv323os_EnableHomeTextBufferv"></span><span id="_CPPv223os_EnableHomeTextBufferv"></span><span id="os_EnableHomeTextBuffer__void"></span><span class="target" id="tice_8h_1ad2beeceae6d37a699fdec285b94afb41"></span>void <code class="sig-name descname">os_EnableHomeTextBuffer</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv423os_EnableHomeTextBufferv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Enables text buffering on the homescreen. C programs use this area by default for the BSS / Heap. </p>
+<dd><p>Enables text buffering on the homescreen. </p>
+<p>C programs use this area by default for the BSS / Heap. </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv49os_GetCSCv">
 <span id="_CPPv39os_GetCSCv"></span><span id="_CPPv29os_GetCSCv"></span><span id="os_GetCSC__void"></span><span class="target" id="tice_8h_1a5239bbcc4677735fa0a79b149e09f0d7"></span><a class="reference internal" href="#_CPPv48sk_key_t" title="sk_key_t">sk_key_t</a> <code class="sig-name descname">os_GetCSC</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv49os_GetCSCv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Performs an OS call to get the keypad scan code</p>
+<dd><p>Performs an OS call to get the keypad scan code. </p>
 <p>You can also use this function to get input from the user as a string like this: <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">chars</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\0\0\0\0\0\0\0\0\0\0\&quot;</span><span class="s2">WRMH</span><span class="se">\0\0</span><span class="s2">?[VQLG</span><span class="se">\0\0</span><span class="s2">:ZUPKFC</span><span class="se">\0</span><span class="s2"> YTOJEB</span><span class="se">\0\0</span><span class="s2">XSNIDA</span><span class="se">\0\0\0\0\0\0\0\0</span><span class="s2">&quot;</span><span class="p">;</span>
 <span class="n">uint8_t</span> <span class="n">key</span><span class="p">,</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 <span class="n">char</span> <span class="n">buffer</span><span class="p">[</span><span class="mi">50</span><span class="p">];</span>
@@ -2051,19 +2420,19 @@
 <dl class="cpp function">
 <dt id="_CPPv417os_ForceCmdNoCharv">
 <span id="_CPPv317os_ForceCmdNoCharv"></span><span id="_CPPv217os_ForceCmdNoCharv"></span><span id="os_ForceCmdNoChar__void"></span><span class="target" id="tice_8h_1a190aee5cf27dcd5f6e889ea738e0890b"></span>void <code class="sig-name descname">os_ForceCmdNoChar</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv417os_ForceCmdNoCharv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Executes the assembly routine _ForceCmdNoChar </p>
+<dd><p>Executes the assembly routine _ForceCmdNoChar. </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv49os_MoveUpv">
 <span id="_CPPv39os_MoveUpv"></span><span id="_CPPv29os_MoveUpv"></span><span id="os_MoveUp__void"></span><span class="target" id="tice_8h_1a4a12456b167131d01b74c9de5d5b247f"></span>void <code class="sig-name descname">os_MoveUp</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv49os_MoveUpv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Routine to scroll homescreen up </p>
+<dd><p>Routine to scroll homescreen up. </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv411os_MoveDownv">
 <span id="_CPPv311os_MoveDownv"></span><span id="_CPPv211os_MoveDownv"></span><span id="os_MoveDown__void"></span><span class="target" id="tice_8h_1aef8e320a7d77919b30c1bf66ed6d6d28"></span>void <code class="sig-name descname">os_MoveDown</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv411os_MoveDownv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Routine to scroll homescreen down </p>
+<dd><p>Routine to scroll homescreen down. </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -2075,73 +2444,74 @@
 <dl class="cpp function">
 <dt id="_CPPv413os_RunIndicOnv">
 <span id="_CPPv313os_RunIndicOnv"></span><span id="_CPPv213os_RunIndicOnv"></span><span id="os_RunIndicOn__void"></span><span class="target" id="tice_8h_1a6a70310fb85609de996ec93422cd96b7"></span>void <code class="sig-name descname">os_RunIndicOn</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv413os_RunIndicOnv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Routine to turn on the Run Indicator </p>
+<dd><p>Routine to turn on the Run Indicator. </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv414os_RunIndicOffv">
 <span id="_CPPv314os_RunIndicOffv"></span><span id="_CPPv214os_RunIndicOffv"></span><span id="os_RunIndicOff__void"></span><span class="target" id="tice_8h_1adc00870524aba07fd3bd5765ea5bda65"></span>void <code class="sig-name descname">os_RunIndicOff</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv414os_RunIndicOffv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Routine to turn off the Run Indicator </p>
+<dd><p>Routine to turn off the Run Indicator. </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv413os_DisableAPDv">
 <span id="_CPPv313os_DisableAPDv"></span><span id="_CPPv213os_DisableAPDv"></span><span id="os_DisableAPD__void"></span><span class="target" id="tice_8h_1a1f784788305295f208bc85abb1477329"></span>void <code class="sig-name descname">os_DisableAPD</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv413os_DisableAPDv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Routine to turn off APD </p>
+<dd><p>Routine to turn off APD. </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv412os_EnableAPDv">
 <span id="_CPPv312os_EnableAPDv"></span><span id="_CPPv212os_EnableAPDv"></span><span id="os_EnableAPD__void"></span><span class="target" id="tice_8h_1a6dc4f34fe8ec19c381886a53b4f0bcb2"></span>void <code class="sig-name descname">os_EnableAPD</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv412os_EnableAPDv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Routine to turn on APD </p>
+<dd><p>Routine to turn on APD. </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv49os_ArcChkv">
 <span id="_CPPv39os_ArcChkv"></span><span id="_CPPv29os_ArcChkv"></span><span id="os_ArcChk__void"></span><span class="target" id="tice_8h_1a0ac2d0c349446077665fc1aba42a6697"></span>void <code class="sig-name descname">os_ArcChk</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv49os_ArcChkv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Routine checks the amount of free archive </p>
+<dd><p>Routine checks the amount of free archive. </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv413os_ClrLCDFullv">
 <span id="_CPPv313os_ClrLCDFullv"></span><span id="_CPPv213os_ClrLCDFullv"></span><span id="os_ClrLCDFull__void"></span><span class="target" id="tice_8h_1a850b2591b12ad04af210596bfe249369"></span>void <code class="sig-name descname">os_ClrLCDFull</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv413os_ClrLCDFullv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Routine to clear the homescreen lcd </p>
+<dd><p>Routine to clear the homescreen lcd. </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv49os_ClrLCDv">
 <span id="_CPPv39os_ClrLCDv"></span><span id="_CPPv29os_ClrLCDv"></span><span id="os_ClrLCD__void"></span><span class="target" id="tice_8h_1a76b55fb8cf571b9a91eadb7057e7d57e"></span>void <code class="sig-name descname">os_ClrLCD</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv49os_ClrLCDv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Routine to clear the homescreen lcd. Accounts for split screen </p>
+<dd><p>Routine to clear the homescreen lcd. </p>
+<p>Accounts for split screen </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv416os_DrawStatusBarv">
 <span id="_CPPv316os_DrawStatusBarv"></span><span id="_CPPv216os_DrawStatusBarv"></span><span id="os_DrawStatusBar__void"></span><span class="target" id="tice_8h_1ac04861f74a043a85f576afc18a3b0cea"></span>void <code class="sig-name descname">os_DrawStatusBar</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv416os_DrawStatusBarv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Routine to redraw the status bar </p>
+<dd><p>Routine to redraw the status bar. </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv49os_DelResv">
 <span id="_CPPv39os_DelResv"></span><span id="_CPPv29os_DelResv"></span><span id="os_DelRes__void"></span><span class="target" id="tice_8h_1abe2be5a73be715caf3058a7066c2198a"></span>void <code class="sig-name descname">os_DelRes</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv49os_DelResv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Invalidate and clear stat variables </p>
+<dd><p>Invalidate and clear stat variables. </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv412os_ClrTxtShdv">
 <span id="_CPPv312os_ClrTxtShdv"></span><span id="_CPPv212os_ClrTxtShdv"></span><span id="os_ClrTxtShd__void"></span><span class="target" id="tice_8h_1a73bff95023931d07ca78c7115d864e86"></span>void <code class="sig-name descname">os_ClrTxtShd</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv412os_ClrTxtShdv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Invalidate and clear text shadow area </p>
+<dd><p>Invalidate and clear text shadow area. </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv416boot_Set6MHzModev">
 <span id="_CPPv316boot_Set6MHzModev"></span><span id="_CPPv216boot_Set6MHzModev"></span><span id="boot_Set6MHzMode__void"></span><span class="target" id="tice_8h_1a3e48d62e2f6e2cbd743a14bffeda16ae"></span>void <code class="sig-name descname">boot_Set6MHzMode</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv416boot_Set6MHzModev" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Runs the calulator at 6 MHz </p>
+<dd><p>Runs the calulator at 6 MHz. </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv417boot_Set48MHzModev">
 <span id="_CPPv317boot_Set48MHzModev"></span><span id="_CPPv217boot_Set48MHzModev"></span><span id="boot_Set48MHzMode__void"></span><span class="target" id="tice_8h_1a67791b653e6aaa33ad8d1135416f5740"></span>void <code class="sig-name descname">boot_Set48MHzMode</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv417boot_Set48MHzModev" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Runs the calulator at 48 MHz </p>
+<dd><p>Runs the calulator at 48 MHz. </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -2159,7 +2529,7 @@
 <dl class="cpp function">
 <dt id="_CPPv414atomic_load_32PV8uint32_t">
 <span id="_CPPv314atomic_load_32PV8uint32_t"></span><span id="_CPPv214atomic_load_32PV8uint32_t"></span><span id="atomic_load_32__uint32_tVP"></span><span class="target" id="tice_8h_1a0be008b3b1dd2bcbcd323c06eec61094"></span>uint32_t <code class="sig-name descname">atomic_load_32</code><span class="sig-paren">(</span><em class="property">volatile</em> uint32_t *<em>p</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv414atomic_load_32PV8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>“Atomically” loads from a volatile 32-bit value.</p>
+<dd><p>“Atomically” loads from a volatile 32-bit value. </p>
 <p><dl class="simple">
 <dt><strong>Remark</strong></dt><dd><p>The hardware does not provide a mechanism to truly atomically load from a 32-bit value. This “atomic” load is implemented by non-atomically reading the value twice and retrying if the values read differ.</p>
 </dd>
@@ -2177,7 +2547,7 @@
 <dl class="cpp function">
 <dt id="_CPPv425atomic_load_increasing_32PV8uint32_t">
 <span id="_CPPv325atomic_load_increasing_32PV8uint32_t"></span><span id="_CPPv225atomic_load_increasing_32PV8uint32_t"></span><span id="atomic_load_increasing_32__uint32_tVP"></span><span class="target" id="tice_8h_1acf4c807f7c9a51cf8ac55059334aef20"></span>uint32_t <code class="sig-name descname">atomic_load_increasing_32</code><span class="sig-paren">(</span><em class="property">volatile</em> uint32_t *<em>p</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv425atomic_load_increasing_32PV8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>“Atomically” loads from a volatile, increasing 32-bit value.</p>
+<dd><p>“Atomically” loads from a volatile, increasing 32-bit value. </p>
 <p><dl class="simple">
 <dt><strong>Remark</strong></dt><dd><p>The hardware does not provide a mechanism to truly atomically load from a 32-bit value. This “atomic” load is implemented by temporarily disabling interrupts while non-atomically reading the value twice and then returning the lesser of the two values read.</p>
 </dd>
@@ -2195,7 +2565,7 @@
 <dl class="cpp function">
 <dt id="_CPPv425atomic_load_decreasing_32PV8uint32_t">
 <span id="_CPPv325atomic_load_decreasing_32PV8uint32_t"></span><span id="_CPPv225atomic_load_decreasing_32PV8uint32_t"></span><span id="atomic_load_decreasing_32__uint32_tVP"></span><span class="target" id="tice_8h_1a52b216df9a65876fa0a88959d975cfd6"></span>uint32_t <code class="sig-name descname">atomic_load_decreasing_32</code><span class="sig-paren">(</span><em class="property">volatile</em> uint32_t *<em>p</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv425atomic_load_decreasing_32PV8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>“Atomically” loads from a volatile, decreasing 32-bit value.</p>
+<dd><p>“Atomically” loads from a volatile, decreasing 32-bit value. </p>
 <p><dl class="simple">
 <dt><strong>Remark</strong></dt><dd><p>The hardware does not provide a mechanism to truly atomically load from a 32-bit value. This “atomic” load is implemented by temporarily disabling interrupts while non-atomically reading the value twice and then returning the greater of the two values read.</p>
 </dd>
@@ -2453,49 +2823,57 @@
 <dl class="cpp var">
 <dt id="_CPPv4N11system_info14osMajorVersionE">
 <span id="_CPPv3N11system_info14osMajorVersionE"></span><span id="_CPPv2N11system_info14osMajorVersionE"></span><span id="system_info::osMajorVersion__uint8_t"></span><span class="target" id="structsystem__info_1ab31d0fccbaf2c40ce110fb5c5e86648d"></span>uint8_t <code class="sig-name descname">osMajorVersion</code><a class="headerlink" href="#_CPPv4N11system_info14osMajorVersionE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>e.g. 5 on OS 5.4.0.0034 </p>
+<dd><p>e.g. </p>
+<p>5 on OS 5.4.0.0034 </p>
 </dd></dl>
 
 <dl class="cpp var">
 <dt id="_CPPv4N11system_info14osMinorVersionE">
 <span id="_CPPv3N11system_info14osMinorVersionE"></span><span id="_CPPv2N11system_info14osMinorVersionE"></span><span id="system_info::osMinorVersion__uint8_t"></span><span class="target" id="structsystem__info_1a70ffaba1d5d5706f73f38607adc77337"></span>uint8_t <code class="sig-name descname">osMinorVersion</code><a class="headerlink" href="#_CPPv4N11system_info14osMinorVersionE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>e.g. 4 on OS 5.4.0.0034 </p>
+<dd><p>e.g. </p>
+<p>4 on OS 5.4.0.0034 </p>
 </dd></dl>
 
 <dl class="cpp var">
 <dt id="_CPPv4N11system_info17osRevisionVersionE">
 <span id="_CPPv3N11system_info17osRevisionVersionE"></span><span id="_CPPv2N11system_info17osRevisionVersionE"></span><span id="system_info::osRevisionVersion__uint8_t"></span><span class="target" id="structsystem__info_1a1026304fd20a6f051fdca2edf0dbc134"></span>uint8_t <code class="sig-name descname">osRevisionVersion</code><a class="headerlink" href="#_CPPv4N11system_info17osRevisionVersionE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>e.g. 0 on OS 5.4.0.0034 </p>
+<dd><p>e.g. </p>
+<p>0 on OS 5.4.0.0034 </p>
 </dd></dl>
 
 <dl class="cpp var">
 <dt id="_CPPv4N11system_info14osBuildVersionE">
 <span id="_CPPv3N11system_info14osBuildVersionE"></span><span id="_CPPv2N11system_info14osBuildVersionE"></span><span id="system_info::osBuildVersion__unsigned"></span><span class="target" id="structsystem__info_1ad72a0cd1a6525a64bacb9bdc04f4f62a"></span>unsigned <code class="sig-name descname">osBuildVersion</code><a class="headerlink" href="#_CPPv4N11system_info14osBuildVersionE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>e.g. 34 on OS 5.4.0.0034 </p>
+<dd><p>e.g. </p>
+<p>34 on OS 5.4.0.0034 </p>
 </dd></dl>
 
 <dl class="cpp var">
 <dt id="_CPPv4N11system_info16bootMajorVersionE">
 <span id="_CPPv3N11system_info16bootMajorVersionE"></span><span id="_CPPv2N11system_info16bootMajorVersionE"></span><span id="system_info::bootMajorVersion__uint8_t"></span><span class="target" id="structsystem__info_1a49dd1efdb367afee4fe2c005eefb0f20"></span>uint8_t <code class="sig-name descname">bootMajorVersion</code><a class="headerlink" href="#_CPPv4N11system_info16bootMajorVersionE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>e.g. 5 on boot 5.3.6.0017 </p>
+<dd><p>e.g. </p>
+<p>5 on boot 5.3.6.0017 </p>
 </dd></dl>
 
 <dl class="cpp var">
 <dt id="_CPPv4N11system_info16bootMinorVersionE">
 <span id="_CPPv3N11system_info16bootMinorVersionE"></span><span id="_CPPv2N11system_info16bootMinorVersionE"></span><span id="system_info::bootMinorVersion__uint8_t"></span><span class="target" id="structsystem__info_1a160919490bbc9c59d15a7e32373bc3a5"></span>uint8_t <code class="sig-name descname">bootMinorVersion</code><a class="headerlink" href="#_CPPv4N11system_info16bootMinorVersionE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>e.g. 3 on boot 5.3.6.0017 </p>
+<dd><p>e.g. </p>
+<p>3 on boot 5.3.6.0017 </p>
 </dd></dl>
 
 <dl class="cpp var">
 <dt id="_CPPv4N11system_info19bootRevisionVersionE">
 <span id="_CPPv3N11system_info19bootRevisionVersionE"></span><span id="_CPPv2N11system_info19bootRevisionVersionE"></span><span id="system_info::bootRevisionVersion__uint8_t"></span><span class="target" id="structsystem__info_1a521d4d46d2a4ba570db053b62bbfbdc4"></span>uint8_t <code class="sig-name descname">bootRevisionVersion</code><a class="headerlink" href="#_CPPv4N11system_info19bootRevisionVersionE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>e.g. 6 on boot 5.3.6.0017 </p>
+<dd><p>e.g. </p>
+<p>6 on boot 5.3.6.0017 </p>
 </dd></dl>
 
 <dl class="cpp var">
 <dt id="_CPPv4N11system_info16bootBuildVersionE">
 <span id="_CPPv3N11system_info16bootBuildVersionE"></span><span id="_CPPv2N11system_info16bootBuildVersionE"></span><span id="system_info::bootBuildVersion__unsigned"></span><span class="target" id="structsystem__info_1a6ad813651a72247253770dcf271ccbac"></span>unsigned <code class="sig-name descname">bootBuildVersion</code><a class="headerlink" href="#_CPPv4N11system_info16bootBuildVersionE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>e.g. 17 on boot 5.3.6.0017 </p>
+<dd><p>e.g. </p>
+<p>17 on boot 5.3.6.0017 </p>
 </dd></dl>
 
 <dl class="cpp var">
