@@ -188,9 +188,9 @@
             
   <div class="section" id="makefile-options">
 <span id="id1"></span><h1>Makefile Options<a class="headerlink" href="#makefile-options" title="Permalink to this headline">¶</a></h1>
-<p>The projects’s Makefile controls different features and settings for the output program, and additionally can be added to for custom build structres if needed.
-This section highlights the avaible options.</p>
-<p>To edit these options, open the <cite>makefile</cite> file inside the project’s folder in a text editor.</p>
+<p>The project’s makefile controls different features and settings for the output program.
+Additional rules can be added to build different components as well.</p>
+<p>To edit these options, open the <code class="code docutils literal notranslate"><span class="pre">makefile</span></code> file inside the project’s folder.</p>
 <div class="section" id="name">
 <h2>NAME<a class="headerlink" href="#name" title="Permalink to this headline">¶</a></h2>
 <p>This is the name of the program variable that will be stored on the calculator.</p>
@@ -249,7 +249,7 @@ Define rules for the files after including the main CEdev makefile.</p>
 <div class="section" id="cflags-cxxflags">
 <h2>CFLAGS / CXXFLAGS<a class="headerlink" href="#cflags-cxxflags" title="Permalink to this headline">¶</a></h2>
 <p>These flags are passed to the clang compiler.
-<em>CFLAGS</em> is used for C source files; <em>CXXFLAGS</em> is used for CPP source files.</p>
+<em>CFLAGS</em> is used for C source files – <em>CXXFLAGS</em> is used for CPP source files.</p>
 <div class="highlight-makefile notranslate"><div class="highlight"><pre><span></span><span class="nv">CFLAGS</span> <span class="o">?=</span> -Wall -Wextra -Oz
 <span class="nv">CXXFLAGS</span> <span class="o">?=</span> -Wall -Wextra -Oz
 </pre></div>
