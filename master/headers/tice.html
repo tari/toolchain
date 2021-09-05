@@ -793,6 +793,17 @@
 </dd></dl>
 
 <dl class="cpp type">
+<dt id="_CPPv421os_runprgm_callback_t">
+<span id="_CPPv321os_runprgm_callback_t"></span><span id="_CPPv221os_runprgm_callback_t"></span><span id="os_runprgm_callback_t"></span><span class="target" id="tice_8h_1a576ba09761060bdad1037e7d071122fe"></span><em class="property">typedef </em>int (*<code class="sig-name descname">os_runprgm_callback_t</code>)<span class="sig-paren">(</span>void *data, int retval<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv421os_runprgm_callback_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Callback function pointer type for os_RunPrgm. </p>
+<p><dl class="simple">
+<dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#tice_8h_1a0a6fece31fca63a81c4ece229e50f671"><span class="std std-ref">os_RunPrgm</span></a> </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp type">
 <dt id="_CPPv410useconds_t">
 <span id="_CPPv310useconds_t"></span><span id="_CPPv210useconds_t"></span><span id="useconds_t"></span><span class="target" id="tice_8h_1a4e3322434ea918ae562e0ea5237ab191"></span><em class="property">typedef </em>unsigned int <code class="sig-name descname">useconds_t</code><a class="headerlink" href="#_CPPv410useconds_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>An unsigned integer type capable of holding integers in the range [0,1000000]. </p>
@@ -1546,6 +1557,30 @@
 </dd>
 </dl>
 </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv410os_RunPrgmPKcPv6size_t21os_runprgm_callback_t">
+<span id="_CPPv310os_RunPrgmPKcPv6size_t21os_runprgm_callback_t"></span><span id="_CPPv210os_RunPrgmPKcPv6size_t21os_runprgm_callback_t"></span><span id="os_RunPrgm__cCP.voidP.s.os_runprgm_callback_t"></span><span class="target" id="tice_8h_1a0a6fece31fca63a81c4ece229e50f671"></span>int <code class="sig-name descname">os_RunPrgm</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>prgm</em>, void *<em>data</em>, size_t <em>size</em>, <a class="reference internal" href="#_CPPv421os_runprgm_callback_t" title="os_runprgm_callback_t">os_runprgm_callback_t</a> <em>callback</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv410os_RunPrgmPKcPv6size_t21os_runprgm_callback_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Runs a program that exists on the calculator. </p>
+<p>Note that this will destroy the currently running program, requiring you to save any data as needed. This program has an optional callback that will be executed when the called program finishes, which can be used to rebuild the program state. Additionally, program context information can be safely stored by using the extra user data arguments, which will then be delivered to the callback.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The callback return code is passed to the launcher of the original program that called this function. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>prgm</strong> – Name of program to execute. </p></li>
+<li><p><strong>data</strong> – User data that will be available in the callback function. May be <code class="docutils literal notranslate"><span class="pre">NULL</span></code>. </p></li>
+<li><p><strong>size</strong> – Size of user data (keep this small, it is stored on the stack!) </p></li>
+<li><p><strong>ret</strong> – Callback function to run when program finishes executing. The argument <code class="docutils literal notranslate"><span class="pre">data</span></code> will contain the provided <code class="docutils literal notranslate"><span class="pre">data</span></code> contents, and <code class="docutils literal notranslate"><span class="pre">retval</span></code> will contain the error code if a TI-BASIC program, or the exit code if a C program. Other types of programs may have an undefined <code class="docutils literal notranslate"><span class="pre">retval</span></code>. This argument may be left <code class="docutils literal notranslate"><span class="pre">NULL</span></code> if execution should not return to the calling program.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>This function should not return, but if it does, -1 indicates the program could not be found, -2 if not enough memory, and &lt; 0 if some other error occurred.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="cpp function">
