@@ -112,7 +112,8 @@
 <li class="toctree-l3"><a class="reference internal" href="#what-not-to-put-in-header-files">What not to put in header files</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#avoid-global-variables">Avoid Global Variables</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#avoid-global-variables">Avoid Global Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#limit-magic-numbers">Limit Magic Numbers</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#proper-scoping">Proper Scoping</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#using-the-static-keyword">Using the static keyword</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#using-structures">Using structures</a></li>
@@ -251,10 +252,10 @@ Especially if there’s a document along side that explains architecture choices
 They should ideally be kept fairly short and to the point (“K.I.S.S” = Keep It Short and Simple”).
 Don’t write comments just because you’ve been told to at some point: the other human in question can read just fine and doesn’t want to waste time reading that “return val;” indeed “returns the value”.</p>
 <p>It is much easier to read code without having to also read comments that don’t convey any helpful information. Instead, provide useful information when needed, in particular when someone may be tempted to change some code that probably shouldn’t be without a lot of thought first, or where some algorithm is complex to understand for someone new on the project and only reading the code to understand what is happening would take too long pointlessly (reverse-engineering source code can annoyingly take a lot of time).</p>
-<p>As such, and especially for complex code, focus rather on explaning <strong>why</strong> something is written that way, and even <strong>why not</strong> written in another way (i.e. some edgecase may not work with an alternative algorithm, some usecase may have inferior performance, etc.). Time will be saved that way for future refactors, whether it’s done by you, or even more so by someone else that may now know the context of the code as much as you.</p>
+<p>As such, and especially for complex code, focus rather on explaining <strong>why</strong> something is written that way, and even <strong>why not</strong> written in another way (i.e. some edge case may not work with an alternative algorithm, some use case may have inferior performance, etc.). Time will be saved that way for future refactors, whether it’s done by you, or even more so by someone else that may now know the context of the code as much as you.</p>
 <p>And remember this: having too many comments leads to issues where <strong>a)</strong> the comments don’t match the code, <strong>b)</strong> they are either superfluous or useless, <strong>c)</strong> they are flat out incorrect or outdated, or <strong>d)</strong> they add noise to the code itself and make it more difficult to read.</p>
 <p>These are examples of bad comments that add no value: remember, good self-explanatory naming and simple code provide better information than comments do.</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">// locates the first occurance of the character in the string</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">// locates the first occurrence of the character in the string</span>
 <span class="kt">void</span> <span class="nf">findFirstChar</span><span class="p">(</span><span class="n">string_t</span><span class="o">*</span> <span class="n">str</span><span class="p">)</span> <span class="p">{</span>
     <span class="p">...</span>
 <span class="p">}</span>
@@ -363,6 +364,13 @@ These are variables which are defined outside of a function.</p>
 </ul>
 <p>So, most of the time, and unless you have a really good excuse, don’t use global variables.
 There are better alternatives to using global variables, described below:</p>
+</div>
+<div class="section" id="limit-magic-numbers">
+<h2>Limit Magic Numbers<a class="headerlink" href="#limit-magic-numbers" title="Permalink to this headline">¶</a></h2>
+<p>Magic numbers are special numbers that one might put in code when it is 2AM and it’s the 50th time you’ve recompiled just to get a pixel positioned perfectly.
+For example, <code class="code docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">x</span> <span class="pre">+</span> <span class="pre">29</span> <span class="pre">+</span> <span class="pre">52</span> <span class="pre">-</span> <span class="pre">3</span></code> contains so-called “magic numbers” – numbers that aren’t tied to a variable or have any real context for why they contain the value they do.
+When updating code 6 months down the road, you won’t have any clue what these numbers meant.
+A better solution is to use a macro such as <code class="code docutils literal notranslate"><span class="pre">#define</span> <span class="pre">X_OFFSET</span> <span class="pre">(29</span> <span class="pre">+</span> <span class="pre">52</span> <span class="pre">-</span> <span class="pre">3)</span></code> where the intent of the numbers is less obscured.</p>
 <div class="section" id="proper-scoping">
 <h3>Proper Scoping<a class="headerlink" href="#proper-scoping" title="Permalink to this headline">¶</a></h3>
 <p>“Scope” is an important part of C programming.
@@ -484,7 +492,7 @@ Some common ones include:</p>
 <li><p>Coverity</p></li>
 </ul>
 <p>Cppcheck is the easiest one to use with the CE C toolchain, but it is also fairly limited.
-Your IDE may also have a static analyer built-in.
+Your IDE may also have a static analyzer built-in.
 Make sure to enable warning flags on the compiler, too (<code class="code docutils literal notranslate"><span class="pre">-Wall</span> <span class="pre">-Wextra</span></code>)</p>
 </div>
 </div>
