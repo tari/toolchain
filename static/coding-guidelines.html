@@ -112,8 +112,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#what-not-to-put-in-header-files">What not to put in header files</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#avoid-global-variables">Avoid Global Variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#limit-magic-numbers">Limit Magic Numbers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#avoid-global-variables">Avoid Global Variables</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#proper-scoping">Proper Scoping</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#using-the-static-keyword">Using the static keyword</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#using-structures">Using structures</a></li>
@@ -124,6 +123,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#general-guidelines">General Guidelines</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#limit-magic-numbers">Limit Magic Numbers</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#use-const-as-much-as-possible">Use const as much as possible</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#avoid-explicit-casting">Avoid explicit casting</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#use-static-analysis-tools">Use Static Analysis Tools</a></li>
@@ -364,13 +364,6 @@ These are variables which are defined outside of a function.</p>
 </ul>
 <p>So, most of the time, and unless you have a really good excuse, don’t use global variables.
 There are better alternatives to using global variables, described below:</p>
-</div>
-<div class="section" id="limit-magic-numbers">
-<h2>Limit Magic Numbers<a class="headerlink" href="#limit-magic-numbers" title="Permalink to this headline">¶</a></h2>
-<p>Magic numbers are special numbers that one might put in code when it is 2AM and it’s the 50th time you’ve recompiled just to get a pixel positioned perfectly.
-For example, <code class="code docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">x</span> <span class="pre">+</span> <span class="pre">29</span> <span class="pre">+</span> <span class="pre">52</span> <span class="pre">-</span> <span class="pre">3</span></code> contains so-called “magic numbers” – numbers that aren’t tied to a variable or have any real context for why they contain the value they do.
-When updating code 6 months down the road, you won’t have any clue what these numbers meant.
-A better solution is to use a macro such as <code class="code docutils literal notranslate"><span class="pre">#define</span> <span class="pre">X_OFFSET</span> <span class="pre">(29</span> <span class="pre">+</span> <span class="pre">52</span> <span class="pre">-</span> <span class="pre">3)</span></code> where the intent of the numbers is less obscured.</p>
 <div class="section" id="proper-scoping">
 <h3>Proper Scoping<a class="headerlink" href="#proper-scoping" title="Permalink to this headline">¶</a></h3>
 <p>“Scope” is an important part of C programming.
@@ -467,6 +460,13 @@ You also aren’t guaranteed that you will get a valid memory pointer – and th
 </div>
 <div class="section" id="general-guidelines">
 <h2>General Guidelines<a class="headerlink" href="#general-guidelines" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="limit-magic-numbers">
+<h3>Limit Magic Numbers<a class="headerlink" href="#limit-magic-numbers" title="Permalink to this headline">¶</a></h3>
+<p>Magic numbers are special numbers that one might put in code when it is 2AM and it’s the 50th time you’ve recompiled just to get a pixel positioned perfectly.
+For example, <code class="code docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">x</span> <span class="pre">+</span> <span class="pre">29</span> <span class="pre">+</span> <span class="pre">52</span> <span class="pre">-</span> <span class="pre">3</span></code> contains so-called “magic numbers” – numbers that aren’t tied to a variable or have any real context for why they contain the value they do.
+When updating code 6 months down the road, you won’t have any clue what these numbers meant.
+A better solution is to use a macro such as <code class="code docutils literal notranslate"><span class="pre">#define</span> <span class="pre">X_OFFSET</span> <span class="pre">(29</span> <span class="pre">+</span> <span class="pre">52</span> <span class="pre">-</span> <span class="pre">3)</span></code> where the intent of the numbers is less obscured.</p>
+</div>
 <div class="section" id="use-const-as-much-as-possible">
 <h3>Use const as much as possible<a class="headerlink" href="#use-const-as-much-as-possible" title="Permalink to this headline">¶</a></h3>
 <p>When a variable will not actually change over time, mark it as <code class="code docutils literal notranslate"><span class="pre">const</span></code>!
