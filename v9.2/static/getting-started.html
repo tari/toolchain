@@ -220,6 +220,13 @@ This is a limitation of the <code class="code docutils literal notranslate"><spa
 <h2>Building Programs<a class="headerlink" href="#building-programs" title="Permalink to this headline">¶</a></h2>
 <p>Programs are built with the <code class="code docutils literal notranslate"><span class="pre">make</span></code> command, executed from a terminal session.
 This tutorial explains how to use the CE C Toolchain to build programs using <code class="code docutils literal notranslate"><span class="pre">make</span></code>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>On Windows, you may need to install the latest Microsoft Visual C++ Redistributable package if you encounter errors such as <code class="code docutils literal notranslate"><span class="pre">Missing</span> <span class="pre">vcruntime140.dll</span></code>.
+The download can be found <a class="reference external" href="https://support.microsoft.com/en-us/topic/the-latest-supported-visual-c-downloads-2647da03-1eea-4433-9aff-95f26a218cc0">at this link</a>, depending on your computer you will need to install one of <em>vc_redist.x86.exe</em>, <em>vc_redist.x64.exe</em>, or <em>vc_redist.arm64.exe</em>.</p>
+<p>Additionally, your antivirus software (e.g. Windows Defender) may flag binaries in the <code class="code docutils literal notranslate"><span class="pre">CEdev/bin</span></code> directory as false positives, and either quarantine the files or prevent them from running.
+It it recommended you whitelist or disable scanning in <code class="code docutils literal notranslate"><span class="pre">CEdev/bin</span></code> to prevent these false positives from occurring.</p>
+</div>
 <p>Locate the installed <cite>CEdev</cite> folder, and open a session by double-clicking <code class="code docutils literal notranslate"><span class="pre">cedev.bat</span></code> on Windows or launching your favorite terminal on Linux/macOS.
 Navigate to the <cite>examples</cite> folder using the <code class="code docutils literal notranslate"><span class="pre">cd</span> <span class="pre">examples</span></code> command.
 This folder contains example projects that you can build and modify to learn how to write CE C programs.
