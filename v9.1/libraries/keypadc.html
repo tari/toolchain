@@ -1,75 +1,35 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <title>keypadc.h &mdash; CE C Toolchain  documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
+  <title>keypadc.h &mdash; CE C Toolchain  documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/language_data.js"></script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="CE C Toolchain Specific Headers" href="../headers/index.html" />
     <link rel="prev" title="graphx.h" href="graphx.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../index.html" class="icon icon-home"> CE C Toolchain
-          
-
-          
           </a>
-
-          
-            
-            
               <div class="version">
                 v9.1
               </div>
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -77,18 +37,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption"><span class="caption-text">Overview</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Welcome to the CE C Toolchain!</a></li>
@@ -123,73 +72,32 @@
 <li class="toctree-l1"><a class="reference internal" href="../static/contributing.html">Contributing to the CE C Toolchain</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">CE C Toolchain</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
           <li><a href="index.html">CE C Libraries</a> &raquo;</li>
-        
       <li>keypadc.h</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   <div class="section" id="keypadc-h">
-<span id="id1"></span><h1>keypadc.h<a class="headerlink" href="#keypadc-h" title="Permalink to this headline">¶</a></h1>
+<span id="id1"></span><h1>keypadc.h<a class="headerlink" href="#keypadc-h" title="Permalink to this headline"></a></h1>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;keypadc.h&gt;</span><span class="cp"></span>
 </pre></div>
 </div>
@@ -207,11 +115,11 @@ It supports multi-key presses, and can be used for extremely responsive input co
 </ul>
 </div>
 <div class="section" id="helpful-key-dection">
-<h2><a class="toc-backref" href="#id2">Helpful key dection</a><a class="headerlink" href="#helpful-key-dection" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id2">Helpful key dection</a><a class="headerlink" href="#helpful-key-dection" title="Permalink to this headline"></a></h2>
 <p>Handling key detection properly is a major requirement for a lot of programs.
 Detecting a hold can be rather straightforward, but things like a press, release, can sometimes be rather confusing at first.</p>
 <div class="section" id="detecting-a-single-press">
-<h3><a class="toc-backref" href="#id3">Detecting a single press</a><a class="headerlink" href="#detecting-a-single-press" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id3">Detecting a single press</a><a class="headerlink" href="#detecting-a-single-press" title="Permalink to this headline"></a></h3>
 <p>When a key is first pressed, we only want to trigger on that event.
 The following code sets up a simple rising edge detector to catch this.</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">bool</span> <span class="n">key</span><span class="p">,</span> <span class="n">prevkey</span><span class="p">;</span>
@@ -225,7 +133,7 @@ The following code sets up a simple rising edge detector to catch this.</p>
 </div>
 </div>
 <div class="section" id="detecting-a-single-release">
-<h3><a class="toc-backref" href="#id4">Detecting a single release</a><a class="headerlink" href="#detecting-a-single-release" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id4">Detecting a single release</a><a class="headerlink" href="#detecting-a-single-release" title="Permalink to this headline"></a></h3>
 <p>When a key is released we only want to trigger on that event.
 The following code sets up a simple falling edge detector to catch this.</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">bool</span> <span class="n">key</span><span class="p">,</span> <span class="n">prevkey</span><span class="p">;</span>
@@ -240,7 +148,7 @@ The following code sets up a simple falling edge detector to catch this.</p>
 </div>
 </div>
 <div class="section" id="api-documentation">
-<h2><a class="toc-backref" href="#id5">API Documentation</a><a class="headerlink" href="#api-documentation" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id5">API Documentation</a><a class="headerlink" href="#api-documentation" title="Permalink to this headline"></a></h2>
 <p>keypadc is a simple direct-input keypad library. </p>
 <p><dl class="simple">
 <dt><strong>Author</strong></dt><dd><p>Matt “MateoConLechuga” Waltz </p>
@@ -253,7 +161,7 @@ The following code sets up a simple falling edge detector to catch this.</p>
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-defines">Defines</p>
 <dl class="cpp macro">
 <dt id="c.kb_SetMode">
-<span class="target" id="keypadc_8h_1a78a8a521b5502b248979a97e48947345"></span><code class="sig-name descname">kb_SetMode</code><span class="sig-paren">(</span><em>mode</em><span class="sig-paren">)</span><a class="headerlink" href="#c.kb_SetMode" title="Permalink to this definition">¶</a><br /></dt>
+<span class="target" id="keypadc_8h_1a78a8a521b5502b248979a97e48947345"></span><code class="sig-name descname">kb_SetMode</code><span class="sig-paren">(</span><em>mode</em><span class="sig-paren">)</span><a class="headerlink" href="#c.kb_SetMode" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Sets the keypad scanning mode. </p>
 <p><dl class="simple">
 <dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#keypadc_8h_1af86f29e15b4b14d3aa66ced481a63424"><span class="std std-ref">kb_scan_mode_t</span></a> </p>
@@ -264,7 +172,7 @@ The following code sets up a simple falling edge detector to catch this.</p>
 
 <dl class="cpp macro">
 <dt id="c.kb_GetMode">
-<span class="target" id="keypadc_8h_1ad3001e9ec2a0bd6fab1a68680641eb53"></span><code class="sig-name descname">kb_GetMode</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#c.kb_GetMode" title="Permalink to this definition">¶</a><br /></dt>
+<span class="target" id="keypadc_8h_1ad3001e9ec2a0bd6fab1a68680641eb53"></span><code class="sig-name descname">kb_GetMode</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#c.kb_GetMode" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Gets the keypad scanning mode. </p>
 <p><dl class="simple">
 <dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#keypadc_8h_1af86f29e15b4b14d3aa66ced481a63424"><span class="std std-ref">kb_scan_mode_t</span></a> </p>
@@ -275,38 +183,38 @@ The following code sets up a simple falling edge detector to catch this.</p>
 
 <dl class="cpp macro">
 <dt id="c.kb_EnableInt">
-<span class="target" id="keypadc_8h_1abef173d3e47568a2a1bce9eab3e5abae"></span><code class="sig-name descname">kb_EnableInt</code><a class="headerlink" href="#c.kb_EnableInt" title="Permalink to this definition">¶</a><br /></dt>
+<span class="target" id="keypadc_8h_1abef173d3e47568a2a1bce9eab3e5abae"></span><code class="sig-name descname">kb_EnableInt</code><a class="headerlink" href="#c.kb_EnableInt" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Enabled keypad interrupt signals. </p>
 </dd></dl>
 
 <dl class="cpp macro">
 <dt id="c.kb_IntAcknowledge">
-<span class="target" id="keypadc_8h_1a6809cbd5aafa31f19e4c3d9735db6e93"></span><code class="sig-name descname">kb_IntAcknowledge</code><a class="headerlink" href="#c.kb_IntAcknowledge" title="Permalink to this definition">¶</a><br /></dt>
+<span class="target" id="keypadc_8h_1a6809cbd5aafa31f19e4c3d9735db6e93"></span><code class="sig-name descname">kb_IntAcknowledge</code><a class="headerlink" href="#c.kb_IntAcknowledge" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Acknowledege keypad interrupt signals. </p>
 </dd></dl>
 
 <dl class="cpp macro">
 <dt id="c.kb_IntStatus">
-<span class="target" id="keypadc_8h_1a623c6f07055016813677fac3aa89b9ec"></span><code class="sig-name descname">kb_IntStatus</code><a class="headerlink" href="#c.kb_IntStatus" title="Permalink to this definition">¶</a><br /></dt>
+<span class="target" id="keypadc_8h_1a623c6f07055016813677fac3aa89b9ec"></span><code class="sig-name descname">kb_IntStatus</code><a class="headerlink" href="#c.kb_IntStatus" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Status of keypad interrupt signals. </p>
 </dd></dl>
 
 <dl class="cpp macro">
 <dt id="c.kb_Config">
-<span class="target" id="keypadc_8h_1ace3745777da79bd73318ae9e5722dd6d"></span><code class="sig-name descname">kb_Config</code><a class="headerlink" href="#c.kb_Config" title="Permalink to this definition">¶</a><br /></dt>
+<span class="target" id="keypadc_8h_1ace3745777da79bd73318ae9e5722dd6d"></span><code class="sig-name descname">kb_Config</code><a class="headerlink" href="#c.kb_Config" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Configuration of keypad controller. </p>
 </dd></dl>
 
 <dl class="cpp macro">
 <dt id="c.kb_IsDown">
-<span class="target" id="keypadc_8h_1a131ac75acf182051fe82d518b75109d8"></span><code class="sig-name descname">kb_IsDown</code><span class="sig-paren">(</span><em>lkey</em><span class="sig-paren">)</span><a class="headerlink" href="#c.kb_IsDown" title="Permalink to this definition">¶</a><br /></dt>
+<span class="target" id="keypadc_8h_1a131ac75acf182051fe82d518b75109d8"></span><code class="sig-name descname">kb_IsDown</code><span class="sig-paren">(</span><em>lkey</em><span class="sig-paren">)</span><a class="headerlink" href="#c.kb_IsDown" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Checks if a key is pressed. This uses the long key type, which includes the group as well. It can be used in place of reading directly from <code class="docutils literal notranslate"><span class="pre">kb_Data</span></code>.</p>
 <p>Long key types have the same name as the normal key types, but are prefixed with kb_Key* rather than kb_*. </p>
 </dd></dl>
 
 <dl class="cpp macro">
 <dt id="c.kb_Data">
-<span class="target" id="keypadc_8h_1a4a4296b5cbbc1f0cd963a36abd456e97"></span><code class="sig-name descname">kb_Data</code><a class="headerlink" href="#c.kb_Data" title="Permalink to this definition">¶</a><br /></dt>
+<span class="target" id="keypadc_8h_1a4a4296b5cbbc1f0cd963a36abd456e97"></span><code class="sig-name descname">kb_Data</code><a class="headerlink" href="#c.kb_Data" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Keypad Data registers</p>
 <p><table class="docutils align-default">
 <colgroup>
@@ -420,7 +328,7 @@ The following code sets up a simple falling edge detector to catch this.</p>
 
 <dl class="cpp macro">
 <dt id="c.kb_On">
-<span class="target" id="keypadc_8h_1aefead9ca152e96406af497bb3f7a20e7"></span><code class="sig-name descname">kb_On</code><a class="headerlink" href="#c.kb_On" title="Permalink to this definition">¶</a><br /></dt>
+<span class="target" id="keypadc_8h_1aefead9ca152e96406af497bb3f7a20e7"></span><code class="sig-name descname">kb_On</code><a class="headerlink" href="#c.kb_On" title="Permalink to this definition"></a><br /></dt>
 <dd><p>ON key signal. <dl class="simple">
 <dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#keypadc_8h_1ad5e1693dfac50389f67005242a3ebe71"><span class="std std-ref">kb_DisableOnLatch</span></a> <a class="reference internal" href="#keypadc_8h_1a2fa5f7d791ab9995e5b7045a49fde25d"><span class="std std-ref">kb_EnableOnLatch</span></a> <a class="reference internal" href="#keypadc_8h_1ad45ec00dab415b6a0c5256ca8e11609c"><span class="std std-ref">kb_ClearOnLatch</span></a> </p>
 </dd>
@@ -447,7 +355,7 @@ The following code sets up a simple falling edge detector to catch this.</p>
 
 <dl class="cpp macro">
 <dt id="c.kb_EnableOnLatch">
-<span class="target" id="keypadc_8h_1a2fa5f7d791ab9995e5b7045a49fde25d"></span><code class="sig-name descname">kb_EnableOnLatch</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#c.kb_EnableOnLatch" title="Permalink to this definition">¶</a><br /></dt>
+<span class="target" id="keypadc_8h_1a2fa5f7d791ab9995e5b7045a49fde25d"></span><code class="sig-name descname">kb_EnableOnLatch</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#c.kb_EnableOnLatch" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Causes kb_On to latch when the ON is key pressed: once the ON key is pressed, kb_On will remain true until reset with <a class="reference internal" href="#keypadc_8h_1ad45ec00dab415b6a0c5256ca8e11609c"><span class="std std-ref">kb_ClearOnLatch()</span></a>. This may be useful if you want to check the ON key occasionally, for example as a break signal. <dl class="simple">
 <dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#keypadc_8h_1ad5e1693dfac50389f67005242a3ebe71"><span class="std std-ref">kb_DisableOnLatch</span></a> <a class="reference internal" href="#keypadc_8h_1ad45ec00dab415b6a0c5256ca8e11609c"><span class="std std-ref">kb_ClearOnLatch</span></a> </p>
 </dd>
@@ -461,7 +369,7 @@ The following code sets up a simple falling edge detector to catch this.</p>
 
 <dl class="cpp macro">
 <dt id="c.kb_DisableOnLatch">
-<span class="target" id="keypadc_8h_1ad5e1693dfac50389f67005242a3ebe71"></span><code class="sig-name descname">kb_DisableOnLatch</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#c.kb_DisableOnLatch" title="Permalink to this definition">¶</a><br /></dt>
+<span class="target" id="keypadc_8h_1ad5e1693dfac50389f67005242a3ebe71"></span><code class="sig-name descname">kb_DisableOnLatch</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#c.kb_DisableOnLatch" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Disables ON key latching behavior. <dl class="simple">
 <dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#keypadc_8h_1a2fa5f7d791ab9995e5b7045a49fde25d"><span class="std std-ref">kb_EnableOnLatch</span></a> </p>
 </dd>
@@ -475,7 +383,7 @@ The following code sets up a simple falling edge detector to catch this.</p>
 
 <dl class="cpp macro">
 <dt id="c.kb_ClearOnLatch">
-<span class="target" id="keypadc_8h_1ad45ec00dab415b6a0c5256ca8e11609c"></span><code class="sig-name descname">kb_ClearOnLatch</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#c.kb_ClearOnLatch" title="Permalink to this definition">¶</a><br /></dt>
+<span class="target" id="keypadc_8h_1ad45ec00dab415b6a0c5256ca8e11609c"></span><code class="sig-name descname">kb_ClearOnLatch</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#c.kb_ClearOnLatch" title="Permalink to this definition"></a><br /></dt>
 <dd><p>When ON key latching has been enabled with <a class="reference internal" href="#keypadc_8h_1a2fa5f7d791ab9995e5b7045a49fde25d"><span class="std std-ref">kb_EnableOnLatch()</span></a>, this will reset kb_On back to false (assuming the user is no longer pressing ON). <dl class="simple">
 <dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#keypadc_8h_1a2fa5f7d791ab9995e5b7045a49fde25d"><span class="std std-ref">kb_EnableOnLatch</span></a> </p>
 </dd>
@@ -492,13 +400,13 @@ The following code sets up a simple falling edge detector to catch this.</p>
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-typedefs">Typedefs</p>
 <dl class="cpp type">
 <dt id="_CPPv48kb_key_t">
-<span id="_CPPv38kb_key_t"></span><span id="_CPPv28kb_key_t"></span><span id="kb_key_t"></span><span class="target" id="keypadc_8h_1a8bdbf527b2c99f741e6ced1cf1c7a880"></span><em class="property">typedef </em>uint8_t <code class="sig-name descname">kb_key_t</code><a class="headerlink" href="#_CPPv48kb_key_t" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv38kb_key_t"></span><span id="_CPPv28kb_key_t"></span><span id="kb_key_t"></span><span class="target" id="keypadc_8h_1a8bdbf527b2c99f741e6ced1cf1c7a880"></span><em class="property">typedef </em>uint8_t <code class="sig-name descname">kb_key_t</code><a class="headerlink" href="#_CPPv48kb_key_t" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Normal key type. </p>
 </dd></dl>
 
 <dl class="cpp type">
 <dt id="_CPPv49kb_lkey_t">
-<span id="_CPPv39kb_lkey_t"></span><span id="_CPPv29kb_lkey_t"></span><span id="kb_lkey_t"></span><span class="target" id="keypadc_8h_1a9161bee6ca17720bffe98f0da5a3c9c8"></span><em class="property">typedef </em>uint16_t <code class="sig-name descname">kb_lkey_t</code><a class="headerlink" href="#_CPPv49kb_lkey_t" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv39kb_lkey_t"></span><span id="_CPPv29kb_lkey_t"></span><span id="kb_lkey_t"></span><span class="target" id="keypadc_8h_1a9161bee6ca17720bffe98f0da5a3c9c8"></span><em class="property">typedef </em>uint16_t <code class="sig-name descname">kb_lkey_t</code><a class="headerlink" href="#_CPPv49kb_lkey_t" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Long key type. </p>
 </dd></dl>
 
@@ -507,30 +415,30 @@ The following code sets up a simple falling edge detector to catch this.</p>
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-enums">Enums</p>
 <dl class="cpp enum">
 <dt id="_CPPv414kb_scan_mode_t">
-<span id="_CPPv314kb_scan_mode_t"></span><span id="_CPPv214kb_scan_mode_t"></span><span class="target" id="keypadc_8h_1af86f29e15b4b14d3aa66ced481a63424"></span><em class="property">enum </em><code class="sig-name descname">kb_scan_mode_t</code><a class="headerlink" href="#_CPPv414kb_scan_mode_t" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv314kb_scan_mode_t"></span><span id="_CPPv214kb_scan_mode_t"></span><span class="target" id="keypadc_8h_1af86f29e15b4b14d3aa66ced481a63424"></span><em class="property">enum </em><code class="sig-name descname">kb_scan_mode_t</code><a class="headerlink" href="#_CPPv414kb_scan_mode_t" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Different available scanning modes. </p>
 <p><em>Values:</em></p>
 <dl class="cpp enumerator">
 <dt id="_CPPv4N14kb_scan_mode_t11MODE_0_IDLEE">
-<span id="_CPPv3N14kb_scan_mode_t11MODE_0_IDLEE"></span><span id="_CPPv2N14kb_scan_mode_t11MODE_0_IDLEE"></span><span class="target" id="keypadc_8h_1af86f29e15b4b14d3aa66ced481a63424a80bc2d19c0dcae62e391b46134f63b47"></span><em class="property">enumerator </em><code class="sig-name descname">MODE_0_IDLE</code><a class="headerlink" href="#_CPPv4N14kb_scan_mode_t11MODE_0_IDLEE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N14kb_scan_mode_t11MODE_0_IDLEE"></span><span id="_CPPv2N14kb_scan_mode_t11MODE_0_IDLEE"></span><span class="target" id="keypadc_8h_1af86f29e15b4b14d3aa66ced481a63424a80bc2d19c0dcae62e391b46134f63b47"></span><em class="property">enumerator </em><code class="sig-name descname">MODE_0_IDLE</code><a class="headerlink" href="#_CPPv4N14kb_scan_mode_t11MODE_0_IDLEE" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Keypad scanning is idle. </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N14kb_scan_mode_t21MODE_1_INDISCRIMINATEE">
-<span id="_CPPv3N14kb_scan_mode_t21MODE_1_INDISCRIMINATEE"></span><span id="_CPPv2N14kb_scan_mode_t21MODE_1_INDISCRIMINATEE"></span><span class="target" id="keypadc_8h_1af86f29e15b4b14d3aa66ced481a63424aed87e811fb621ebe07f303a28b1e9f5e"></span><em class="property">enumerator </em><code class="sig-name descname">MODE_1_INDISCRIMINATE</code><a class="headerlink" href="#_CPPv4N14kb_scan_mode_t21MODE_1_INDISCRIMINATEE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N14kb_scan_mode_t21MODE_1_INDISCRIMINATEE"></span><span id="_CPPv2N14kb_scan_mode_t21MODE_1_INDISCRIMINATEE"></span><span class="target" id="keypadc_8h_1af86f29e15b4b14d3aa66ced481a63424aed87e811fb621ebe07f303a28b1e9f5e"></span><em class="property">enumerator </em><code class="sig-name descname">MODE_1_INDISCRIMINATE</code><a class="headerlink" href="#_CPPv4N14kb_scan_mode_t21MODE_1_INDISCRIMINATEE" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Indiscriminate key detection. Data registers are invalid, but when any key is pressed, interrupt KB_MODE_1_PRESS is set (and cannot be cleared until the key is released). </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N14kb_scan_mode_t13MODE_2_SINGLEE">
-<span id="_CPPv3N14kb_scan_mode_t13MODE_2_SINGLEE"></span><span id="_CPPv2N14kb_scan_mode_t13MODE_2_SINGLEE"></span><span class="target" id="keypadc_8h_1af86f29e15b4b14d3aa66ced481a63424ab79420dfbec0f787f896b02d753b1bd7"></span><em class="property">enumerator </em><code class="sig-name descname">MODE_2_SINGLE</code><a class="headerlink" href="#_CPPv4N14kb_scan_mode_t13MODE_2_SINGLEE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N14kb_scan_mode_t13MODE_2_SINGLEE"></span><span id="_CPPv2N14kb_scan_mode_t13MODE_2_SINGLEE"></span><span class="target" id="keypadc_8h_1af86f29e15b4b14d3aa66ced481a63424ab79420dfbec0f787f896b02d753b1bd7"></span><em class="property">enumerator </em><code class="sig-name descname">MODE_2_SINGLE</code><a class="headerlink" href="#_CPPv4N14kb_scan_mode_t13MODE_2_SINGLEE" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Single scan. The keypad is scanned once, and then the mode returns to MODE_0_IDLE. </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N14kb_scan_mode_t17MODE_3_CONTINUOUSE">
-<span id="_CPPv3N14kb_scan_mode_t17MODE_3_CONTINUOUSE"></span><span id="_CPPv2N14kb_scan_mode_t17MODE_3_CONTINUOUSE"></span><span class="target" id="keypadc_8h_1af86f29e15b4b14d3aa66ced481a63424ab1c43d362b2ffc7e1b5b16f2abb7e1cb"></span><em class="property">enumerator </em><code class="sig-name descname">MODE_3_CONTINUOUS</code><a class="headerlink" href="#_CPPv4N14kb_scan_mode_t17MODE_3_CONTINUOUSE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N14kb_scan_mode_t17MODE_3_CONTINUOUSE"></span><span id="_CPPv2N14kb_scan_mode_t17MODE_3_CONTINUOUSE"></span><span class="target" id="keypadc_8h_1af86f29e15b4b14d3aa66ced481a63424ab1c43d362b2ffc7e1b5b16f2abb7e1cb"></span><em class="property">enumerator </em><code class="sig-name descname">MODE_3_CONTINUOUS</code><a class="headerlink" href="#_CPPv4N14kb_scan_mode_t17MODE_3_CONTINUOUSE" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Continuous scan. When scanning completes, it just starts over again after a delay. </p>
 </dd></dl>
 
@@ -538,24 +446,24 @@ The following code sets up a simple falling edge detector to catch this.</p>
 
 <dl class="cpp enum">
 <dt id="_CPPv415kb_int_signal_t">
-<span id="_CPPv315kb_int_signal_t"></span><span id="_CPPv215kb_int_signal_t"></span><span class="target" id="keypadc_8h_1a563ca39e35b2a344a3ecef7f1c990e66"></span><em class="property">enum </em><code class="sig-name descname">kb_int_signal_t</code><a class="headerlink" href="#_CPPv415kb_int_signal_t" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv315kb_int_signal_t"></span><span id="_CPPv215kb_int_signal_t"></span><span class="target" id="keypadc_8h_1a563ca39e35b2a344a3ecef7f1c990e66"></span><em class="property">enum </em><code class="sig-name descname">kb_int_signal_t</code><a class="headerlink" href="#_CPPv415kb_int_signal_t" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Different available interrupt signals </p>
 <p><em>Values:</em></p>
 <dl class="cpp enumerator">
 <dt id="_CPPv4N15kb_int_signal_t16KB_SCAN_COMPLETEE">
-<span id="_CPPv3N15kb_int_signal_t16KB_SCAN_COMPLETEE"></span><span id="_CPPv2N15kb_int_signal_t16KB_SCAN_COMPLETEE"></span><span class="target" id="keypadc_8h_1a563ca39e35b2a344a3ecef7f1c990e66a00291a05f50f5e096d81e5bed54f0e3b"></span><em class="property">enumerator </em><code class="sig-name descname">KB_SCAN_COMPLETE</code><a class="headerlink" href="#_CPPv4N15kb_int_signal_t16KB_SCAN_COMPLETEE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N15kb_int_signal_t16KB_SCAN_COMPLETEE"></span><span id="_CPPv2N15kb_int_signal_t16KB_SCAN_COMPLETEE"></span><span class="target" id="keypadc_8h_1a563ca39e35b2a344a3ecef7f1c990e66a00291a05f50f5e096d81e5bed54f0e3b"></span><em class="property">enumerator </em><code class="sig-name descname">KB_SCAN_COMPLETE</code><a class="headerlink" href="#_CPPv4N15kb_int_signal_t16KB_SCAN_COMPLETEE" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Interrupt set when keypad is done scanning </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N15kb_int_signal_t15KB_DATA_CHANGEDE">
-<span id="_CPPv3N15kb_int_signal_t15KB_DATA_CHANGEDE"></span><span id="_CPPv2N15kb_int_signal_t15KB_DATA_CHANGEDE"></span><span class="target" id="keypadc_8h_1a563ca39e35b2a344a3ecef7f1c990e66a462e5c3f6ce21b0b4734f03bec1445ee"></span><em class="property">enumerator </em><code class="sig-name descname">KB_DATA_CHANGED</code><a class="headerlink" href="#_CPPv4N15kb_int_signal_t15KB_DATA_CHANGEDE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N15kb_int_signal_t15KB_DATA_CHANGEDE"></span><span id="_CPPv2N15kb_int_signal_t15KB_DATA_CHANGEDE"></span><span class="target" id="keypadc_8h_1a563ca39e35b2a344a3ecef7f1c990e66a462e5c3f6ce21b0b4734f03bec1445ee"></span><em class="property">enumerator </em><code class="sig-name descname">KB_DATA_CHANGED</code><a class="headerlink" href="#_CPPv4N15kb_int_signal_t15KB_DATA_CHANGEDE" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Interrupt set when data is changed on a press or a release </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N15kb_int_signal_t15KB_MODE_1_PRESSE">
-<span id="_CPPv3N15kb_int_signal_t15KB_MODE_1_PRESSE"></span><span id="_CPPv2N15kb_int_signal_t15KB_MODE_1_PRESSE"></span><span class="target" id="keypadc_8h_1a563ca39e35b2a344a3ecef7f1c990e66a2aae3e5b9909b0da4fd1524b484fb17b"></span><em class="property">enumerator </em><code class="sig-name descname">KB_MODE_1_PRESS</code><a class="headerlink" href="#_CPPv4N15kb_int_signal_t15KB_MODE_1_PRESSE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N15kb_int_signal_t15KB_MODE_1_PRESSE"></span><span id="_CPPv2N15kb_int_signal_t15KB_MODE_1_PRESSE"></span><span class="target" id="keypadc_8h_1a563ca39e35b2a344a3ecef7f1c990e66a2aae3e5b9909b0da4fd1524b484fb17b"></span><em class="property">enumerator </em><code class="sig-name descname">KB_MODE_1_PRESS</code><a class="headerlink" href="#_CPPv4N15kb_int_signal_t15KB_MODE_1_PRESSE" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Interrupt set when a key is pressed in MODE_1_INDISCRIMINATE </p>
 </dd></dl>
 
@@ -566,7 +474,7 @@ The following code sets up a simple falling edge detector to catch this.</p>
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-functions">Functions</p>
 <dl class="cpp function">
 <dt id="_CPPv47kb_Scanv">
-<span id="_CPPv37kb_Scanv"></span><span id="_CPPv27kb_Scanv"></span><span id="kb_Scan__void"></span><span class="target" id="keypadc_8h_1a8cea914fc7256292713f6cd915e111ac"></span>void <code class="sig-name descname">kb_Scan</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv47kb_Scanv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv37kb_Scanv"></span><span id="_CPPv27kb_Scanv"></span><span id="kb_Scan__void"></span><span class="target" id="keypadc_8h_1a8cea914fc7256292713f6cd915e111ac"></span>void <code class="sig-name descname">kb_Scan</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv47kb_Scanv" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Scans the keyboard to update data values. </p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -576,7 +484,7 @@ The following code sets up a simple falling edge detector to catch this.</p>
 
 <dl class="cpp function">
 <dt id="_CPPv412kb_ScanGroup7uint8_t">
-<span id="_CPPv312kb_ScanGroup7uint8_t"></span><span id="_CPPv212kb_ScanGroup7uint8_t"></span><span id="kb_ScanGroup__uint8_t"></span><span class="target" id="keypadc_8h_1a3e36569b5a313cc743612929dcbc55f4"></span><a class="reference internal" href="#_CPPv48kb_key_t" title="kb_key_t">kb_key_t</a> <code class="sig-name descname">kb_ScanGroup</code><span class="sig-paren">(</span>uint8_t <em>row</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv412kb_ScanGroup7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv312kb_ScanGroup7uint8_t"></span><span id="_CPPv212kb_ScanGroup7uint8_t"></span><span id="kb_ScanGroup__uint8_t"></span><span class="target" id="keypadc_8h_1a3e36569b5a313cc743612929dcbc55f4"></span><a class="reference internal" href="#_CPPv48kb_key_t" title="kb_key_t">kb_key_t</a> <code class="sig-name descname">kb_ScanGroup</code><span class="sig-paren">(</span>uint8_t <em>row</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv412kb_ScanGroup7uint8_t" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Scans the given keyboard row and returns the row value. </p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -591,7 +499,7 @@ The following code sets up a simple falling edge detector to catch this.</p>
 
 <dl class="cpp function">
 <dt id="_CPPv49kb_AnyKeyv">
-<span id="_CPPv39kb_AnyKeyv"></span><span id="_CPPv29kb_AnyKeyv"></span><span id="kb_AnyKey__void"></span><span class="target" id="keypadc_8h_1ac02ee9014609d6b1fead0c10b02b6419"></span>uint8_t <code class="sig-name descname">kb_AnyKey</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv49kb_AnyKeyv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv39kb_AnyKeyv"></span><span id="_CPPv29kb_AnyKeyv"></span><span id="kb_AnyKey__void"></span><span class="target" id="keypadc_8h_1ac02ee9014609d6b1fead0c10b02b6419"></span>uint8_t <code class="sig-name descname">kb_AnyKey</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv49kb_AnyKeyv" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Scans the keyboard quickly to tell if any key was pressed. </p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -601,7 +509,7 @@ The following code sets up a simple falling edge detector to catch this.</p>
 
 <dl class="cpp function">
 <dt id="_CPPv48kb_Resetv">
-<span id="_CPPv38kb_Resetv"></span><span id="_CPPv28kb_Resetv"></span><span id="kb_Reset__void"></span><span class="target" id="keypadc_8h_1a6432b4b1d55539eb5cedbad14a00267b"></span>void <code class="sig-name descname">kb_Reset</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv48kb_Resetv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv38kb_Resetv"></span><span id="_CPPv28kb_Resetv"></span><span id="kb_Reset__void"></span><span class="target" id="keypadc_8h_1a6432b4b1d55539eb5cedbad14a00267b"></span>void <code class="sig-name descname">kb_Reset</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv48kb_Resetv" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Resets the keyboard before returning to the OS. </p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -615,37 +523,27 @@ The following code sets up a simple falling edge detector to catch this.</p>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="../headers/index.html" class="btn btn-neutral float-right" title="CE C Toolchain Specific Headers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="graphx.html" class="btn btn-neutral float-left" title="graphx.h" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../headers/index.html" class="btn btn-neutral float-right" title="CE C Toolchain Specific Headers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2015-2021 CE Programming.
-
-    </p>
+    <p>&#169; Copyright 2015-2021 CE Programming.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
   
   <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
@@ -679,18 +577,11 @@ The following code sets up a simple falling edge detector to catch this.</p>
       
     </div>
   </div>
-
-
-  <script type="text/javascript">
+<script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>
